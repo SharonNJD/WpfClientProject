@@ -19,9 +19,11 @@ namespace WpfClientProject
     /// </summary>
     public partial class Register : Window
     {
+        bool passOk;
         public Register()
         {
             InitializeComponent();
+            passOk = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,6 +41,27 @@ namespace WpfClientProject
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Passwor_Changed(object sender, RoutedEventArgs e)
+        {
+            tbPass.Text = pbPass.Password;
+            VaildPassword vaildPassword = new VaildPassword();
+            ValidationResult result = vaildPassword.Validate(pbPass.Password, null);
+            if(!result.IsValid)
+            {
+                pbPass.BorderBrush = Brushes.Red;
+                pbPass.BorderThickness = new Thickness(2);
+                pbPass.ToolTip=result.ErrorContent.ToString();
+                passOk = false;
+            }
+            else
+            {
+                pbPass.BorderBrush = Brushes.Transparent;
+                pbPass.BorderThickness = new Thickness(0);
+                pbPass.ToolTip = null;
+                passOk = true;
+            }
         }
     }
 }
