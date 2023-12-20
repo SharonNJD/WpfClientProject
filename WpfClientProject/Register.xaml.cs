@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfClientProject.ServiceReferenceBank;
 
 namespace WpfClientProject
 {
@@ -20,10 +21,15 @@ namespace WpfClientProject
     public partial class Register : Window
     {
         bool passOk;
+        User user;
         public Register()
         {
+
             InitializeComponent();
             passOk = false;
+            user = new User();
+            this.DataContext = user;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -52,7 +58,7 @@ namespace WpfClientProject
             {
                 pbPass.BorderBrush = Brushes.Red;
                 pbPass.BorderThickness = new Thickness(2);
-                pbPass.ToolTip=result.ErrorContent.ToString();
+                pbPass.ToolTip=result.ErrorContent;
                 passOk = false;
             }
             else

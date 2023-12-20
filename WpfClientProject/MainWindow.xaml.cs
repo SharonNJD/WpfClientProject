@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfClientProject.ServiceReferenceBank;
 
 namespace WpfClientProject
 {
@@ -20,9 +21,13 @@ namespace WpfClientProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        User user;
         public MainWindow()
         {
             InitializeComponent();
+            user = new User();
+            this.DataContext = user;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

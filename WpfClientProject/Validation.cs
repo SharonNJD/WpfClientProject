@@ -151,32 +151,44 @@ namespace WpfClientProject
                 {
                     return new ValidationResult(false, "Dosent fit the patren");
                 }
-                int[] digits = name.Select(c => int.Parse(c.ToString())).ToArray();
-
+                
+                string israeliID = value.ToString();
                 // Validate checksum
-                int sum = 0;
-                for (int i = 0; i < 8; i++)
+                if (israeliID.Length != 9)
+                    return new ValidationResult(false, "Its not in the right length");
+
+                long sum = 0;
+
+                for (int i = 0; i < israeliID.Length; i++)
                 {
-                    int digit = digits[i];
-                    if (i % 2 == 0)
-                    {
-                        digit *= 1;
-                    }
-                    else
-                    {
-                        digit *= 2;
-                        if (digit > 9)
-                        {
-                            digit -= 9;
-                        }
-                    }
-                    sum += digit;
+                    var digit = israeliID[israeliID.Length - 1 - i] - '0';
+                    sum += (i % 2 != 0) ? GetDouble(digit) : digit;
                 }
 
-                int checksum = (10 - (sum % 10)) % 10;
-                if (digits[8] == checksum)
+                if (!(sum % 10 == 0))
                 {
-                    return new ValidationResult(false, "Not a posabile id");
+                    return new ValidationResult(false, "not a posiible id");
+                }
+
+                int GetDouble(long i)
+                {
+                    switch (i)
+                    {
+                        case 0: return 0;
+                        case 1: return 2;
+                        case 2: return 4;
+                        case 3: return 6;
+                        case 4: return 8;
+                        case 5: return 1;
+                        case 6: return 3;
+                        case 7: return 5;
+                        case 8: return 7;
+                        case 9: return 9;
+                        default:
+                            return 0;
+
+
+                    }
                 }
             }
             catch (Exception ex)

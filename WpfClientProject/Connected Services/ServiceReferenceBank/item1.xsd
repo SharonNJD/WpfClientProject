@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Birthday" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsWorker" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phonenum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkerRank" type="xs:int" />
+          <xs:element minOccurs="0" name="realid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="UserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserList" nillable="true" type="tns:UserList" />
+  <xs:complexType name="BankAccountList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankAccount" nillable="true" type="tns:BankAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankAccountList" nillable="true" type="tns:BankAccountList" />
+  <xs:complexType name="BankAccount">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adultAcouunt" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bankAcuuntNum" type="xs:int" />
+          <xs:element minOccurs="0" name="canTradeStocks" type="xs:boolean" />
+          <xs:element minOccurs="0" name="canTransferOverSeas" type="xs:boolean" />
+          <xs:element minOccurs="0" name="canloan" type="xs:boolean" />
+          <xs:element minOccurs="0" name="customer" nillable="true" type="tns:Customers" />
+          <xs:element minOccurs="0" name="personalAcouunt" type="xs:boolean" />
+          <xs:element minOccurs="0" name="secretCode" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankAccount" nillable="true" type="tns:BankAccount" />
+  <xs:complexType name="Customers">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:User">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="dateOfJoining" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="isNative" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Customers" nillable="true" type="tns:Customers" />
+  <xs:complexType name="CustomersList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customers" nillable="true" type="tns:Customers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomersList" nillable="true" type="tns:CustomersList" />
+  <xs:complexType name="MyAction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actionName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="commissionTaken" type="xs:double" />
+          <xs:element minOccurs="0" name="minRank" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MyAction" nillable="true" type="tns:MyAction" />
+  <xs:complexType name="ActionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MyAction" nillable="true" type="tns:MyAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionList" nillable="true" type="tns:ActionList" />
+  <xs:complexType name="AccountAction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="tns:MyAction" />
+          <xs:element minOccurs="0" name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="BankAccount" nillable="true" type="tns:BankAccount" />
+          <xs:element minOccurs="0" name="TimaStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccountAction" nillable="true" type="tns:AccountAction" />
+  <xs:complexType name="AccountActionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountAction" nillable="true" type="tns:AccountAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountActionList" nillable="true" type="tns:AccountActionList" />
+</xs:schema>
