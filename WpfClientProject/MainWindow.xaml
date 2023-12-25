@@ -71,6 +71,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="ID" 
                    Grid.Row="0"
@@ -95,15 +96,17 @@
                    Grid.Row="2"
                    Margin="0,15,0,0"
                    HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
-                    <PasswordBox Grid.Row="3"
-                      Password="Enterhere"
-                      Padding="0,5"                           
-                      Width="255"
-                      BorderThickness="0,0,0,1"
-                      HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+                    <PasswordBox Grid.Row="3" x:Name="pbPass" BorderBrush="Purple"
+
+             Padding="0,5"
+             Width="255"
+             BorderThickness="1,1,1,1"
+             HorizontalAlignment="Left"
+             PasswordChanged="Passwor_Changed" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbPass"
+         Grid.Row="4" Visibility="Collapsed" />
                 </Grid>
-                <TextBlock Text="forgot password?" 
-                       HorizontalAlignment="Right"/>
+                
                 <Button x:Name="LoginBtn" 
                     Content="Login" 
                     Foreground="Black"

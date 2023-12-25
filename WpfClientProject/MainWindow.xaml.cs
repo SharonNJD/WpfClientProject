@@ -21,10 +21,12 @@ namespace WpfClientProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool passOk;
         User user;
         public MainWindow()
         {
             InitializeComponent();
+            passOk = false;
             user = new User();
             this.DataContext = user;
 
@@ -43,6 +45,26 @@ namespace WpfClientProject
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void Passwor_Changed(object sender, RoutedEventArgs e)
+        {
+            tbPass.Text = pbPass.Password;
+            VaildPassword vaildPassword = new VaildPassword();
+            ValidationResult result = vaildPassword.Validate(pbPass.Password, null);
+            if (!result.IsValid)
+            {
+                pbPass.BorderBrush = Brushes.Red;
+                pbPass.BorderThickness = new Thickness(2);
+                pbPass.ToolTip = result.ErrorContent;
+                passOk = false;
+            }
+            else
+            {
+                pbPass.BorderBrush = Brushes.Transparent;
+                pbPass.BorderThickness = new Thickness(0);
+                pbPass.ToolTip = null;
+                passOk = true;
+            }
         }
     }
 }
