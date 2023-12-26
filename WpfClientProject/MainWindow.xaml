@@ -78,6 +78,7 @@
                    Margin="0,15,0,15"
                    HorizontalAlignment="Left"/>
                     <TextBox
+                        x:Name="tbID"
                   Grid.Row="1"
                   Padding="0,5"
                   Width="255"
@@ -96,7 +97,7 @@
                    Grid.Row="2"
                    Margin="0,15,0,0"
                    HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
-                    <PasswordBox Grid.Row="3" x:Name="pbPass" BorderBrush="Purple"
+                    <PasswordBox  Grid.Row="3" x:Name="pbPass" BorderBrush="Purple"
 
              Padding="0,5"
              Width="255"

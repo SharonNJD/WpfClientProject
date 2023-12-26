@@ -22,12 +22,16 @@ namespace WpfClientProject
     public partial class MainWindow : Window
     {
         bool passOk;
+       
+        ServiceReferenceBank.ServiceBaseClient ServiceClient;
         User user;
         public MainWindow()
         {
             InitializeComponent();
+            ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
             passOk = false;
             user = new User();
+            
             this.DataContext = user;
 
         }
@@ -44,6 +48,16 @@ namespace WpfClientProject
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
+            User user = new User();
+            user.Password = pbPass.Password;
+            user.realid = tbID.Text;
+            User loggeduser = ServiceClient.UserLogin(user);
+            if (loggeduser != null)
+            {
+                Register reg = new Register();
+                this.Close();
+                reg.Show();
+            }
 
         }
         private void Passwor_Changed(object sender, RoutedEventArgs e)
