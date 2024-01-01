@@ -13,8 +13,8 @@
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="BorderThickness" Value="0,0,0,1"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#ecf0f1"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
+            
+            
             <Setter Property="Validation.ErrorTemplate">
                 <Setter.Value>
                     <ControlTemplate>
@@ -80,6 +80,7 @@
                     <TextBox
                         x:Name="tbID"
                   Grid.Row="1"
+                        BorderBrush="DarkCyan"
                   Padding="0,5"
                   Width="255"
                   BorderThickness="0,0,0,1"
@@ -97,26 +98,25 @@
                    Grid.Row="2"
                    Margin="0,15,0,0"
                    HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
-                    <PasswordBox  Grid.Row="3" x:Name="pbPass" BorderBrush="Purple"
+                    <PasswordBox  Grid.Row="3" x:Name="pbPass" BorderBrush="DarkCyan"
 
              Padding="0,5"
              Width="255"
-             BorderThickness="1,1,1,1"
+             BorderThickness="0,0,0,1"
              HorizontalAlignment="Left"
              PasswordChanged="Passwor_Changed" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="tbPass"
-         Grid.Row="4" Visibility="Collapsed" />
+         Grid.Row="4" Visibility="Collapsed"/>
                 </Grid>
-                
                 <Button x:Name="LoginBtn" 
                     Content="Login" 
+                        Grid.Row="5"
                     Foreground="Black"
                     Background="CadetBlue"
-                    Margin="0,25"
                     Height="35"
-                    Width="250" Click="LoginBtn_Click">
+                    Width="250" Click="LoginBtn_Click" Margin="0,30,0,0">
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="{x:Type Button}">
@@ -138,9 +138,9 @@
                     </Button.Style>
                 </Button>
                 <Button Content="Sign up" Background="Transparent" BorderThickness="0"
-                         Margin="0,10"
-                       VerticalAlignment="Bottom"
-                       HorizontalAlignment="Center" Click="Button_Click"/>
+         Margin="0,10"
+       VerticalAlignment="Bottom"
+       HorizontalAlignment="Center" Click="Button_Click"/>
             </StackPanel>
         </Border>
     </Grid>
