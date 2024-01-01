@@ -100,7 +100,7 @@
                                                      Foreground="Green"
                                                      Margin="5"
                                                      VerticalAlignment="Center" />
-                            <TextBlock Text="Acouunt Manggement"
+                            <TextBlock Text="Acouunt Manggement!"
                                        Margin="10" />
                         </StackPanel>
                     </ListViewItem>
