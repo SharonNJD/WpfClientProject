@@ -18,8 +18,10 @@ namespace WpfClientProject
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
+     
     public partial class Register : Window
     {
+        ServiceReferenceBank.ServiceBaseClient ServiceClient;
         bool passOk;
         User user;
         public Register()
@@ -29,6 +31,7 @@ namespace WpfClientProject
             passOk = false;
             user = new User();
             this.DataContext = user;
+            addDates();
 
         }
 
@@ -41,12 +44,40 @@ namespace WpfClientProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            birthdayDatePicker.Visibility = Visibility.Visible;
+            //birthdayDatePicker.Visibility = Visibility.Visible;
+        }
+        private void addDates()
+        {
+            DayComboBox.Items.Clear();
+            MonthComboBox.Items.Clear();
+            YearComboBox.Items.Clear();
+            for (int i = 1907; i < DateTime.Now.Year; i++)
+            {
+                YearComboBox.Items.Add(i);
+            }
+            for (int i = 1; i < 13; i++)
+            {
+                MonthComboBox.Items.Add(i);
+            }
+            for (int i = 1; i < 32; i++)
+            {
+                DayComboBox.Items.Add(i);
+            }
         }
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ServiceClient = new ServiceBaseClient();
+            user.FirstName = tbxFirstName.Text;
+            user.LastName = tbxLastName.Text;
+            user.realid = tbxId.Text;
+            user.Password = pbPass.Password;
+            user.Email = tbxEmail.Text;
+            user.Phonenum = tbxPhoneNum.Text;
+            user.Gender = ((string)((ComboBoxItem)yesNoComboBox.SelectedItem).Content == "Male");// male - true
+           // user.Birthday = DateTime.Parse(birthdayDatePicker.SelectedDate.ToString());
+            ServiceClient.InsertUser(user);
+            
         }
 
         private void Passwor_Changed(object sender, RoutedEventArgs e)
