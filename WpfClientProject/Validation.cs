@@ -68,19 +68,7 @@ namespace WpfClientProject
                 {
                     return new ValidationResult(false, "Nothing");
                 }
-                if (!Char.IsLetter(name[0]))
-                {
-                    return new ValidationResult(false, "First letter needs to be a letter");
-                }
-
-                for (int i = 0; i < name.Length; i++)
-                {
-                    if (!(Char.IsLetter(name[i])))
-                    {
-                        return new ValidationResult(false, "only letters or spaces");
-                    }
-
-                }
+               
                 string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
                 if (!Regex.IsMatch(name, emailPattern))
@@ -113,7 +101,7 @@ namespace WpfClientProject
                
 
 
-                string phonePattern = @"^(972|0)?5[2-4]\d{7}$";
+                string phonePattern = @"^(972|0)?5[0-9]\d{7}$";
               
 
                 if (!Regex.IsMatch(name, phonePattern))

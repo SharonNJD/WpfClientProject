@@ -81,6 +81,9 @@ namespace WpfClientProject
             DateTime time = new DateTime(year, month, day);
             user.Birthday = time;
             ServiceClient.InsertUser(user);
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Hide();
             
         }
 
