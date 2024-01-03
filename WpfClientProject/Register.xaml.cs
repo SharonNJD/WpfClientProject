@@ -75,7 +75,11 @@ namespace WpfClientProject
             user.Email = tbxEmail.Text;
             user.Phonenum = tbxPhoneNum.Text;
             user.Gender = ((string)((ComboBoxItem)yesNoComboBox.SelectedItem).Content == "Male");// male - true
-           // user.Birthday = DateTime.Parse(birthdayDatePicker.SelectedDate.ToString());
+            int day = int.Parse(DayComboBox.Text);
+            int month = int.Parse(MonthComboBox.Text);
+            int year = int.Parse(YearComboBox.Text);                                 // user.Birthday = DateTime.Parse(birthdayDatePicker.SelectedDate.ToString());
+            DateTime time = new DateTime(year, month, day);
+            user.Birthday = time;
             ServiceClient.InsertUser(user);
             
         }
