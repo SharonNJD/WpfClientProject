@@ -80,5 +80,12 @@ namespace WpfClientProject
                 passOk = true;
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NewUserPage newWindow = new NewUserPage();
+            newWindow.Show();
+            this.Close();
+        }
     }
 }
