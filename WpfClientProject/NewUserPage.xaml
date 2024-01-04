@@ -11,7 +11,8 @@
         Width="1080"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None">
+        WindowStyle="None"
+        WindowState="Maximized">
     
     <Window.Resources>
         <Storyboard x:Key="CloseMenu">
@@ -59,7 +60,7 @@
         </EventTrigger>
     </Window.Triggers>
 
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="7*" />
             <RowDefinition Height="193*" />
@@ -68,6 +69,7 @@
               Background="#55313131"
               Opacity="0"
               Grid.RowSpan="2" />
+        <Grid x:Name="GridMain" Grid.Row="1" Visibility="Collapsed"/>
         <Button x:Name="ButtonOpen"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
@@ -76,7 +78,7 @@
                 Width="30"
                 Height="30"
                 Padding="0"
-                Grid.RowSpan="2">
+                Grid.RowSpan="3">
             <materialDesign:PackIcon Kind="Menu"
                                      Foreground="#FF313131" />
         </Button>
@@ -117,7 +119,7 @@
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45"
-                                  Padding="0">
+                                  Padding="0" Selected="Trade_Load">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10 0">
                             <materialDesign:PackIcon Kind="Graph"
@@ -126,7 +128,7 @@
                                                      Foreground="#FFF08033"
                                                      Margin="5"
                                                      VerticalAlignment="Center" />
-                            <TextBlock Text="Trade Stocks"
+                            <TextBlock Text="Check currency"
                                        Margin="10" />
                         </StackPanel>
                     </ListViewItem>
@@ -140,7 +142,7 @@
                                                      Foreground="Blue"
                                                      Margin="5"
                                                      VerticalAlignment="Center" />
-                            <TextBlock Text="For you"
+                            <TextBlock Text="Actions"
                                        Margin="10" />
                         </StackPanel>
                     </ListViewItem>
@@ -191,6 +193,7 @@
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
+                <TextBlock x:Name="Welcome" Text="{Binding FirstName}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
             </StackPanel>
             
             <Button x:Name="ButtonClose"

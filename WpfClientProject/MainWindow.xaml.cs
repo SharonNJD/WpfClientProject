@@ -54,7 +54,7 @@ namespace WpfClientProject
             User loggeduser = ServiceClient.UserLogin(user);
             if (loggeduser != null)
             {
-                Register reg = new Register();
+                NewUserPage reg = new NewUserPage(user);
                 this.Close();
                 reg.Show();
             }
@@ -83,7 +83,7 @@ namespace WpfClientProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NewUserPage newWindow = new NewUserPage();
+            NewUserPage newWindow = new NewUserPage(user);
             newWindow.Show();
             this.Close();
         }
