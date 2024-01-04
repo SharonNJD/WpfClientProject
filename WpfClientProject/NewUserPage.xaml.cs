@@ -47,5 +47,10 @@ namespace WpfClientProject
 
            
         }
+
+        private void ButtonCloseApp_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

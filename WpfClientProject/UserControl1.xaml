@@ -5,8 +5,86 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfClientProject"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Aqua">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <UserControl.Resources>
+
+        
+            <local:ImageConverter x:Key="ImageConverter"/>
+            <Style TargetType="ComboBoxItem">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Tahoma"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Tahoma"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+    </UserControl.Resources>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Client Currency App" FontSize="35"
+               FontWeight="DemiBold"
+               TextAlignment="Center"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Key" Width="70" DisplayMemberBinding="{Binding Key}" />
+                        <GridViewColumn Header="Rate" Width="80" DisplayMemberBinding="{Binding Rate}" />
+                        <GridViewColumn Header="Change" Width="80">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Height="30" Width="30" Source="{Binding Path=Change, Converter={StaticResource ImageConverter}}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Exchage Calc" FontSize="25"
+           FontWeight="DemiBold"
+           TextAlignment="Center"
+           Grid.Row="0"/>
+                <Border BorderBrush="Indigo"  BorderThickness="2" CornerRadius="5"
+                Grid.Row="1" Margin="5" Padding="5">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal"  Margin="5">
+                            <Label Content="Source: "/>
+                            <ComboBox x:Name="cmbSource"/>
+                            <Label Content="Target: "/>
+                            <ComboBox x:Name="cmbTarget"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <Label Content="amount: "/>
+                            <TextBox x:Name="tbAmount" PreviewTextInput="tbAmount_PreviewTextInput"/>
+                            <Button Content="Calc it!" Margin="15 0" Padding="5" Click="Button_Click"/>
+                        </StackPanel>
+                        <TextBlock x:Name="tbResult" Margin="15"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="25"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
 </UserControl>

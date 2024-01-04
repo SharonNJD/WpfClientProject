@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfClientProject.ServiceReferenceCurrency;
 
 namespace WpfClientProject
 {
@@ -23,6 +24,39 @@ namespace WpfClientProject
         public UserControl1()
         {
             InitializeComponent();
+            currencyList = currencyService.GetAllCurrencies();
+            lvCurrencies.ItemsSource = currencyList;
+
+            addListToComboBox();
+        }
+        private CurrencyServiceClient currencyService = new CurrencyServiceClient();
+        private CurrencyList currencyList;
+
+
+        
+
+        private void tbAmount_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.Text[0]);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Currency source = cmbSource.SelectedItem as Currency;
+            Currency target = cmbTarget.SelectedItem as Currency;
+            double amount = double.Parse(tbAmount.Text);
+            double result = currencyService.Convert(source, target, amount);
+            tbResult.Text = $"{amount} {source.Key} is {result} is {target.Key}";
+        }
+
+        public void addListToComboBox()
+        {
+            cmbSource.Items.Clear();
+            cmbTarget.Items.Clear();
+            cmbSource.DisplayMemberPath = cmbTarget.DisplayMemberPath = "Key";
+            cmbSource.ItemsSource = currencyList;
+            cmbTarget.ItemsSource = currencyList;
+
         }
     }
 }
