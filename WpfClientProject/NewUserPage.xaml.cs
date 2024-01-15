@@ -52,5 +52,13 @@ namespace WpfClientProject
         {
             this.Close();
         }
+
+        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new userusercontrol());
+            GridMain.Visibility = Visibility.Visible;
+            this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
     }
 }

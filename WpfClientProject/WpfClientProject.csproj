@@ -247,6 +247,28 @@
     <Resource Include="Images\no-change.png" />
     <Resource Include="Images\up.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-back-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Graph.png" />
+    <Resource Include="Images\icons8-centralized-network-50.png" />
+    <Resource Include="Images\icons8-dashboard-52.png" />
+    <Resource Include="Images\icons8-fan-speed-100.png" />
+    <Resource Include="Images\icons8-forward-24.png" />
+    <Resource Include="Images\icons8-gear-50.png" />
+    <Resource Include="Images\icons8-new-post-48.png" />
+    <Resource Include="Images\icons8-notification-50.png" />
+    <Resource Include="Images\icons8-user-48.png" />
+    <Resource Include="Images\profile-1.jpg" />
+    <Resource Include="Images\profile-2.png" />
+    <Resource Include="Images\profile-3.jpg" />
+    <Resource Include="Images\profile-4.jpg" />
+    <Resource Include="Images\profile-5.jpg" />
+    <Resource Include="Images\profile-6.jpg" />
+    <Resource Include="Images\profile-7.jpg" />
+    <Resource Include="Images\profile-8.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
