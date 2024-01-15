@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        WindowState="Maximized">
+        >
     
     <Window.Resources>
         <Storyboard x:Key="CloseMenu">
@@ -128,7 +128,7 @@
                                                      Foreground="#FFF08033"
                                                      Margin="5"
                                                      VerticalAlignment="Center" />
-                            <TextBlock Text="Check currency"
+                            <TextBlock Text="Foreign Currency"
                                        Margin="10" />
                         </StackPanel>
                     </ListViewItem>

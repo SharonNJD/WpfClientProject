@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfClientProject"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" >
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" >
     <UserControl.Resources>
 
         
@@ -41,16 +41,19 @@
                 <RowDefinition/>
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Client Currency App" FontSize="35"
+            <TextBlock Text="foreign currency" FontSize="35"
                FontWeight="DemiBold"
                TextAlignment="Center"
                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0">
+        <Border BorderBrush="Aqua" Grid.Row="1" BorderThickness="10">
+            <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black" SelectionChanged="lvCurrencies_SelectionChanged">
                 <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Key" Width="70" DisplayMemberBinding="{Binding Key}" />
-                        <GridViewColumn Header="Rate" Width="80" DisplayMemberBinding="{Binding Rate}" />
-                        <GridViewColumn Header="Change" Width="80">
+                    <GridView >
+                        
+                        <GridViewColumn Header="Key" Width="90" DisplayMemberBinding="{Binding Key}" />
+                        
+                        <GridViewColumn Header="Rate" Width="90" DisplayMemberBinding="{Binding Rate}"  />
+                        <GridViewColumn Header="Change" Width="120" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image Height="30" Width="30" Source="{Binding Path=Change, Converter={StaticResource ImageConverter}}" />
@@ -60,13 +63,14 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <StackPanel Grid.Row="1" Grid.Column="1">
+        </Border>
+        <StackPanel Grid.Row="1" Grid.Column="1">
                 <TextBlock Text="Exchage Calc" FontSize="25"
            FontWeight="DemiBold"
            TextAlignment="Center"
            Grid.Row="0"/>
                 <Border BorderBrush="Indigo"  BorderThickness="2" CornerRadius="5"
-                Grid.Row="1" Margin="5" Padding="5">
+                Grid.Row="1" Margin="5" Padding="5" Width="413">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal"  Margin="5">
                             <Label Content="Source: "/>
@@ -80,9 +84,9 @@
                             <Button Content="Calc it!" Margin="15 0" Padding="5" Click="Button_Click"/>
                         </StackPanel>
                         <TextBlock x:Name="tbResult" Margin="15"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontSize="25"/>
+                           
+                          
+                           FontSize="15"/>
                     </StackPanel>
                 </Border>
             </StackPanel>

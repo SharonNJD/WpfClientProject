@@ -58,5 +58,10 @@ namespace WpfClientProject
             cmbTarget.ItemsSource = currencyList;
 
         }
+
+        private void lvCurrencies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
