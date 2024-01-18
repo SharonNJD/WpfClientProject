@@ -44,6 +44,7 @@ namespace WpfClientProject
         {
             Currency source = cmbSource.SelectedItem as Currency;
             Currency target = cmbTarget.SelectedItem as Currency;
+
             double amount = double.Parse(tbAmount.Text);
             double result = currencyService.Convert(source, target, amount);
             tbResult.Text = $"{amount} {source.Key} is {result} is {target.Key}";
@@ -53,9 +54,12 @@ namespace WpfClientProject
         {
             cmbSource.Items.Clear();
             cmbTarget.Items.Clear();
+            cmbTarget2.Items.Clear();
             cmbSource.DisplayMemberPath = cmbTarget.DisplayMemberPath = "Key";
             cmbSource.ItemsSource = currencyList;
             cmbTarget.ItemsSource = currencyList;
+            cmbSource.DisplayMemberPath = cmbTarget2.DisplayMemberPath = "Key";
+            cmbTarget2.ItemsSource = currencyList;
 
         }
 

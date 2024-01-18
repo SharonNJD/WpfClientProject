@@ -5,53 +5,63 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfClientProject"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White" >
+             d:DesignHeight="600" d:DesignWidth="1080" Background="White" >
     <UserControl.Resources>
 
-        
-            <local:ImageConverter x:Key="ImageConverter"/>
-            <Style TargetType="ComboBoxItem">
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="FontFamily" Value="Tahoma"/>
-            </Style>
-            <Style TargetType="Label">
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="FontFamily" Value="Tahoma"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-            </Style>
-            <Style TargetType="TextBox">
-                <Setter Property="Width" Value="100"/>
-                <Setter Property="FontSize" Value="20"/>
-            </Style>
-            <Style TargetType="ComboBox">
-                <Setter Property="Width" Value="100"/>
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="Margin" Value="5"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-            </Style>
+
+        <local:ImageConverter x:Key="ImageConverter"/>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
     </UserControl.Resources>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="1.6*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="5*"/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="foreign currency" FontSize="35"
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1.6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
+                    <GradientStop Color="LightCyan" Offset="1"/>
+                    <GradientStop Color="DarkCyan"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Text="foreign currency" FontSize="35"
                FontWeight="DemiBold"
                TextAlignment="Center"
-               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Border BorderBrush="Aqua" Grid.Row="1" BorderThickness="10">
+               Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Grid.RowSpan="2"/>
+        <Border BorderBrush="Gray" Grid.Row="1" Grid.Column="1" BorderThickness="10" Margin="163,0,174,0">
             <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black" SelectionChanged="lvCurrencies_SelectionChanged">
                 <ListView.View>
                     <GridView >
-                        
+
                         <GridViewColumn Header="Key" Width="90" DisplayMemberBinding="{Binding Key}" />
-                        
+
                         <GridViewColumn Header="Rate" Width="90" DisplayMemberBinding="{Binding Rate}"  />
                         <GridViewColumn Header="Change" Width="120" >
                             <GridViewColumn.CellTemplate>
@@ -64,31 +74,78 @@
                 </ListView.View>
             </ListView>
         </Border>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-                <TextBlock Text="Exchage Calc" FontSize="25"
+
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="151" Margin="116,71,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Center" Height="17" Margin="0,83,0,0" TextWrapping="Wrap" Text="Your Coins" VerticalAlignment="Top" Width="133" Foreground="White" Grid.Row="1"/>
+        <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="62" Stretch="Fill" VerticalAlignment="Center" Width="56" Stroke="White" Margin="152,0,0,0" Grid.Row="1">
+            <Path.Fill>
+                <ImageBrush ImageSource="C:\Users\charon\source\repos\WpfClientProject\WpfClientProject\Images\dollor.jpg" Stretch="UniformToFill"/>
+            </Path.Fill>
+        </Path>
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="Exchage Calc" FontSize="25"
            FontWeight="DemiBold"
            TextAlignment="Center"
            Grid.Row="0"/>
-                <Border BorderBrush="Indigo"  BorderThickness="2" CornerRadius="5"
+            <Border BorderBrush="Indigo"  BorderThickness="2" CornerRadius="5"
                 Grid.Row="1" Margin="5" Padding="5" Width="413">
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal"  Margin="5">
-                            <Label Content="Source: "/>
-                            <ComboBox x:Name="cmbSource"/>
-                            <Label Content="Target: "/>
-                            <ComboBox x:Name="cmbTarget"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="5">
-                            <Label Content="amount: "/>
-                            <TextBox x:Name="tbAmount" PreviewTextInput="tbAmount_PreviewTextInput"/>
-                            <Button Content="Calc it!" Margin="15 0" Padding="5" Click="Button_Click"/>
-                        </StackPanel>
-                        <TextBlock x:Name="tbResult" Margin="15"
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="5">
+                        <Label Content="Source: "/>
+                        <ComboBox x:Name="cmbSource">
+                            <ComboBox x:Name="cmbSource_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </ComboBox>
+                        <Label Content="Target: "/>
+                        <ComboBox x:Name="cmbTarget"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Content="amount: "/>
+                        <TextBox x:Name="tbAmount" PreviewTextInput="tbAmount_PreviewTextInput"/>
+                        <Button Content="Calc it!" Margin="15 0" Padding="5" Click="Button_Click"/>
+                    </StackPanel>
+                    <TextBlock x:Name="tbResult" Margin="15"
                            
                           
                            FontSize="15"/>
-                    </StackPanel>
-                </Border>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="151" Margin="41,40,0,0" VerticalAlignment="Top" Width="485" RadiusY="5" RadiusX="5" Grid.ColumnSpan="2" Grid.Row="2"/>
+        <StackPanel Grid.Row="2" Grid.Column="0" Margin="55,82,635,44" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal"  Margin="5">
+                <Label Content="Action: "/>
+                <ComboBox x:Name="cmbSource2">
+                    <ComboBox x:Name="cmbSource_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </ComboBox>
+                <Label Content="Type: " Width="60"/>
+                <ComboBox x:Name="cmbTarget2"/>
             </StackPanel>
-        </Grid>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="amount: "/>
+                <TextBox x:Name="tbAmount2" PreviewTextInput="tbAmount_PreviewTextInput"/>
+                <Button Content="Send" Margin="15 0" Padding="5" Click="Button_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="tbResult2" Margin="15"
+           
+          
+           FontSize="15"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="55,56,0,0" TextWrapping="Wrap" Text="Actions" VerticalAlignment="Top" Width="133" Foreground="White" Grid.Row="2"/>
+        <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="62" Stretch="Fill" VerticalAlignment="Center" Width="56" Stroke="White" Margin="230,0,0,0" Grid.Row="1">
+            <Path.Fill>
+                <ImageBrush ImageSource="C:\Users\charon\source\repos\WpfClientProject\WpfClientProject\Images\euro.png" Stretch="Uniform"/>
+            </Path.Fill>
+        </Path>
+        <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="62" Stretch="Fill" VerticalAlignment="Center" Width="56" Stroke="White" Margin="309,0,0,0" Grid.Row="1">
+            <Path.Fill>
+                <ImageBrush ImageSource="C:\Users\charon\source\repos\WpfClientProject\WpfClientProject\Images\pound.png" Stretch="UniformToFill"/>
+            </Path.Fill>
+        </Path>
+        <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="62" Stretch="Fill" VerticalAlignment="Center" Width="56" Stroke="White" Margin="383,0,0,0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Path.Fill>
+                <ImageBrush ImageSource="C:\Users\charon\source\repos\WpfClientProject\WpfClientProject\Images\yen.png" Stretch="Uniform"/>
+            </Path.Fill>
+        </Path>
+    </Grid>
 </UserControl>

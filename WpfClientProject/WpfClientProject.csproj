@@ -269,6 +269,18 @@
     <Resource Include="Images\profile-7.jpg" />
     <Resource Include="Images\profile-8.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dollor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\euro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\yen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
