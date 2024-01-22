@@ -23,6 +23,7 @@ namespace WpfClientProject
     {
         public UserControl1()
         {
+            
             InitializeComponent();
             currencyList = currencyService.GetAllCurrencies();
             lvCurrencies.ItemsSource = currencyList;
