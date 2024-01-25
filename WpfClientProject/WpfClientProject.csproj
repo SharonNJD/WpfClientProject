@@ -73,6 +73,9 @@
     <Compile Include="ActionsControl.xaml.cs">
       <DependentUpon>ActionsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminControl.xaml.cs">
+      <DependentUpon>AdminControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReferenceBank\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +101,10 @@
     </Compile>
     <Compile Include="Validation.cs" />
     <Page Include="ActionsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

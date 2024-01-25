@@ -60,5 +60,13 @@ namespace WpfClientProject
             GridMain.Visibility = Visibility.Visible;
             this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
+
+        private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new ActionsControl());
+            GridMain.Visibility = Visibility.Visible;
+            this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
     }
 }

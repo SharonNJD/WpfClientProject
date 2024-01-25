@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="WpfClientProject.AdminControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfClientProject"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1080">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
+                    <GradientStop Color="LightCyan" Offset="1"/>
+                    <GradientStop Color="DarkCyan"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Border BorderBrush="Gray" BorderThickness="10" Margin="23,0,759,10">
+            <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black" SelectionChanged="lvCurrencies_SelectionChanged" Height="570" VerticalAlignment="Center">
+                <ListView.View>
+                    <GridView >
+
+                        <GridViewColumn Header="User" Width="90" DisplayMemberBinding="{Binding Key}" />
+
+                        <GridViewColumn Header="Request" Width="90" DisplayMemberBinding="{Binding Rate}"  />
+                        <GridViewColumn Header="Agree/no" Width="120" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Height="30" Width="30" Source="{Binding Path=Change}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Border>
+
+    </Grid>
+</UserControl>
