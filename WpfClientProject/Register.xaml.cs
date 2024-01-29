@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,6 +80,8 @@ namespace WpfClientProject
             int month = int.Parse(MonthComboBox.Text);
             int year = int.Parse(YearComboBox.Text);                                 // user.Birthday = DateTime.Parse(birthdayDatePicker.SelectedDate.ToString());
             DateTime time = new DateTime(year, month, day);
+           
+
             user.Birthday = time;
             ServiceClient.InsertUser(user);
             MainWindow main = new MainWindow();

@@ -16,7 +16,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <Border BorderBrush="Gray" BorderThickness="10" Margin="23,0,759,10">
-            <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black" SelectionChanged="lvCurrencies_SelectionChanged" Height="570" VerticalAlignment="Center">
+            <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="570" VerticalAlignment="Center">
                 <ListView.View>
                     <GridView >
 

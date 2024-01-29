@@ -60,8 +60,8 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="5">
                         <Label Content="amount: "/>
-                        <TextBox x:Name="tbAmount" PreviewTextInput="tbAmount_PreviewTextInput"/>
-                        <Button Content="Calc it!" Margin="15 0" Padding="5" Click="Button_Click"/>
+                        <TextBox x:Name="tbAmount" />
+                        <Button Content="Calc it!" Margin="15 0" Padding="5" />
                     </StackPanel>
                     <TextBlock x:Name="tbResult" Margin="15"
                    
@@ -83,8 +83,8 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="amount: "/>
-                <TextBox x:Name="tbAmount2" PreviewTextInput="tbAmount_PreviewTextInput"/>
-                <Button Content="Send" Margin="15 0" Padding="5" Click="Button_Click"/>
+                <TextBox x:Name="tbAmount2" />
+                <Button Content="Send" Margin="15 0" Padding="5" />
             </StackPanel>
             <TextBlock x:Name="tbResult2" Margin="15"
     
@@ -104,8 +104,8 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="name: "/>
-                <TextBox x:Name="tbAmount3" PreviewTextInput="tbAmount_PreviewTextInput"/>
-                <Button Content="Send" Margin="15 0" Padding="5" Click="Button_Click"/>
+                <TextBox x:Name="tbAmount3" />
+                <Button Content="Send" Margin="15 0" Padding="5" />
             </StackPanel>
             <TextBlock x:Name="tbResult3" Margin="15"
 
