@@ -23,14 +23,14 @@
         <Image HorizontalAlignment="Left" Height="31" Margin="136,30,0,0" VerticalAlignment="Top" Width="32" Source="C:\Users\charon\source\repos\WpfClientProject\WpfClientProject\Images\_5032411d-2c60-4b05-b4a6-57f1c6e3505e-removebg-preview.png"/>
 
 
-        <Rectangle Fill="#7F050546" HorizontalAlignment="Left" Height="62" Margin="928,0,0,0" VerticalAlignment="Top" Width="152"/>
+        <Rectangle Fill="#7F050546" HorizontalAlignment="Left" Height="62" Margin="909,0,0,0" VerticalAlignment="Top" Width="171"/>
 
         <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="40" Margin="1033,11,0,0" Stretch="Fill" VerticalAlignment="Top" Width="37">
             <Path.Fill>
                 <ImageBrush ImageSource="C:\Users\charon\source\repos\WpfClientProject\WpfClientProject\Images\icons8-user-48.png" Stretch="UniformToFill"/>
             </Path.Fill>
         </Path>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="929,22,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="104" Foreground="White" TextAlignment="Right"/>
+        <TextBlock x:Name="UserName" Height="18" Margin="921,22,47,0" TextWrapping="Wrap"  VerticalAlignment="Top" Foreground="White" TextAlignment="Right"/>
         <Ellipse Fill="#FF00FB89" HorizontalAlignment="Left" Height="10" Margin="1052,40,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>

@@ -56,7 +56,7 @@ namespace WpfClientProject
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
-            GridMain.Children.Add(new userusercontrol());
+            GridMain.Children.Add(new userusercontrol(user));
             GridMain.Visibility = Visibility.Visible;
             this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }

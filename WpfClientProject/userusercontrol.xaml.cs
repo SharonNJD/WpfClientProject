@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfClientProject.ServiceReferenceBank;
 
 namespace WpfClientProject
 {
@@ -20,9 +21,12 @@ namespace WpfClientProject
     /// </summary>
     public partial class userusercontrol : UserControl
     {
-        public userusercontrol()
+        User user1;
+        public userusercontrol(User user)
         {
             InitializeComponent();
+            user1 = user;
+            UserName.Text = user.FirstName + " " + user.LastName;
         }
     }
 }

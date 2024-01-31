@@ -54,7 +54,7 @@ namespace WpfClientProject
             User loggeduser = ServiceClient.UserLogin(user);
             if (loggeduser != null)
             {
-                NewUserPage reg = new NewUserPage(user);
+                NewUserPage reg = new NewUserPage(loggeduser);
                 this.Close();
                 reg.Show();
             }

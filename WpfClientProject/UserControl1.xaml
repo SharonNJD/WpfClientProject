@@ -116,7 +116,7 @@
             <StackPanel Orientation="Horizontal"  Margin="5">
                 <Label Content="Action: "/>
                 <ComboBox x:Name="cmbSource2">
-                    <ComboBox x:Name="cmbSource_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    
                 </ComboBox>
                 <Label Content="Type: " Width="60"/>
                 <ComboBox x:Name="cmbTarget2"/>

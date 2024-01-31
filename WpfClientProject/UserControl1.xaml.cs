@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfClientProject.ServiceReferenceBank;
 using WpfClientProject.ServiceReferenceCurrency;
 
 namespace WpfClientProject
@@ -21,13 +22,16 @@ namespace WpfClientProject
     /// </summary>
     public partial class UserControl1 : UserControl
     {
+        ServiceReferenceBank.ServiceBaseClient ServiceClient;
         public UserControl1()
         {
             
             InitializeComponent();
             currencyList = currencyService.GetAllCurrencies();
             lvCurrencies.ItemsSource = currencyList;
-
+            
+            ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
+            GetAllActions();
             addListToComboBox();
         }
         private CurrencyServiceClient currencyService = new CurrencyServiceClient();
@@ -66,6 +70,16 @@ namespace WpfClientProject
 
         private void lvCurrencies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+        public void GetAllActions()
+        {
+            cmbSource2.Items.Clear ();
+            ActionList actionList = ServiceClient.GetAllActions();
+            cmbSource2.ItemsSource = actionList ;
+            cmbSource2.DisplayMemberPath = "actionName";
+
+
 
         }
     }
