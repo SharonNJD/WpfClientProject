@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,14 +23,15 @@ namespace WpfClientProject
     /// </summary>
     public partial class UserControl1 : UserControl
     {
+        User user1;
         ServiceReferenceBank.ServiceBaseClient ServiceClient;
-        public UserControl1()
+        public UserControl1(User user)
         {
             
             InitializeComponent();
             currencyList = currencyService.GetAllCurrencies();
             lvCurrencies.ItemsSource = currencyList;
-            
+            user1 = user;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
             GetAllActions();
             addListToComboBox();
@@ -47,13 +49,13 @@ namespace WpfClientProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Currency source = cmbSource.SelectedItem as Currency;
+            
             Currency target = cmbTarget.SelectedItem as Currency;
-
-            double amount = double.Parse(tbAmount.Text);
-            double result = currencyService.Convert(source, target, amount);
-            tbResult.Text = $"{amount} {source.Key} is {result} is {target.Key}";
+            Action source = cmbSource2.SelectedItem as Action;
+            AccountAction action = new AccountAction { BankAccount = null, Action = null, Amount = 0, TimaStamp = DateTime.Now };
+            ServiceClient.Insertintoacountaction(action);
         }
+       
 
         public void addListToComboBox()
         {

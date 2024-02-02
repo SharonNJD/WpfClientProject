@@ -41,11 +41,11 @@ namespace WpfClientProject
         private void Trade_Load(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
-            GridMain.Children.Add(new UserControl1());
+            GridMain.Children.Add(new UserControl1(user));
             GridMain.Visibility = Visibility.Visible;
             this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            
 
-           
         }
 
         private void ButtonCloseApp_Click_1(object sender, RoutedEventArgs e)
