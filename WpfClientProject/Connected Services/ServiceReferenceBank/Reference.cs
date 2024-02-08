@@ -270,6 +270,9 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime TimaStampField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClientProject.ServiceReferenceBank.BankAccount toBankAcouuntField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public WpfClientProject.ServiceReferenceBank.MyAction Action {
             get {
@@ -318,6 +321,19 @@ namespace WpfClientProject.ServiceReferenceBank {
                 if ((this.TimaStampField.Equals(value) != true)) {
                     this.TimaStampField = value;
                     this.RaisePropertyChanged("TimaStamp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClientProject.ServiceReferenceBank.BankAccount toBankAcouunt {
+            get {
+                return this.toBankAcouuntField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.toBankAcouuntField, value) != true)) {
+                    this.toBankAcouuntField = value;
+                    this.RaisePropertyChanged("toBankAcouunt");
                 }
             }
         }
@@ -627,6 +643,12 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/UpdateBankAcouuntResponse")]
         System.Threading.Tasks.Task<int> UpdateBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetCustomerByUser", ReplyAction="http://tempuri.org/IServiceBase/GetCustomerByUserResponse")]
+        WpfClientProject.ServiceReferenceBank.Customers GetCustomerByUser(WpfClientProject.ServiceReferenceBank.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetCustomerByUser", ReplyAction="http://tempuri.org/IServiceBase/GetCustomerByUserResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.Customers> GetCustomerByUserAsync(WpfClientProject.ServiceReferenceBank.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/DeleteBankAcouuntResponse")]
         int DeleteBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
@@ -686,6 +708,12 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UserLogin", ReplyAction="http://tempuri.org/IServiceBase/UserLoginResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> UserLoginAsync(WpfClientProject.ServiceReferenceBank.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccount", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccount GetBankAccount(WpfClientProject.ServiceReferenceBank.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccount", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAccountAsync(WpfClientProject.ServiceReferenceBank.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/Insertintoacountaction", ReplyAction="http://tempuri.org/IServiceBase/InsertintoacountactionResponse")]
         int Insertintoacountaction(WpfClientProject.ServiceReferenceBank.AccountAction account);
@@ -795,6 +823,14 @@ namespace WpfClientProject.ServiceReferenceBank {
             return base.Channel.UpdateBankAcouuntAsync(bankAccount);
         }
         
+        public WpfClientProject.ServiceReferenceBank.Customers GetCustomerByUser(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetCustomerByUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.Customers> GetCustomerByUserAsync(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetCustomerByUserAsync(user);
+        }
+        
         public int DeleteBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
             return base.Channel.DeleteBankAcouunt(bankAccount);
         }
@@ -873,6 +909,14 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> UserLoginAsync(WpfClientProject.ServiceReferenceBank.User user) {
             return base.Channel.UserLoginAsync(user);
+        }
+        
+        public WpfClientProject.ServiceReferenceBank.BankAccount GetBankAccount(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetBankAccount(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAccountAsync(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetBankAccountAsync(user);
         }
         
         public int Insertintoacountaction(WpfClientProject.ServiceReferenceBank.AccountAction account) {

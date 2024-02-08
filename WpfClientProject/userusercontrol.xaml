@@ -60,27 +60,7 @@
             </Path.Fill>
         </Path>
         <Grid Margin="163,176,564,144" Grid.Row="1">
-            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White">
 
-            </Path>
-            <TextBlock HorizontalAlignment="Left" Height="17" Margin="40,3.079,0,0" TextWrapping="Wrap" Text="Francisco Haney" VerticalAlignment="Top" Width="133" Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Height="17" Margin="40,20.079,0,0" TextWrapping="Wrap" Text="2h 45m" VerticalAlignment="Top" Width="133" Foreground="#FF898989"/>
-
-        </Grid>
-        <Grid Margin="163,223,564,97" Grid.Row="1">
-            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White">
-
-            </Path>
-            <TextBlock HorizontalAlignment="Left" Height="17" Margin="40,3.079,0,0" TextWrapping="Wrap" Text="Jal Chibuzo" VerticalAlignment="Top" Width="133" Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Height="17" Margin="40,20.079,0,0" TextWrapping="Wrap" Text="1h 45m" VerticalAlignment="Top" Width="133" Foreground="#FF898989"/>
-
-        </Grid>
-        <Grid Margin="163,269,564,51" Grid.Row="1">
-            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White">
-
-            </Path>
-            <TextBlock HorizontalAlignment="Left" Height="17" Margin="40,3.079,0,0" TextWrapping="Wrap" Text="Harmen Porter" VerticalAlignment="Top" Width="133" Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Height="17" Margin="40,20.079,0,0" TextWrapping="Wrap" Text="2h 45m" VerticalAlignment="Top" Width="133" Foreground="#FF898989"/>
 
         </Grid>
         <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="205,218,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF" Grid.Row="1"/>
@@ -96,10 +76,23 @@
             </Path.RenderTransform>
         </Path>
         <TextBlock HorizontalAlignment="Left" Height="80" Margin="318,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="94" Foreground="White" FontSize="72" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="334,265,0,0" TextWrapping="Wrap" Text="Quick Actions" VerticalAlignment="Top" Width="133" Foreground="White" Grid.Row="1"/>
+
         <Image HorizontalAlignment="Left" Height="20" Margin="411,199,0,0" VerticalAlignment="Top" Width="20"  Grid.Row="1"/>
         <Rectangle Fill="#FF04041F" HorizontalAlignment="Left" Height="20" Margin="377,287,0,0" VerticalAlignment="Top" Width="70" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="11" Margin="377,289,0,0" TextWrapping="Wrap" Text="SEE ALL" VerticalAlignment="Top" Width="70" Foreground="#FFAEABAB" FontSize="10" TextAlignment="Center" Grid.Row="1"/>
+        <Button x:Name="createbank" Content="createbank" Click="createbank_Click" Margin="318,220,564,178" Grid.Row="1"/>
+        <Button x:Name="Createcostomer" Content="create" Margin="377,248,620,150" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Click="Createcostomer_Click">
+            
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.531"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="536,1,0,0" TextWrapping="Wrap" Text="Last Activites" VerticalAlignment="Top" Width="133" Foreground="White" Grid.Row="1"/>
         <Grid Margin="536,28,231,292" Grid.Row="1">
 

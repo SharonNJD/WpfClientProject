@@ -32,7 +32,9 @@ namespace WpfClientProject
             currencyList = currencyService.GetAllCurrencies();
             lvCurrencies.ItemsSource = currencyList;
             user1 = user;
+
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
+           BankAccountList moshe = ServiceClient.GetAllBankAccountList();
             GetAllActions();
             addListToComboBox();
         }
@@ -51,8 +53,17 @@ namespace WpfClientProject
         {
             
             Currency target = cmbTarget.SelectedItem as Currency;
-            Action source = cmbSource2.SelectedItem as Action;
-            AccountAction action = new AccountAction { BankAccount = null, Action = null, Amount = 0, TimaStamp = DateTime.Now };
+            MyAction source = (MyAction)cmbSource2.SelectedItem;
+            AccountAction action = new AccountAction();
+            action.Action = source;
+            action.BankAccount = ServiceClient.GetBankAccount(user1);
+            
+            
+           
+           
+           
+
+
             ServiceClient.Insertintoacountaction(action);
         }
        

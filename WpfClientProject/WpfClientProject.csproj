@@ -171,7 +171,13 @@
     <None Include="Connected Services\ServiceReferenceBank\WpfClientProject.ServiceReferenceBank.ActionList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReferenceBank\WpfClientProject.ServiceReferenceBank.BankAccount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceBank\WpfClientProject.ServiceReferenceBank.BankAccountList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceBank\WpfClientProject.ServiceReferenceBank.Customers.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceBank\WpfClientProject.ServiceReferenceBank.CustomersList.datasource">

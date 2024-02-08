@@ -95,10 +95,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCustomerByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="user" nillable="true" type="q8:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetCustomerByUserResult" nillable="true" type="q9:Customers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="DeleteBankAcouunt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="bankAccount" nillable="true" type="q8:BankAccount" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="bankAccount" nillable="true" type="q10:BankAccount" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -112,7 +126,7 @@
   <xs:element name="InsertIntoCustomers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="customers" nillable="true" type="q9:Customers" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="customers" nillable="true" type="q11:Customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -126,7 +140,7 @@
   <xs:element name="UpgdateCustomers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="customers" nillable="true" type="q10:Customers" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="customers" nillable="true" type="q12:Customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -140,7 +154,7 @@
   <xs:element name="DeleteCustomers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="customers" nillable="true" type="q11:Customers" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="customers" nillable="true" type="q13:Customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -159,14 +173,14 @@
   <xs:element name="GetAllCustomersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAllCustomersResult" nillable="true" type="q12:CustomersList" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAllCustomersResult" nillable="true" type="q14:CustomersList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertIntoAction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q13:MyAction" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q15:MyAction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -180,7 +194,7 @@
   <xs:element name="UpdateAction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q14:MyAction" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q16:MyAction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -194,7 +208,7 @@
   <xs:element name="DeleteAction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q15:MyAction" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q17:MyAction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -213,28 +227,42 @@
   <xs:element name="GetAllActionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAllActionsResult" nillable="true" type="q16:ActionList" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAllActionsResult" nillable="true" type="q18:ActionList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UserLogin">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="user" nillable="true" type="q17:User" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="user" nillable="true" type="q19:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UserLoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="UserLoginResult" nillable="true" type="q18:User" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="UserLoginResult" nillable="true" type="q20:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="user" nillable="true" type="q21:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetBankAccountResult" nillable="true" type="q22:BankAccount" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Insertintoacountaction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="account" nillable="true" type="q19:AccountAction" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="account" nillable="true" type="q23:AccountAction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -248,7 +276,7 @@
   <xs:element name="UpdateIntoAcountAction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="account" nillable="true" type="q20:AccountAction" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="account" nillable="true" type="q24:AccountAction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -262,7 +290,7 @@
   <xs:element name="DeleteIntoAcountAction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q21:AccountAction" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="action" nillable="true" type="q25:AccountAction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -281,7 +309,7 @@
   <xs:element name="SelectAllAccountActionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="SelectAllAccountActionResult" nillable="true" type="q22:AccountActionList" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="SelectAllAccountActionResult" nillable="true" type="q26:AccountActionList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

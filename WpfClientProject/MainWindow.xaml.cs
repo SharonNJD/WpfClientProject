@@ -83,9 +83,16 @@ namespace WpfClientProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NewUserPage newWindow = new NewUserPage(user);
-            newWindow.Show();
-            this.Close();
+            User user = new User();
+            user.Password = "Project2006!";
+            user.realid = "214790677";
+            User loggeduser = ServiceClient.UserLogin(user);
+            if (loggeduser != null)
+            {
+                NewUserPage reg = new NewUserPage(loggeduser);
+                this.Close();
+                reg.Show();
+            }
         }
     }
 }
