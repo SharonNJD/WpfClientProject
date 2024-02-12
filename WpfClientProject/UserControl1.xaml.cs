@@ -52,19 +52,19 @@ namespace WpfClientProject
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
-            Currency target = cmbTarget.SelectedItem as Currency;
-            MyAction source = (MyAction)cmbSource2.SelectedItem;
-            AccountAction action = new AccountAction();
-            action.Action = source;
-            action.BankAccount = ServiceClient.GetBankAccount(user1);
-            
-            
-           
-           
-           
+         
+
+            Currency s = cmbSource.SelectedItem as Currency;
+            Currency t = cmbTarget.SelectedItem as Currency;
+            double amount = double.Parse(tbAmount.Text);
+            double result = currencyService.Convert(s, t, amount);
+            tbResult.Text = $"{amount} {s.Key} is {result} is {t.Key}";
 
 
-            ServiceClient.Insertintoacountaction(action);
+
+
+
+            
         }
        
 
@@ -94,6 +94,16 @@ namespace WpfClientProject
 
 
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Currency target = cmbTarget.SelectedItem as Currency;
+            MyAction source = (MyAction)cmbSource2.SelectedItem;
+            AccountAction action = new AccountAction();
+            action.Action = source;
+            action.BankAccount = ServiceClient.GetBankAccount(user1);
+            ServiceClient.Insertintoacountaction(action);
         }
     }
 }
