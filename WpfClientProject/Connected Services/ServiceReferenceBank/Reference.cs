@@ -18,8 +18,8 @@ namespace WpfClientProject.ServiceReferenceBank {
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.BankAccount))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.MyAction))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.AccountAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.MyAction))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.User))]
     public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -199,61 +199,6 @@ namespace WpfClientProject.ServiceReferenceBank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MyAction", Namespace="http://schemas.datacontract.org/2004/07/Model")]
-    [System.SerializableAttribute()]
-    public partial class MyAction : WpfClientProject.ServiceReferenceBank.BaseEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string actionNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double commissionTakenField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int minRankField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string actionName {
-            get {
-                return this.actionNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.actionNameField, value) != true)) {
-                    this.actionNameField = value;
-                    this.RaisePropertyChanged("actionName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double commissionTaken {
-            get {
-                return this.commissionTakenField;
-            }
-            set {
-                if ((this.commissionTakenField.Equals(value) != true)) {
-                    this.commissionTakenField = value;
-                    this.RaisePropertyChanged("commissionTaken");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int minRank {
-            get {
-                return this.minRankField;
-            }
-            set {
-                if ((this.minRankField.Equals(value) != true)) {
-                    this.minRankField = value;
-                    this.RaisePropertyChanged("minRank");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AccountAction", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
     public partial class AccountAction : WpfClientProject.ServiceReferenceBank.BaseEntity {
@@ -334,6 +279,109 @@ namespace WpfClientProject.ServiceReferenceBank {
                 if ((object.ReferenceEquals(this.toBankAcouuntField, value) != true)) {
                     this.toBankAcouuntField = value;
                     this.RaisePropertyChanged("toBankAcouunt");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MyAction", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class MyAction : WpfClientProject.ServiceReferenceBank.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AddingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool CoinForeignField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string actionNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string coinSymbolField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double commissionTakenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int minRankField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Adding {
+            get {
+                return this.AddingField;
+            }
+            set {
+                if ((this.AddingField.Equals(value) != true)) {
+                    this.AddingField = value;
+                    this.RaisePropertyChanged("Adding");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool CoinForeign {
+            get {
+                return this.CoinForeignField;
+            }
+            set {
+                if ((this.CoinForeignField.Equals(value) != true)) {
+                    this.CoinForeignField = value;
+                    this.RaisePropertyChanged("CoinForeign");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string actionName {
+            get {
+                return this.actionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.actionNameField, value) != true)) {
+                    this.actionNameField = value;
+                    this.RaisePropertyChanged("actionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string coinSymbol {
+            get {
+                return this.coinSymbolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.coinSymbolField, value) != true)) {
+                    this.coinSymbolField = value;
+                    this.RaisePropertyChanged("coinSymbol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double commissionTaken {
+            get {
+                return this.commissionTakenField;
+            }
+            set {
+                if ((this.commissionTakenField.Equals(value) != true)) {
+                    this.commissionTakenField = value;
+                    this.RaisePropertyChanged("commissionTaken");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int minRank {
+            get {
+                return this.minRankField;
+            }
+            set {
+                if ((this.minRankField.Equals(value) != true)) {
+                    this.minRankField = value;
+                    this.RaisePropertyChanged("minRank");
                 }
             }
         }
@@ -578,6 +626,13 @@ namespace WpfClientProject.ServiceReferenceBank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="AccountActionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="AccountAction")]
+    [System.SerializableAttribute()]
+    public class AccountActionList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.AccountAction> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomersList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Customers")]
     [System.SerializableAttribute()]
     public class CustomersList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.Customers> {
@@ -588,13 +643,6 @@ namespace WpfClientProject.ServiceReferenceBank {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ActionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="MyAction")]
     [System.SerializableAttribute()]
     public class ActionList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.MyAction> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="AccountActionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="AccountAction")]
-    [System.SerializableAttribute()]
-    public class AccountActionList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.AccountAction> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -625,6 +673,12 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllUsers", ReplyAction="http://tempuri.org/IServiceBase/GetAllUsersResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.UserList> GetAllUsersAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByID", ReplyAction="http://tempuri.org/IServiceBase/GetUserByIDResponse")]
+        WpfClientProject.ServiceReferenceBank.User GetUserByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByID", ReplyAction="http://tempuri.org/IServiceBase/GetUserByIDResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByIDAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAccountList", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAccountListResponse")]
         WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAccountList();
         
@@ -642,6 +696,18 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/UpdateBankAcouuntResponse")]
         System.Threading.Tasks.Task<int> UpdateBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer", ReplyAction="http://tempuri.org/IServiceBase/GetbankAcouuntthattransferResponse")]
+        WpfClientProject.ServiceReferenceBank.AccountActionList GetbankAcouuntthattransfer(int num);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer", ReplyAction="http://tempuri.org/IServiceBase/GetbankAcouuntthattransferResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetbankAcouuntthattransferAsync(int num);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntByNum", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntByNumResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccount GetBankAcouuntByNum(int num);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntByNum", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntByNumResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAcouuntByNumAsync(int num);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetCustomerByUser", ReplyAction="http://tempuri.org/IServiceBase/GetCustomerByUserResponse")]
         WpfClientProject.ServiceReferenceBank.Customers GetCustomerByUser(WpfClientProject.ServiceReferenceBank.User user);
@@ -738,6 +804,12 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/SelectAllAccountAction", ReplyAction="http://tempuri.org/IServiceBase/SelectAllAccountActionResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> SelectAllAccountActionAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouuntResponse")]
+        WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAcouunt(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouuntResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetAccountActionByBankAcouuntAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -799,6 +871,14 @@ namespace WpfClientProject.ServiceReferenceBank {
             return base.Channel.GetAllUsersAsync();
         }
         
+        public WpfClientProject.ServiceReferenceBank.User GetUserByID(int id) {
+            return base.Channel.GetUserByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByIDAsync(int id) {
+            return base.Channel.GetUserByIDAsync(id);
+        }
+        
         public WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAccountList() {
             return base.Channel.GetAllBankAccountList();
         }
@@ -821,6 +901,22 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         public System.Threading.Tasks.Task<int> UpdateBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
             return base.Channel.UpdateBankAcouuntAsync(bankAccount);
+        }
+        
+        public WpfClientProject.ServiceReferenceBank.AccountActionList GetbankAcouuntthattransfer(int num) {
+            return base.Channel.GetbankAcouuntthattransfer(num);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetbankAcouuntthattransferAsync(int num) {
+            return base.Channel.GetbankAcouuntthattransferAsync(num);
+        }
+        
+        public WpfClientProject.ServiceReferenceBank.BankAccount GetBankAcouuntByNum(int num) {
+            return base.Channel.GetBankAcouuntByNum(num);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAcouuntByNumAsync(int num) {
+            return base.Channel.GetBankAcouuntByNumAsync(num);
         }
         
         public WpfClientProject.ServiceReferenceBank.Customers GetCustomerByUser(WpfClientProject.ServiceReferenceBank.User user) {
@@ -949,6 +1045,14 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> SelectAllAccountActionAsync() {
             return base.Channel.SelectAllAccountActionAsync();
+        }
+        
+        public WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAcouunt(int id) {
+            return base.Channel.GetAccountActionByBankAcouunt(id);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetAccountActionByBankAcouuntAsync(int id) {
+            return base.Channel.GetAccountActionByBankAcouuntAsync(id);
         }
     }
 }

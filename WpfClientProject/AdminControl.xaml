@@ -15,21 +15,24 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Border BorderBrush="Gray" BorderThickness="10" Margin="23,0,759,10">
-            <ListView x:Name="lvCurrencies" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="570" VerticalAlignment="Center">
+        <Border BorderBrush="Gray" BorderThickness="10" Margin="23,0,114,10">
+            <ListView x:Name="Users" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="570" VerticalAlignment="Center">
                 <ListView.View>
                     <GridView >
 
-                        <GridViewColumn Header="User" Width="90" DisplayMemberBinding="{Binding Key}" />
+                        <GridViewColumn Header="User" Width="90" DisplayMemberBinding="{Binding realid}" />
 
-                        <GridViewColumn Header="Request" Width="90" DisplayMemberBinding="{Binding Rate}"  />
-                        <GridViewColumn Header="Agree/no" Width="120" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Height="30" Width="30" Source="{Binding Path=Change}" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                        <GridViewColumn Header="Password" Width="90" DisplayMemberBinding="{Binding Password}"  />
+                        <GridViewColumn Header="firstName" Width="90" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="lastName" Width="90" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="email" Width="90" DisplayMemberBinding="{Binding Email}"/>
+                        <GridViewColumn Header="phoneNum" Width="90" DisplayMemberBinding="{Binding Phonenum}"/>
+                        <GridViewColumn Header="IsWorker" Width="90" DisplayMemberBinding="{Binding IsWorker}"/>
+                        <GridViewColumn Header="WorkerRank" Width="90" DisplayMemberBinding="{Binding WorkerRank}"/>
+                        <GridViewColumn Header="birthday" Width="90" DisplayMemberBinding="{Binding Birthday}"/>
+                        <GridViewColumn Header="id" Width="90" DisplayMemberBinding="{Binding Id}"/>
+
+
                     </GridView>
                 </ListView.View>
             </ListView>

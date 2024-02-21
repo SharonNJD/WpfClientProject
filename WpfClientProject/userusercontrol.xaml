@@ -50,7 +50,7 @@
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="154,1,0,0" TextWrapping="Wrap" Text="Net Worth" VerticalAlignment="Top" Width="133" Foreground="White" Grid.Row="1"/>
 
 
-        <TextBlock HorizontalAlignment="Left" Height="56" Margin="137,34,0,0" TextWrapping="Wrap" Text="$4,510.00" VerticalAlignment="Top" Width="333" Foreground="White" FontSize="36" TextAlignment="Center" Grid.Row="1"/>
+        <TextBlock x:Name="NetWorth" HorizontalAlignment="Left" Height="56" Margin="137,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333" Foreground="White" FontSize="36" TextAlignment="Center" Grid.Row="1"/>
         <Path Data="M139,276 L189.73054,224 415.26946,224 464,276 z" HorizontalAlignment="Left" Height="52" Margin="136,82,0,0" Stretch="Fill" VerticalAlignment="Top" Width="334" Grid.Row="1">
             <Path.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

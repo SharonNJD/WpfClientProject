@@ -34,6 +34,8 @@ namespace WpfClientProject
             UserName.Text = user.FirstName + " " + user.LastName;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
 
+            NetWorthcucltour();
+
         }
 
         private void Createcostomer_Click(object sender, RoutedEventArgs e)
@@ -47,6 +49,30 @@ namespace WpfClientProject
             ServiceClient.InsertIntoCustomers(customer);
             customer = ServiceClient.GetCustomerByUser(user1);
 
+        }
+        private void NetWorthcucltour()
+        {
+            if (ServiceClient.GetBankAccount(user1) != null)
+            {
+                double newworth = 0;
+                int id = ServiceClient.GetBankAccount(user1).bankAcuuntNum;
+                AccountActionList accountActionsto = new AccountActionList();
+                accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
+                AccountActionList accountActionsto2 = new AccountActionList();
+                accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+                foreach (AccountAction accountAction in accountActionsto)
+                {
+                    newworth += accountAction.Amount;
+                }
+                foreach (AccountAction accountAction in accountActionsto2)
+                {
+                    newworth -= accountAction.Amount;
+                }
+                NetWorth.Text = newworth.ToString();
+
+
+            }
+           
         }
 
         private void createbank_Click(object sender, RoutedEventArgs e)
