@@ -60,6 +60,7 @@ namespace WpfClientProject
                 accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
                 AccountActionList accountActionsto2 = new AccountActionList();
                 accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+                
                 foreach (AccountAction accountAction in accountActionsto)
                 {
                     newworth += accountAction.Amount;

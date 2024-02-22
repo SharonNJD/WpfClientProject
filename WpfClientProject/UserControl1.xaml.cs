@@ -104,7 +104,7 @@ namespace WpfClientProject
             action.Action = source;
             action.BankAccount = ServiceClient.GetBankAccount(user1);
             
-            action.toBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(ToBank.Text));
+            action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(ToBank.Text));
             action.Amount = int.Parse(tbAmount2.Text);
             action.TimaStamp = DateTime.Now;
             

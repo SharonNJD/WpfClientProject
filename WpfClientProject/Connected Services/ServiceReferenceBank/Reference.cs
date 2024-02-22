@@ -216,7 +216,7 @@ namespace WpfClientProject.ServiceReferenceBank {
         private System.DateTime TimaStampField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WpfClientProject.ServiceReferenceBank.BankAccount toBankAcouuntField;
+        private WpfClientProject.ServiceReferenceBank.BankAccount ToBankAcouuntField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public WpfClientProject.ServiceReferenceBank.MyAction Action {
@@ -271,14 +271,14 @@ namespace WpfClientProject.ServiceReferenceBank {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WpfClientProject.ServiceReferenceBank.BankAccount toBankAcouunt {
+        public WpfClientProject.ServiceReferenceBank.BankAccount ToBankAcouunt {
             get {
-                return this.toBankAcouuntField;
+                return this.ToBankAcouuntField;
             }
             set {
-                if ((object.ReferenceEquals(this.toBankAcouuntField, value) != true)) {
-                    this.toBankAcouuntField = value;
-                    this.RaisePropertyChanged("toBankAcouunt");
+                if ((object.ReferenceEquals(this.ToBankAcouuntField, value) != true)) {
+                    this.ToBankAcouuntField = value;
+                    this.RaisePropertyChanged("ToBankAcouunt");
                 }
             }
         }

@@ -80,7 +80,7 @@
           <xs:element minOccurs="0" name="Amount" type="xs:double" />
           <xs:element minOccurs="0" name="BankAccount" nillable="true" type="tns:BankAccount" />
           <xs:element minOccurs="0" name="TimaStamp" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="toBankAcouunt" nillable="true" type="tns:BankAccount" />
+          <xs:element minOccurs="0" name="ToBankAcouunt" nillable="true" type="tns:BankAccount" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
