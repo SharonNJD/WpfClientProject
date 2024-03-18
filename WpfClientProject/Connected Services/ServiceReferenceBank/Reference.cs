@@ -805,6 +805,12 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/SelectAllAccountAction", ReplyAction="http://tempuri.org/IServiceBase/SelectAllAccountActionResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> SelectAllAccountActionAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUser", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUserResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAcouuntsByUser(WpfClientProject.ServiceReferenceBank.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUser", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUserResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAcouuntsByUserAsync(WpfClientProject.ServiceReferenceBank.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouuntResponse")]
         WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAcouunt(int id);
         
@@ -1045,6 +1051,14 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> SelectAllAccountActionAsync() {
             return base.Channel.SelectAllAccountActionAsync();
+        }
+        
+        public WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAcouuntsByUser(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetAllBankAcouuntsByUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAcouuntsByUserAsync(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetAllBankAcouuntsByUserAsync(user);
         }
         
         public WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAcouunt(int id) {

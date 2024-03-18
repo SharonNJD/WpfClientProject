@@ -25,6 +25,7 @@ namespace WpfClientProject
         ServiceReferenceBank.ServiceBaseClient ServiceClient;
         User user1;
         double networth;
+        int idtodelete;
         public AdminControl(User user)
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace WpfClientProject
             Users.ItemsSource = UserList;
             user1 = user;
             GetAllActions();
-
+            
 
         }
         private UserList UserList;
@@ -105,6 +106,22 @@ namespace WpfClientProject
             {
                 MessageBox.Show("Not enough money " + networth + " this is your net worth");
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+           
+
+            idtodelete = int.Parse(tbId.Text);
+            User user = ServiceClient.GetUserByID(idtodelete);
+            BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(user);
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                ServiceClient.DeleteBankAcouunt(list[i]);
+            }
+            ServiceClient.DeleteCustomers(ServiceClient.GetCustomerByUser(user));
+            ServiceClient.DeleteUser(user);
         }
     }
 }

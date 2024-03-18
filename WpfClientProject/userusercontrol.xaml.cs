@@ -40,14 +40,21 @@ namespace WpfClientProject
 
         private void Createcostomer_Click(object sender, RoutedEventArgs e)
         {
-            
-            Customers customer = new Customers();
-            customer.User = user1;
-            customer.isNative = true;
-            customer.dateOfJoining = DateTime.Now;
+            if (ServiceClient.GetCustomerByUser(user1) == null)
+            {
+                Customers customer = new Customers();
+                customer.User = user1;
+                customer.isNative = true;
+                customer.dateOfJoining = DateTime.Now;
 
-            ServiceClient.InsertIntoCustomers(customer);
-            customer = ServiceClient.GetCustomerByUser(user1);
+                ServiceClient.InsertIntoCustomers(customer);
+                customer = ServiceClient.GetCustomerByUser(user1);
+            }
+            else
+            {
+                MessageBox.Show("You have a customer account");
+            }
+            
 
         }
         private void NetWorthcucltour()

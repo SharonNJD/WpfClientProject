@@ -26,12 +26,18 @@ namespace WpfClientProject
     public partial class NewUserPage : Window
     {
         User user;
+        
         public NewUserPage(User us)
         {
             
             InitializeComponent();
             user = us;
             DataContext = us;
+            AdminPage.Visibility = Visibility.Collapsed;
+            if (user.WorkerRank > 0)
+            {
+                AdminPage.Visibility = Visibility.Visible;
+            }
         }
         private void ButtonCloseApp_Click(object sender, RoutedEventArgs e)
         {
@@ -70,6 +76,14 @@ namespace WpfClientProject
         }
 
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new AdminControl(user));
+            GridMain.Visibility = Visibility.Visible;
+            this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+
+        private void ListViewItem_Selected_3(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
             GridMain.Children.Add(new AdminControl(user));

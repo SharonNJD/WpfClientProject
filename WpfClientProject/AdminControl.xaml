@@ -39,7 +39,7 @@
             </ListView>
         </Border>
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="40,400,0,0" VerticalAlignment="Top" Width="408" RadiusY="5" RadiusX="5"/>
-        <TextBlock Text="Send money or request " Margin="40,400,841,170" FontSize="18" RenderTransformOrigin="0.452,4.233"></TextBlock>
+        <TextBlock Text="Send money " Margin="40,400,841,170" FontSize="18" RenderTransformOrigin="0.452,4.233"></TextBlock>
         <StackPanel  Margin="48,448,632,44">
             <StackPanel Orientation="Horizontal"  Margin="5">
                 <Label Content="Action: "/>
@@ -56,6 +56,18 @@
 
    
 FontSize="15"/>
+        </StackPanel>
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="484,400,0,0" VerticalAlignment="Top" Width="169" RadiusY="5" RadiusX="5"/>
+        <TextBlock Text="Delete" Margin="484,411,397,159" FontSize="18" RenderTransformOrigin="0.452,4.233"></TextBlock>
+        <StackPanel  Margin="484,475,357,50">
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="amount: "/>
+                <TextBox x:Name="tbId" Width="100" Background="AliceBlue" />
+                
+            </StackPanel>
+            <Button Content="Send" Margin="15 0" Padding="5"  Width="77" Click="Button_Click_1" />
+           
         </StackPanel>
     </Grid>
 </UserControl>

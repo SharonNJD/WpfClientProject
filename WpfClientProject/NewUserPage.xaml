@@ -101,7 +101,7 @@
                 <Image Height="240"
                        Source="Images/_5032411d-2c60-4b05-b4a6-57f1c6e3505e-removebg-preview.png"
                        Stretch="Fill" />
-                <ListView Foreground="#FF313131"
+                <ListView x:Name="ListOfOptions" Foreground="#FF313131"
                           FontFamily="Champagne &amp; Limousines"
                           FontSize="18">
                     <ListViewItem Height="45"
@@ -159,6 +159,20 @@
                                                      VerticalAlignment="Center" />
                             <TextBlock Text="Support"
                                        Margin="10" />
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="AdminPage" Height="45"
+              Padding="0" Selected="ListViewItem_Selected_3">
+                        <StackPanel Orientation="Horizontal"
+                Margin="10 0">
+                            <materialDesign:PackIcon Kind="Administrator"
+                                 Width="20"
+                                 Height="20"
+                                 Foreground="Aqua"
+                                 Margin="5"
+                                 VerticalAlignment="Center" />
+                            <TextBlock Text="Admin Page"
+                   Margin="10" />
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45"

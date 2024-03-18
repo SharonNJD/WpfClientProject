@@ -63,25 +63,14 @@
 
 
         </Grid>
-        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="205,218,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF" Grid.Row="1"/>
-        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="205,266,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF" Grid.Row="1"/>
-        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="254,240,0,0" Stretch="Fill" VerticalAlignment="Top" Width="118" Stroke="#33FFFFFF" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
-            <Path.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Path.RenderTransform>
-        </Path>
+       
         <TextBlock HorizontalAlignment="Left" Height="80" Margin="318,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="94" Foreground="White" FontSize="72" Grid.Row="1"/>
 
         <Image HorizontalAlignment="Left" Height="20" Margin="411,199,0,0" VerticalAlignment="Top" Width="20"  Grid.Row="1"/>
         <Rectangle Fill="#FF04041F" HorizontalAlignment="Left" Height="20" Margin="377,287,0,0" VerticalAlignment="Top" Width="70" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="11" Margin="377,289,0,0" TextWrapping="Wrap" Text="SEE ALL" VerticalAlignment="Top" Width="70" Foreground="#FFAEABAB" FontSize="10" TextAlignment="Center" Grid.Row="1"/>
-        <Button x:Name="createbank" Content="createbank" Click="createbank_Click" Margin="318,220,564,178" Grid.Row="1"/>
-        <Button x:Name="Createcostomer" Content="create" Margin="377,248,620,150" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Click="Createcostomer_Click">
+        <Button x:Name="createbank" Content="createbank" Click="createbank_Click" Margin="213,199,669,199" Grid.Row="1"/>
+        <Button x:Name="Createcostomer" Content="create" Margin="268,248,729,150" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Click="Createcostomer_Click">
             
             <Button.RenderTransform>
                 <TransformGroup>

@@ -355,6 +355,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllBankAcouuntsByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="user" nillable="true" type="q30:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBankAcouuntsByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAllBankAcouuntsByUserResult" nillable="true" type="q31:BankAccountList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAccountActionByBankAcouunt">
     <xs:complexType>
       <xs:sequence>
@@ -365,7 +379,7 @@
   <xs:element name="GetAccountActionByBankAcouuntResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAccountActionByBankAcouuntResult" nillable="true" type="q30:AccountActionList" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAccountActionByBankAcouuntResult" nillable="true" type="q32:AccountActionList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
