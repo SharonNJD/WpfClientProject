@@ -26,6 +26,7 @@ namespace WpfClientProject
     public partial class NewUserPage : Window
     {
         User user;
+        int num;
         
         public NewUserPage(User us)
         {
