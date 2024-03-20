@@ -79,6 +79,12 @@
   <wsdl:message name="IServiceBase_DeleteBankAcouunt_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteBankAcouuntResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceBase_GetUserByRealId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByRealId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBase_GetUserByRealId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByRealIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceBase_InsertIntoCustomers_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertIntoCustomers" />
   </wsdl:message>
@@ -223,6 +229,10 @@
     <wsdl:operation name="DeleteBankAcouunt">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/DeleteBankAcouunt" message="tns:IServiceBase_DeleteBankAcouunt_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/DeleteBankAcouuntResponse" message="tns:IServiceBase_DeleteBankAcouunt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByRealId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetUserByRealId" message="tns:IServiceBase_GetUserByRealId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetUserByRealIdResponse" message="tns:IServiceBase_GetUserByRealId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertIntoCustomers">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertIntoCustomers" message="tns:IServiceBase_InsertIntoCustomers_InputMessage" />
@@ -392,6 +402,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteBankAcouunt">
       <soap:operation soapAction="http://tempuri.org/IServiceBase/DeleteBankAcouunt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByRealId">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetUserByRealId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

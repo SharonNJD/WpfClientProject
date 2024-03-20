@@ -113,15 +113,26 @@ namespace WpfClientProject
            
 
             idtodelete = int.Parse(tbId.Text);
-            User user = ServiceClient.GetUserByID(idtodelete);
+            User user = ServiceClient.GetUserByRealId(idtodelete);
             BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(user);
-
-            for (int i = 0; i < list.Count; i++)
+            if (list != null)
             {
-                ServiceClient.DeleteBankAcouunt(list[i]);
+                for (int i = 0; i < list.Count; i++)
+                {
+                    ServiceClient.DeleteBankAcouunt(list[i]);
+                }
             }
-            ServiceClient.DeleteCustomers(ServiceClient.GetCustomerByUser(user));
+            if (ServiceClient.GetCustomerByUser(user)!= null)
+            {
+                ServiceClient.DeleteCustomers(ServiceClient.GetCustomerByUser(user));
+            }
             ServiceClient.DeleteUser(user);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+          UserControlBanks win = new UserControlBanks(int.Parse(tbId1.Text));
+            win.Show();
         }
     }
 }

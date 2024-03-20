@@ -721,6 +721,12 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/DeleteBankAcouuntResponse")]
         System.Threading.Tasks.Task<int> DeleteBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetUserByRealIdResponse")]
+        WpfClientProject.ServiceReferenceBank.User GetUserByRealId(int realId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetUserByRealIdResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByRealIdAsync(int realId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertIntoCustomers", ReplyAction="http://tempuri.org/IServiceBase/InsertIntoCustomersResponse")]
         int InsertIntoCustomers(WpfClientProject.ServiceReferenceBank.Customers customers);
         
@@ -939,6 +945,14 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         public System.Threading.Tasks.Task<int> DeleteBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
             return base.Channel.DeleteBankAcouuntAsync(bankAccount);
+        }
+        
+        public WpfClientProject.ServiceReferenceBank.User GetUserByRealId(int realId) {
+            return base.Channel.GetUserByRealId(realId);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByRealIdAsync(int realId) {
+            return base.Channel.GetUserByRealIdAsync(realId);
         }
         
         public int InsertIntoCustomers(WpfClientProject.ServiceReferenceBank.Customers customers) {
