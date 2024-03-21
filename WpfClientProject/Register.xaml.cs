@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Schema;
 using WpfClientProject.ServiceReferenceBank;
 
 namespace WpfClientProject
@@ -68,25 +69,32 @@ namespace WpfClientProject
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
-            ServiceClient = new ServiceBaseClient();
-            user.FirstName = tbxFirstName.Text;
-            user.LastName = tbxLastName.Text;
-            user.realid = tbxId.Text;
-            user.Password = pbPass.Password;
-            user.Email = tbxEmail.Text;
-            user.Phonenum = tbxPhoneNum.Text;
-            user.Gender = ((string)((ComboBoxItem)yesNoComboBox.SelectedItem).Content == "Male");// male - true
-            int day = int.Parse(DayComboBox.Text);
-            int month = int.Parse(MonthComboBox.Text);
-            int year = int.Parse(YearComboBox.Text);                                 // user.Birthday = DateTime.Parse(birthdayDatePicker.SelectedDate.ToString());
-            DateTime time = new DateTime(year, month, day);
-           
+            if (!Validation.GetHasError(tbxId) && !Validation.GetHasError(tbxFirstName) && !Validation.GetHasError(tbxLastName) && (passOk) && !Validation.GetHasError(tbxEmail) && !Validation.GetHasError(tbxPhoneNum))
+            {
+                ServiceClient = new ServiceBaseClient();
+                user.FirstName = tbxFirstName.Text;
+                user.LastName = tbxLastName.Text;
+                user.realid = tbxId.Text;
+                user.Password = pbPass.Password;
+                user.Email = tbxEmail.Text;
+                user.Phonenum = tbxPhoneNum.Text;
+                user.Gender = ((string)((ComboBoxItem)yesNoComboBox.SelectedItem).Content == "Male");// male - true
+                int day = int.Parse(DayComboBox.Text);
+                int month = int.Parse(MonthComboBox.Text);
+                int year = int.Parse(YearComboBox.Text);                                 // user.Birthday = DateTime.Parse(birthdayDatePicker.SelectedDate.ToString());
+                DateTime time = new DateTime(year, month, day);
 
-            user.Birthday = time;
-            ServiceClient.InsertUser(user);
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Hide();
+
+                user.Birthday = time;
+                if (!DoesUserExists(user))
+                {
+                    ServiceClient.InsertUser(user);
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                    this.Hide();
+                }
+            }
+            
             
         }
 
@@ -109,6 +117,25 @@ namespace WpfClientProject
                 pbPass.ToolTip = null;
                 passOk = true;
             }
+        }
+        public bool DoesUserExists(User us)
+        {
+            UserList users = ServiceClient.GetAllUsers();
+
+            foreach (User user in users)
+            {
+                if (user.Email.Equals(us.Email))
+                {
+                    MessageBox.Show("This email is taken!", "Error");
+                    return true;
+                }
+                if (user.realid.Equals(us.realid))
+                {
+                    MessageBox.Show("This Id is taken!", "Error");
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

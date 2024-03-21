@@ -138,6 +138,7 @@
                              BorderBrush="DarkCyan"
                              BorderThickness="0,0,0,1"
                              HorizontalAlignment="Left"
+                             PasswordChanged="Passwor_Changed"
                             />
                         <TextBox x:Name="tbPass"
                          Grid.Row="3" Visibility="Collapsed" />
@@ -264,30 +265,17 @@
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox>
-                        <TextBlock Text="Gender"
-                        Grid.Row="12"
-                        Margin="0,15"
-                        HorizontalAlignment="Left" />
-                        <ComboBox x:Name="yesNoComboBox1"
-                        Style="{StaticResource WhiteComboBox}"
-                        SelectedIndex="0"
-                        Grid.Row="13"
-                        Background="Transparent"
-                        BorderThickness="0">
-                            <ComboBoxItem Content="Male" IsSelected="True" />
-                            <ComboBoxItem Content="Female" />
-                        </ComboBox>
                         <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="center"
                         Margin="0,0,0,20" Grid.Row="15"/>
                     </Grid>
-                    <Button x:Name="SignUpBtn1"
+                    <Button x:Name="Updatebtn1"
                     Content="Upadte"
                     Foreground="Black"
                     Background="CadetBlue"
                     Margin="0,25"
                     Height="35"
-                    Width="250"
+                    Width="250"      Click="Updatebtn1_Click_1"
                     >
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
