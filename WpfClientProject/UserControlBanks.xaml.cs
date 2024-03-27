@@ -30,5 +30,14 @@ namespace WpfClientProject
             bankAccountList = ServiceClient.GetAllBankAcouuntsByUser(ServiceClient.GetUserByRealId(id));
             Banks.ItemsSource = bankAccountList;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (ServiceClient.GetBankAcouuntByNum(int.Parse(tbBankNum.Text)) != null)
+            {
+                ServiceClient.DeleteBankAcouunt(ServiceClient.GetBankAcouuntByNum(int.Parse(tbBankNum.Text)));
+            }
+            
+        }
     }
 }

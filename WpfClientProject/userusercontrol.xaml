@@ -6,11 +6,18 @@
              xmlns:local="clr-namespace:WpfClientProject"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1080" >
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+
     <Grid>
+
+
         <Grid.RowDefinitions>
             <RowDefinition Height="71*"/>
             <RowDefinition Height="179*"/>
         </Grid.RowDefinitions>
+
         <Rectangle HorizontalAlignment="Center" Height="600" VerticalAlignment="Top" Width="1080" Grid.RowSpan="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
@@ -63,15 +70,19 @@
 
 
         </Grid>
-       
-        <TextBlock HorizontalAlignment="Left" Height="80" Margin="318,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="94" Foreground="White" FontSize="72" Grid.Row="1"/>
+
+        
 
         <Image HorizontalAlignment="Left" Height="20" Margin="411,199,0,0" VerticalAlignment="Top" Width="20"  Grid.Row="1"/>
         <Rectangle Fill="#FF04041F" HorizontalAlignment="Left" Height="20" Margin="377,287,0,0" VerticalAlignment="Top" Width="70" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="11" Margin="377,289,0,0" TextWrapping="Wrap" Text="SEE ALL" VerticalAlignment="Top" Width="70" Foreground="#FFAEABAB" FontSize="10" TextAlignment="Center" Grid.Row="1"/>
-        <Button x:Name="createbank" Content="createbank" Click="createbank_Click" Margin="213,199,669,199" Grid.Row="1"/>
-        <Button x:Name="Createcostomer" Content="create" Margin="268,248,729,150" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Click="Createcostomer_Click">
-            
+        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,205,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
+        <Button x:Name="createbank" Content="create bank" Click="createbank_Click" Margin="246,201,720,189" Grid.Row="1" Foreground="Black" Background="Transparent"
+ />
+        <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="246,253,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
+        <Button x:Name="Createcostomer" Content="create Customer" Margin="260,245,737,150" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"
+Height="35"  Click="Createcostomer_Click" >
+
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

@@ -30,11 +30,18 @@ namespace WpfClientProject
         {
             InitializeComponent();
             user1 = user;
-            
+            Createcostomer.Visibility = Visibility.Visible;
+            Createcus.Visibility = Visibility.Visible;
+
             UserName.Text = user.FirstName + " " + user.LastName;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
 
             NetWorthcucltour();
+            if (ServiceClient.GetCustomerByUser(user) != null)
+            {
+                Createcostomer.Visibility = Visibility.Collapsed;
+                Createcus.Visibility = Visibility.Collapsed;
+            }
 
         }
 
@@ -105,6 +112,7 @@ namespace WpfClientProject
             
 
             ServiceClient.InsertIntoBankAcouunt(bank);
+
         }
     }
     }

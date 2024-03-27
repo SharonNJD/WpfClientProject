@@ -75,6 +75,8 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="47*"/>
             </Grid.ColumnDefinitions>
+            
+            
 
             <Border Width="300"
             Background="White"
@@ -304,9 +306,48 @@
                                 </Setter>
                             </Style>
                         </Button.Style>
+                        
+                    </Button>
+                    <Button x:Name="Crecustomer"
+  Content="Upadte"
+  Foreground="Black"
+  Background="CadetBlue"
+  Margin="0,25"
+  Height="35"
+  Width="250"      Click="Updatebtn1_Click_1"
+  >
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="LoginBorder"
+                          Background="{TemplateBinding Background}"
+                          CornerRadius="16">
+                                                <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver"
+                              Value="True">
+                                                    <Setter Property="Background"
+                                  Value="AliceBlue"
+                                  TargetName="LoginBorder" />
+                                                    <Setter Property="TextBlock.Foreground"
+                                  Value="Black"
+                                  TargetName="LoginBorder" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+
                     </Button>
                 </StackPanel>
             </Border>
+            
         </Grid>
     </Grid>
 </UserControl>

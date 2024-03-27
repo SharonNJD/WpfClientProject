@@ -5,17 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfClientProject"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1080">
-    
-        <Grid>
-            <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
-                        <GradientStop Color="LightCyan" Offset="1"/>
-                        <GradientStop Color="DarkCyan"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
+            Title="UserControlBanks" Height="700" Width="1000" Background="DarkCyan">
+
+    <Grid>
+
 
         <Border BorderBrush="Gray" BorderThickness="10" Margin="23,0,36,258">
             <ListView x:Name="Banks" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Center">
@@ -33,9 +26,9 @@
                 </ListView.View>
             </ListView>
         </Border>
-        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="23,400,0,0" VerticalAlignment="Top" Width="169" RadiusY="5" RadiusX="5"/>
-        <TextBlock Margin="23,400,858,154" FontSize="18" RenderTransformOrigin="0.452,4.233"><Run Text="Delete all"/><LineBreak/><Run/></TextBlock>
-        <StackPanel  Margin="23,453,818,72">
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="23,504,0,0" VerticalAlignment="Top" Width="169" RadiusY="5" RadiusX="5"/>
+        <TextBlock Margin="23,504,858,50" FontSize="18" RenderTransformOrigin="0.452,4.233"><Run Text="Delete all"/><LineBreak/><Run/></TextBlock>
+        <StackPanel  Margin="23,555,818,-30">
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="Real ID: "/>
@@ -43,6 +36,18 @@
 
             </StackPanel>
             <Button Content="Send" Margin="15 0" Padding="5"  Width="77"/>
+
+        </StackPanel>
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="237,504,0,0" VerticalAlignment="Top" Width="169" RadiusY="5" RadiusX="5"/>
+        <TextBlock Margin="237,504,644,50" FontSize="18" RenderTransformOrigin="0.452,4.233"><Run Text="Delete bank"/><LineBreak/><Run/></TextBlock>
+        <StackPanel  Margin="237,557,604,-32">
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="BankNum: "/>
+                <TextBox x:Name="tbBankNum" Width="100" Background="AliceBlue" />
+
+            </StackPanel>
+            <Button Content="Send" Margin="15 0" Padding="5"  Width="77" Click="Button_Click"/>
 
         </StackPanel>
     </Grid>
