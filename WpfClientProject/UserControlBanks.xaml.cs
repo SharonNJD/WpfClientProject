@@ -27,7 +27,7 @@ namespace WpfClientProject
         {
             InitializeComponent();
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-            bankAccountList = ServiceClient.GetAllBankAcouuntsByUser(ServiceClient.GetUserByRealId(id));
+            bankAccountList = ServiceClient.GetBankAcouuntsByRealId(id);
             Banks.ItemsSource = bankAccountList;
         }
 

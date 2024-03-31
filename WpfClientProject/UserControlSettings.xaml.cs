@@ -79,5 +79,24 @@ namespace WpfClientProject
                 MessageBox.Show("something is wrong pls fix");
             }
         }
+
+        private void Deleteacouunt_Click(object sender, RoutedEventArgs e)
+        {
+             
+            
+            BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(User);
+            if (list != null)
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    ServiceClient.DeleteBankAcouunt(list[i]);
+                }
+            }
+            if (ServiceClient.GetCustomerByUser(User) != null)
+            {
+                ServiceClient.DeleteCustomers(ServiceClient.GetCustomerByUser(User));
+            }
+            ServiceClient.DeleteUser(User);
+        }
     }
 }

@@ -697,6 +697,12 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/UpdateBankAcouuntResponse")]
         System.Threading.Tasks.Task<int> UpdateBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealIdResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAcouuntsByRealId(int realId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealIdResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAcouuntsByRealIdAsync(int realId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer", ReplyAction="http://tempuri.org/IServiceBase/GetbankAcouuntthattransferResponse")]
         WpfClientProject.ServiceReferenceBank.AccountActionList GetbankAcouuntthattransfer(int num);
         
@@ -913,6 +919,14 @@ namespace WpfClientProject.ServiceReferenceBank {
         
         public System.Threading.Tasks.Task<int> UpdateBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
             return base.Channel.UpdateBankAcouuntAsync(bankAccount);
+        }
+        
+        public WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAcouuntsByRealId(int realId) {
+            return base.Channel.GetBankAcouuntsByRealId(realId);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAcouuntsByRealIdAsync(int realId) {
+            return base.Channel.GetBankAcouuntsByRealIdAsync(realId);
         }
         
         public WpfClientProject.ServiceReferenceBank.AccountActionList GetbankAcouuntthattransfer(int num) {

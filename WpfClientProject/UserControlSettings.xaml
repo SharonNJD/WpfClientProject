@@ -308,13 +308,13 @@
                         </Button.Style>
                         
                     </Button>
-                    <Button x:Name="Crecustomer"
-  Content="Upadte"
+                    <Button x:Name="Deleteacouunt"
+  Content="Deleteacouunt"
   Foreground="Black"
   Background="CadetBlue"
   Margin="0,25"
   Height="35"
-  Width="250"      Click="Updatebtn1_Click_1"
+  Width="250"      Click="Deleteacouunt_Click"
   >
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">

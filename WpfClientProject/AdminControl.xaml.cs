@@ -114,7 +114,7 @@ namespace WpfClientProject
 
             idtodelete = int.Parse(tbId.Text);
             User user = ServiceClient.GetUserByRealId(idtodelete);
-            BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(user);
+            BankAccountList list = ServiceClient.GetBankAcouuntsByRealId(idtodelete);
             if (list != null)
             {
                 for (int i = 0; i < list.Count; i++)

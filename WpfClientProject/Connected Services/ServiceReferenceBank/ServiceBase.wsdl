@@ -55,6 +55,12 @@
   <wsdl:message name="IServiceBase_UpdateBankAcouunt_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBankAcouuntResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceBase_GetBankAcouuntsByRealId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAcouuntsByRealId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBase_GetBankAcouuntsByRealId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAcouuntsByRealIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceBase_GetbankAcouuntthattransfer_InputMessage">
     <wsdl:part name="parameters" element="tns:GetbankAcouuntthattransfer" />
   </wsdl:message>
@@ -214,6 +220,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpdateBankAcouunt" message="tns:IServiceBase_UpdateBankAcouunt_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UpdateBankAcouuntResponse" message="tns:IServiceBase_UpdateBankAcouunt_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetBankAcouuntsByRealId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId" message="tns:IServiceBase_GetBankAcouuntsByRealId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealIdResponse" message="tns:IServiceBase_GetBankAcouuntsByRealId_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetbankAcouuntthattransfer">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer" message="tns:IServiceBase_GetbankAcouuntthattransfer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransferResponse" message="tns:IServiceBase_GetbankAcouuntthattransfer_OutputMessage" />
@@ -366,6 +376,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateBankAcouunt">
       <soap:operation soapAction="http://tempuri.org/IServiceBase/UpdateBankAcouunt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAcouuntsByRealId">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
