@@ -71,16 +71,22 @@
 
         </Grid>
 
-        
+
 
         <Image HorizontalAlignment="Left" Height="20" Margin="411,199,0,0" VerticalAlignment="Top" Width="20"  Grid.Row="1"/>
         <Rectangle Fill="#FF04041F" HorizontalAlignment="Left" Height="20" Margin="377,287,0,0" VerticalAlignment="Top" Width="70" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="11" Margin="377,289,0,0" TextWrapping="Wrap" Text="SEE ALL" VerticalAlignment="Top" Width="70" Foreground="#FFAEABAB" FontSize="10" TextAlignment="Center" Grid.Row="1"/>
+
         <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,205,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
-        <Button x:Name="createbank" Content="create bank" Click="createbank_Click" Margin="246,201,720,189" Grid.Row="1" Foreground="Black" Background="Transparent"
- />
-        <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="246,253,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
-        <Button x:Name="Createcostomer" Content="create Customer" Margin="260,245,737,150" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"
+        <Button x:Name="createbank" Content="create bank" Click="createbank_Click" Margin="246,201,720,189" Grid.Row="1" Foreground="Black" Background="Transparent"/>
+        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="550,166,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
+        <Button x:Name="RquestToLoan" Content="RquestToLoan" Click="RquestToLoan_Click" Margin="550,161,416,407" Foreground="Black" Background="Transparent" Grid.RowSpan="2"/>
+        <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="695,168,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
+        <Button x:Name="AdultAcouunt" Content="AdultAcouunt" Click="AdultAcouunt_Click" Margin="695,163,271,405" Foreground="Black" Background="Transparent" Grid.RowSpan="2"/>
+        <TextBox Text="Bank Num:" Margin="511,63,428,322" Grid.Row="1" FontSize="20"></TextBox>
+        <TextBlock x:Name="BankNum" Background="White" Margin="626,60,350,333" Grid.Row="1"></TextBlock>
+        <Rectangle x:Name="yes"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,242,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
+        <Button x:Name="Createcostomer" Content="create Customer" Margin="260,232,737,163" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"
 Height="35"  Click="Createcostomer_Click" >
 
             <Button.RenderTransform>
@@ -93,7 +99,7 @@ Height="35"  Click="Createcostomer_Click" >
             </Button.RenderTransform>
         </Button>
 
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="536,1,0,0" TextWrapping="Wrap" Text="Last Activites" VerticalAlignment="Top" Width="133" Foreground="White" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="520,126,0,0" TextWrapping="Wrap" Text="Last Activites" VerticalAlignment="Top" Width="133" Foreground="White"/>
         <Grid Margin="536,28,231,292" Grid.Row="1">
 
 
@@ -110,10 +116,7 @@ Height="35"  Click="Createcostomer_Click" >
 
 
         </Grid>
-        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="580,72,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF" Grid.Row="1"/>
-        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="580,119,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF" Grid.Row="1"/>
-        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="736,71,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF" Grid.Row="1"/>
-        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="736,119,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF" Grid.Row="1"/>
+
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="529,179,0,0" TextWrapping="Wrap" Text="Money manegment" VerticalAlignment="Top" Width="157" Foreground="White" Grid.Row="1"/>
 
         <Image HorizontalAlignment="Left" Height="101" Margin="745,201,0,0" VerticalAlignment="Top" Width="299" Grid.Row="1"/>

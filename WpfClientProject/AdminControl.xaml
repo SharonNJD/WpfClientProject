@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:WpfClientProject"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1080">
+
     <Grid>
+
         <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
@@ -16,28 +18,37 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Border BorderBrush="Gray" BorderThickness="10" Margin="23,0,36,258">
-            <ListView x:Name="Users" Grid.Row="1" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Center">
-                <ListView.View>
-                    <GridView >
 
-                        <GridViewColumn Header="User" Width="90" DisplayMemberBinding="{Binding realid}" />
+        <ListView x:Name="Users" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Top" Margin="0,0,199,0">
+            <ListView.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Block.BorderBrush" Value="Black">
+                        
+                    </Setter>
+                    
+                    <Setter Property="Block.BorderThickness" Value="3"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView >
 
-                        <GridViewColumn Header="Password" Width="90" DisplayMemberBinding="{Binding Password}"  />
-                        <GridViewColumn Header="firstName" Width="90" DisplayMemberBinding="{Binding FirstName}"/>
-                        <GridViewColumn Header="lastName" Width="90" DisplayMemberBinding="{Binding LastName}"/>
-                        <GridViewColumn Header="email" Width="90" DisplayMemberBinding="{Binding Email}"/>
-                        <GridViewColumn Header="phoneNum" Width="90" DisplayMemberBinding="{Binding Phonenum}"/>
-                        <GridViewColumn Header="IsWorker" Width="90" DisplayMemberBinding="{Binding IsWorker}"/>
-                        <GridViewColumn Header="WorkerRank" Width="90" DisplayMemberBinding="{Binding WorkerRank}"/>
-                        <GridViewColumn Header="birthday" Width="90" DisplayMemberBinding="{Binding Birthday}"/>
-                        <GridViewColumn Header="id" Width="90" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="User" Width="90" DisplayMemberBinding="{Binding realid}" />
+
+                    <GridViewColumn Header="Password" Width="90" DisplayMemberBinding="{Binding Password}"  />
+                    <GridViewColumn Header="firstName" Width="90" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="lastName" Width="90" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="email" Width="90" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="phoneNum" Width="90" DisplayMemberBinding="{Binding Phonenum}"/>
+                    <GridViewColumn Header="IsWorker" Width="90" DisplayMemberBinding="{Binding IsWorker}"/>
+                    <GridViewColumn Header="WorkerRank" Width="90" DisplayMemberBinding="{Binding WorkerRank}"/>
+                    <GridViewColumn Header="birthday" Width="90" DisplayMemberBinding="{Binding Birthday}"/>
+                    <GridViewColumn Header="id" Width="90" DisplayMemberBinding="{Binding Id}"/>
 
 
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Border>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="40,400,0,0" VerticalAlignment="Top" Width="326" RadiusY="5" RadiusX="5"/>
         <TextBlock Text="Send money " Margin="40,400,841,170" FontSize="18" RenderTransformOrigin="0.452,4.233"></TextBlock>
         <StackPanel  Margin="48,448,632,44">

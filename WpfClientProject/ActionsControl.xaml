@@ -32,6 +32,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
+    
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Rectangle.Fill>
@@ -86,6 +87,9 @@
                 <TextBox x:Name="tbAmount2" />
                 <Button Content="Send" Margin="15 0" Padding="5" Click="Button_Click" />
             </StackPanel>
+            <TextBlock x:Name="Howmuch" Height="36"  Background="White" FontSize="20" />
+            <Button x:Name="Yes" Visibility="Collapsed" Content="Yes" Margin="15 0" Padding="5" Click="Yes_Click" />
+            <Button x:Name="No" Visibility="Collapsed" Content="No" Margin="15 0" Padding="5" Click="No_Click" />
             <TextBlock x:Name="tbResult2" Margin="15"
     
    

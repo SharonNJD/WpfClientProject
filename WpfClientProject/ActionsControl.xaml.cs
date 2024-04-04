@@ -27,16 +27,28 @@ namespace WpfClientProject
         double networth;
         public ActionsControl(User user)
         {
+
             InitializeComponent();
             user1 = user;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
           networth =  NetWorthcucltour();
             GetAllActions();
+            Howmuch.Visibility = Visibility.Collapsed;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+
+            Howmuch.Visibility = Visibility.Visible;
+            double Amount = int.Parse(tbAmount2.Text);
+            Amount = Amount + Amount / 100;
+            Howmuch.Text = "You will have to pay" + Amount.ToString();
+            Yes.Visibility = Visibility.Visible;
+            No.Visibility = Visibility.Visible;
+            
+        }
+        public void Transfer()
+        {
             MyAction source = (MyAction)cmbSource2.SelectedItem;
             AccountAction action = new AccountAction();
             action.Action = source;
@@ -45,10 +57,17 @@ namespace WpfClientProject
             action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
             action.Amount = int.Parse(tbAmount2.Text);
             action.TimaStamp = DateTime.Now;
-            networth = 1000;
-            if (networth> double.Parse(tbAmount2.Text))
-            {
 
+            AccountAction ToBank = new AccountAction();
+            action.Action = source;
+            action.BankAccount = ServiceClient.GetBankAccount(user1);
+
+            action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(5);
+            action.Amount = int.Parse(tbAmount2.Text)/100;
+            action.TimaStamp = DateTime.Now;
+            if (networth > double.Parse(tbAmount2.Text))
+            {
+                ServiceClient.Insertintoacountaction(ToBank);
                 ServiceClient.Insertintoacountaction(action);
                 NetWorthcucltour();
             }
@@ -95,6 +114,18 @@ namespace WpfClientProject
 
             
             return newworth;
+        }
+
+        private void No_Click(object sender, RoutedEventArgs e)
+        {
+            Yes.Visibility = Visibility.Collapsed;
+            No.Visibility = Visibility.Collapsed;
+            Howmuch.Visibility = Visibility.Collapsed;
+        }
+
+        private void Yes_Click(object sender, RoutedEventArgs e)
+        {
+            Transfer();
         }
     }
 }

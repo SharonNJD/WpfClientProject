@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,13 +36,14 @@ namespace WpfClientProject
 
             UserName.Text = user.FirstName + " " + user.LastName;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-
+            
             NetWorthcucltour();
             if (ServiceClient.GetCustomerByUser(user) != null)
             {
                 Createcostomer.Visibility = Visibility.Collapsed;
                 Createcus.Visibility = Visibility.Collapsed;
             }
+
 
         }
 
@@ -92,27 +94,75 @@ namespace WpfClientProject
 
         private void createbank_Click(object sender, RoutedEventArgs e)
         {
-            BankAccount bank = new BankAccount();
-            Random rnd = new Random();
-            customer = ServiceClient.GetCustomerByUser(user1);
-
-
-            bank.secretCode = rnd.Next(1000, 9999);
-            bank.canloan = false;
-            bank.canTransferOverSeas = false;
-            bank.canTradeStocks = false;
-            if (user1.Birthday.Year > 2006 )
+            BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(user1);
+            if (list.Count < 3)
             {
-                bank.adultAcouunt = true;
+                BankAccount bank = new BankAccount();
+                Random rnd = new Random();
+                customer = ServiceClient.GetCustomerByUser(user1);
+
+
+                bank.secretCode = rnd.Next(1000, 9999);
+                bank.canloan = false;
+                bank.canTransferOverSeas = false;
+                bank.canTradeStocks = false;
+                if (user1.Birthday.Year > 2006)
+                {
+                    bank.adultAcouunt = true;
+                }
+                else
+                    bank.adultAcouunt = false;
+                bank.personalAcouunt = true;
+                bank.customer = customer;
+
+
+                ServiceClient.InsertIntoBankAcouunt(bank);
             }
             else
-            bank.adultAcouunt = false;
-            bank.personalAcouunt = true;
-            bank.customer = customer;
+            {
+                MessageBox.Show("you have the max amount of possible bank acouunts");
+            }
             
 
-            ServiceClient.InsertIntoBankAcouunt(bank);
+        }
 
+        private void RquestToLoan_Click(object sender, RoutedEventArgs e)
+        {
+            Customers customer = ServiceClient.GetCustomerByUser(user1);
+            // need to fix this and also need to make sure someone else dosent change other people account
+            BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum.Text));
+
+            if (customer != null && account != null)
+            {
+                if (customer.dateOfJoining.AddDays(10) > DateTime.Now)
+                {
+                    account.canloan = true;
+                    ServiceClient.UpdateBankAcouunt(account);
+
+                }
+                else
+                {
+                    MessageBox.Show("Customer was crated recently you need to wait more days");
+                }
+            }
+            else
+            {
+                MessageBox.Show("You arent a customer or you dont have a bank acouunt");
+            }
+        }
+
+        private void AdultAcouunt_Click(object sender, RoutedEventArgs e)
+        {
+            BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum.Text));
+            if (user1.Birthday.Year < DateTime.Now.Year - 18)
+            {
+                account.adultAcouunt = true;
+                ServiceClient.UpdateBankAcouunt(account);
+            }
+            else
+            {
+                MessageBox.Show("to young");
+            }
         }
     }
     }
