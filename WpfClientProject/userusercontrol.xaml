@@ -79,12 +79,13 @@
 
         <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,205,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
         <Button x:Name="createbank" Content="create bank" Click="createbank_Click" Margin="246,201,720,189" Grid.Row="1" Foreground="Black" Background="Transparent"/>
-        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="550,166,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
-        <Button x:Name="RquestToLoan" Content="RquestToLoan" Click="RquestToLoan_Click" Margin="550,161,416,407" Foreground="Black" Background="Transparent" Grid.RowSpan="2"/>
-        <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="695,168,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
-        <Button x:Name="AdultAcouunt" Content="AdultAcouunt" Click="AdultAcouunt_Click" Margin="695,163,271,405" Foreground="Black" Background="Transparent" Grid.RowSpan="2"/>
-        <TextBox Text="Bank Num:" Margin="511,63,428,322" Grid.Row="1" FontSize="20"></TextBox>
-        <TextBlock x:Name="BankNum" Background="White" Margin="626,60,350,333" Grid.Row="1"></TextBlock>
+        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="515,15,0,0" VerticalAlignment="Top" Width="171" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
+        <Button x:Name="RquestToLoan" Content="RquestToLoan" Click="RquestToLoan_Click" Margin="502,1,382,397" Foreground="Black" Background="Transparent" Grid.Row="1"/>
+        <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="695,14,0,0" VerticalAlignment="Top" Width="144" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
+        <Button x:Name="AdultAcouunt" Content="AdultAcouunt" Click="AdultAcouunt_Click" Margin="695,6,229,392" Foreground="Black" Background="Transparent" RenderTransformOrigin="1.845,0.667" Grid.Row="1"/>
+        <Label Content="BankNum:" Margin="540,62,-540,197" Grid.Row="1" FontSize="20"></Label>
+        <TextBox x:Name="BankNum2"  Margin="636,61,303,325" Grid.Row="1" FontSize="20" Background="White"></TextBox>
+
         <Rectangle x:Name="yes"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,242,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
         <Button x:Name="Createcostomer" Content="create Customer" Margin="260,232,737,163" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"
 Height="35"  Click="Createcostomer_Click" >
@@ -100,27 +101,24 @@ Height="35"  Click="Createcostomer_Click" >
         </Button>
 
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="520,126,0,0" TextWrapping="Wrap" Text="Last Activites" VerticalAlignment="Top" Width="133" Foreground="White"/>
-        <Grid Margin="536,28,231,292" Grid.Row="1">
-
-
-        </Grid>
-        <Grid Margin="536,76,231,244" Grid.Row="1">
-
-
-        </Grid>
-        <Grid Margin="695,28,72,292" Grid.Row="1">
-
-
-        </Grid>
-        <Grid Margin="695,76,72,244" Grid.Row="1">
-
-
-        </Grid>
+       
 
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="529,179,0,0" TextWrapping="Wrap" Text="Money manegment" VerticalAlignment="Top" Width="157" Foreground="White" Grid.Row="1"/>
 
         <Image HorizontalAlignment="Left" Height="101" Margin="745,201,0,0" VerticalAlignment="Top" Width="299" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="47" Margin="565,196,0,0" TextWrapping="Wrap" Text="35.01" VerticalAlignment="Top" Width="203" Foreground="White" FontSize="36" Grid.Row="1"/>
+        <Label Content="BankNum:" Margin="146,131,623,4" FontSize="20"/>
+        <TextBox x:Name="BankNum2_Copy"  Margin="247,128,692,429" FontSize="20" Background="White" Grid.RowSpan="2"/>
+        <Button x:Name="Show" Content="Show" Click="Show_Click" Margin="376,128,585,10" Foreground="Black" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.145"/>
+                    <RotateTransform Angle="-0.123"/>
+                    <TranslateTransform Y="-0.247"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
 
     </Grid>
 </UserControl>

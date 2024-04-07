@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -130,38 +131,124 @@ namespace WpfClientProject
         {
             Customers customer = ServiceClient.GetCustomerByUser(user1);
             // need to fix this and also need to make sure someone else dosent change other people account
-            BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum.Text));
-
-            if (customer != null && account != null)
+            
+            if (Regex.IsMatch(BankNum2.Text,@"^[0-9]+$"))
             {
-                if (customer.dateOfJoining.AddDays(10) > DateTime.Now)
-                {
-                    account.canloan = true;
-                    ServiceClient.UpdateBankAcouunt(account);
 
-                }
-                else
+
+                BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum2.Text));
+                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
+                bool isThebank = false;
+
+                for (int i = 0; i < bankAccounts.Count; i++)
                 {
-                    MessageBox.Show("Customer was crated recently you need to wait more days");
+
+                    if (bankAccounts[i].bankAcuuntNum == int.Parse(BankNum2.Text))
+                    {
+                        isThebank = true;
+                    }
+                }
+                if (isThebank)
+                {
+                    if (customer != null && account != null)
+                    {
+                        if (customer.dateOfJoining.AddDays(10) < DateTime.Now)
+                        {
+                            account.canloan = true;
+                            ServiceClient.UpdateBankAcouunt(account);
+                            MessageBox.Show("Sucsses");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Customer was crated recently you need to wait more days");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You arent a customer or you dont have a bank acouunt");
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("You arent a customer or you dont have a bank acouunt");
+                MessageBox.Show("input is not a number");
             }
+            
         }
 
         private void AdultAcouunt_Click(object sender, RoutedEventArgs e)
         {
-            BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum.Text));
-            if (user1.Birthday.Year < DateTime.Now.Year - 18)
+            if (Regex.IsMatch(BankNum2.Text, @"^[0-9]+$"))
             {
-                account.adultAcouunt = true;
-                ServiceClient.UpdateBankAcouunt(account);
+                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
+                bool isThebank = false;
+
+                for (int i = 0; i < bankAccounts.Count; i++)
+                {
+
+                    if (bankAccounts[i].bankAcuuntNum == int.Parse(BankNum2.Text))
+                    {
+                        isThebank = true;
+                    }
+                }
+                if (isThebank)
+                {
+                    BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum2.Text));
+                    if (user1.Birthday.Year < DateTime.Now.Year - 18)
+                    {
+                        account.adultAcouunt = true;
+                        ServiceClient.UpdateBankAcouunt(account);
+                    }
+                    else
+                    {
+                        MessageBox.Show("to young");
+                    }
+                }
             }
-            else
+
+        }
+
+        private void Show_Click(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(BankNum2_Copy.Text, @"^[0-9]+$"))
             {
-                MessageBox.Show("to young");
+                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
+                bool isThebank = false;
+
+                for (int i = 0; i < bankAccounts.Count; i++)
+                {
+
+                    if (bankAccounts[i].bankAcuuntNum == int.Parse(BankNum2_Copy.Text))
+                    {
+                        isThebank = true;
+                    }
+                }
+                if (isThebank)
+                {
+                    if (ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum2_Copy.Text)) != null)
+                    {
+                        double newworth = 0;
+                        int id = int.Parse(BankNum2_Copy.Text);
+                        AccountActionList accountActionsto = new AccountActionList();
+                        accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
+                        AccountActionList accountActionsto2 = new AccountActionList();
+                        accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+
+                        foreach (AccountAction accountAction in accountActionsto)
+                        {
+                            newworth += accountAction.Amount;
+                        }
+                        foreach (AccountAction accountAction in accountActionsto2)
+                        {
+                            newworth -= accountAction.Amount;
+                        }
+                        NetWorth.Text = newworth.ToString();
+
+
+                    }
+                }
+
             }
         }
     }
