@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,7 +32,7 @@ namespace WpfClientProject
             InitializeComponent();
             user1 = user;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-          networth =  NetWorthcucltour();
+          
             GetAllActions();
             Howmuch.Visibility = Visibility.Collapsed;
         }
@@ -49,32 +50,87 @@ namespace WpfClientProject
         }
         public void Transfer()
         {
-            MyAction source = (MyAction)cmbSource2.SelectedItem;
-            AccountAction action = new AccountAction();
-            action.Action = source;
-            action.BankAccount = ServiceClient.GetBankAccount(user1);
-
-            action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
-            action.Amount = int.Parse(tbAmount2.Text);
-            action.TimaStamp = DateTime.Now;
-
-            AccountAction ToBank = new AccountAction();
-            action.Action = source;
-            action.BankAccount = ServiceClient.GetBankAccount(user1);
-
-            action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(5);
-            action.Amount = int.Parse(tbAmount2.Text)/100;
-            action.TimaStamp = DateTime.Now;
-            if (networth > double.Parse(tbAmount2.Text))
+            bool isThebankForm = false;
+            bool isTheBankTo = false;
+            if (Regex.IsMatch(cmbFrom2.Text, @"^[0-9]+$"))
             {
-                ServiceClient.Insertintoacountaction(ToBank);
-                ServiceClient.Insertintoacountaction(action);
-                NetWorthcucltour();
+
+
+                BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbFrom2.Text));
+                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
+                
+
+                for (int i = 0; i < bankAccounts.Count; i++)
+                {
+
+                    if (bankAccounts[i].bankAcuuntNum == int.Parse(cmbFrom2.Text))
+                    {
+                        isThebankForm = true;
+                    }
+                }
+            }
+            if (Regex.IsMatch(cmbTarget2.Text, @"^[0-9]+$"))
+            {
+
+
+                BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
+                BankAccountList bankAccounts = ServiceClient.GetAllBankAccountList();
+
+
+                for (int i = 0; i < bankAccounts.Count; i++)
+                {
+
+                    if (bankAccounts[i].bankAcuuntNum == int.Parse(cmbTarget2.Text))
+                    {
+                        isTheBankTo = true;
+                    }
+                }
+            }
+            else { MessageBox.Show("Wrong Input From It must be only numbers"); }
+            if (isThebankForm && isTheBankTo)
+            {
+                MyAction source = (MyAction)cmbSource2.SelectedItem;
+                AccountAction action = new AccountAction();
+                action.Action = source;
+                action.BankAccount = ServiceClient.GetBankAccount(user1);
+
+                action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
+                action.Amount = int.Parse(tbAmount2.Text);
+                action.TimaStamp = DateTime.Now;
+
+                AccountAction ToBank = new AccountAction();
+                action.Action = source;
+                action.BankAccount = ServiceClient.GetBankAccount(user1);
+
+                action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(5);
+                action.Amount = int.Parse(tbAmount2.Text) / 100;
+                action.TimaStamp = DateTime.Now;
+                networth = NetWorthcucltour(int.Parse(cmbFrom2.Text));
+                if (networth > double.Parse(tbAmount2.Text))
+                {
+                    ServiceClient.Insertintoacountaction(ToBank);
+                    ServiceClient.Insertintoacountaction(action);
+                    MessageBox.Show("Money transferd");
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Not enough money " + networth + " this is your net worth");
+                }
             }
             else
             {
-                MessageBox.Show("Not enough money " + networth + " this is your net worth");
+                if (!isThebankForm)
+                {
+                    MessageBox.Show("this is not your bank acouunt");
+                }
+                if (!isTheBankTo)
+                {
+                    MessageBox.Show("This bank acouunt dosent exist");
+                }
+                
             }
+                
         }
         public void GetAllActions()
         {
@@ -86,7 +142,7 @@ namespace WpfClientProject
 
 
         }
-        private double NetWorthcucltour()
+        private double NetWorthcucltour(int num)
         {
             double newworth = 0;
             
@@ -94,7 +150,7 @@ namespace WpfClientProject
                 if (ServiceClient.GetBankAccount(user1) != null)
                 {
                     
-                    int id = ServiceClient.GetBankAccount(user1).bankAcuuntNum;
+                    int id = num;
                     AccountActionList accountActionsto = new AccountActionList();
                     accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
                     AccountActionList accountActionsto2 = new AccountActionList();
