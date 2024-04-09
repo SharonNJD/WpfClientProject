@@ -19,7 +19,7 @@
         </Rectangle>
 
 
-        <ListView x:Name="Users" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Top" Margin="0,0,199,0">
+        <ListView x:Name="Userslv" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Top" Margin="0,0,199,0" SelectionChanged="Users_SelectionChanged_1">
             <ListView.ItemContainerStyle>
                 <Style>
                     <Setter Property="Block.BorderBrush" Value="Black">
@@ -32,9 +32,7 @@
             <ListView.View>
                 <GridView >
 
-                    <GridViewColumn Header="User" Width="90" DisplayMemberBinding="{Binding realid}" />
-
-                    <GridViewColumn Header="Password" Width="90" DisplayMemberBinding="{Binding Password}"  />
+                    <GridViewColumn Header="User" Width="Auto" DisplayMemberBinding="{Binding realid}" />
                     <GridViewColumn Header="firstName" Width="90" DisplayMemberBinding="{Binding FirstName}"/>
                     <GridViewColumn Header="lastName" Width="90" DisplayMemberBinding="{Binding LastName}"/>
                     <GridViewColumn Header="email" Width="90" DisplayMemberBinding="{Binding Email}"/>
@@ -42,7 +40,6 @@
                     <GridViewColumn Header="IsWorker" Width="90" DisplayMemberBinding="{Binding IsWorker}"/>
                     <GridViewColumn Header="WorkerRank" Width="90" DisplayMemberBinding="{Binding WorkerRank}"/>
                     <GridViewColumn Header="birthday" Width="90" DisplayMemberBinding="{Binding Birthday}"/>
-                    <GridViewColumn Header="id" Width="90" DisplayMemberBinding="{Binding Id}"/>
 
 
                 </GridView>

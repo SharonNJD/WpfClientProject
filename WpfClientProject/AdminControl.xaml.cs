@@ -41,6 +41,8 @@ namespace WpfClientProject
 
         private void Users_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (Userslv.SelectedIndex == -1) return;
+            User user = Userslv.SelectedItem as User;
 
         }
         public void GetAllActions()
@@ -134,5 +136,6 @@ namespace WpfClientProject
           UserControlBanks win = new UserControlBanks(int.Parse(tbId1.Text));
             win.Show();
         }
+
     }
 }

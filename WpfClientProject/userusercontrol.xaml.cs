@@ -27,7 +27,7 @@ namespace WpfClientProject
         ServiceReferenceBank.ServiceBaseClient ServiceClient;
         User user1;
         Customers customer;
-
+        BankAccountList BankList = new BankAccountList();
         public userusercontrol(User user)
         {
             InitializeComponent();
@@ -37,7 +37,9 @@ namespace WpfClientProject
 
             UserName.Text = user.FirstName + " " + user.LastName;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-            
+            BankList = ServiceClient.GetAllBankAcouuntsByUser(user1);
+            BankNum2_Copy.ItemsSource = BankList;
+            BankNum2_Copy.DisplayMemberPath = "bankAcuuntNum";
             NetWorthcucltour();
             if (ServiceClient.GetCustomerByUser(user) != null)
             {
@@ -211,23 +213,10 @@ namespace WpfClientProject
 
         private void Show_Click(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(BankNum2_Copy.Text, @"^[0-9]+$"))
-            {
-                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
-                bool isThebank = false;
-
-                for (int i = 0; i < bankAccounts.Count; i++)
-                {
-
-                    if (bankAccounts[i].bankAcuuntNum == int.Parse(BankNum2_Copy.Text))
-                    {
-                        isThebank = true;
-                    }
-                }
-                if (isThebank)
-                {
-                    if (ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum2_Copy.Text)) != null)
-                    {
+            if (BankNum2_Copy.SelectedIndex == -1) return;
+            BankAccount bankAccount=BankNum2_Copy.SelectedItem as BankAccount;
+                   
+                    
                         double newworth = 0;
                         int id = int.Parse(BankNum2_Copy.Text);
                         AccountActionList accountActionsto = new AccountActionList();
@@ -246,7 +235,7 @@ namespace WpfClientProject
                         NetWorth.Text = newworth.ToString();
 
 
-                    }
+                    
                 }
 
             }

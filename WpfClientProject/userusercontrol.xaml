@@ -50,7 +50,7 @@
         </Ellipse>
 
         
-        <TextBlock HorizontalAlignment="Left" Height="24" Margin="137,83,0,0" TextWrapping="Wrap" Text="Acount review" VerticalAlignment="Top" Width="133" Foreground="White" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="137,83,0,0" TextWrapping="Wrap" Text="Account review" VerticalAlignment="Top" Width="133" Foreground="White" FontSize="18"/>
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="151" Margin="136,157,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Grid.RowSpan="2"/>
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="151" Margin="137,165,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Grid.Row="1"/>
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="151" Margin="512,153,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Grid.RowSpan="2"/>
@@ -109,7 +109,11 @@ Height="35"  Click="Createcostomer_Click" >
         <Image HorizontalAlignment="Left" Height="101" Margin="745,201,0,0" VerticalAlignment="Top" Width="299" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Height="47" Margin="565,196,0,0" TextWrapping="Wrap" Text="35.01" VerticalAlignment="Top" Width="203" Foreground="White" FontSize="36" Grid.Row="1"/>
         <Label Content="BankNum:" Margin="137,157,833,403" FontSize="20" Grid.RowSpan="2"/>
-        <TextBox x:Name="BankNum2_Copy"  Margin="245,165,777,408" FontSize="20" Background="White" Grid.RowSpan="2"/>
+        <ComboBox x:Name="BankNum2_Copy"  Margin="245,165,777,408" FontSize="20" Background="White" Grid.RowSpan="2">
+            <ComboBox.Resources>
+                <SolidColorBrush x:Key="Back" Color="White"/>
+            </ComboBox.Resources>
+        </ComboBox>
         <Button x:Name="Show" Content="Show" Click="Show_Click" Margin="316,163,655,405" Foreground="Black" Background="Transparent" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
 
         </Button>
