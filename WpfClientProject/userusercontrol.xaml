@@ -49,7 +49,7 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
-        
+
         <TextBlock HorizontalAlignment="Left" Height="24" Margin="137,83,0,0" TextWrapping="Wrap" Text="Account review" VerticalAlignment="Top" Width="133" Foreground="White" FontSize="18"/>
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="151" Margin="136,157,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Grid.RowSpan="2"/>
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="151" Margin="137,165,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Grid.Row="1"/>
@@ -85,7 +85,7 @@
         <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="690,0,0,0" VerticalAlignment="Top" Width="144" RadiusY="11.007" RadiusX="11.007" Grid.Row="2"/>
         <Button x:Name="AdultAcouunt" Content="AdultAcouunt" Click="AdultAcouunt_Click" Margin="690,-50,250,357" Foreground="Black" Background="Transparent" RenderTransformOrigin="1.845,0.667" Grid.Row="2"/>
         <Label Content="BankNum:" Margin="529,82,444,304" Grid.Row="1" FontSize="20"></Label>
-        <TextBox x:Name="BankNum2"  Margin="634,99,335,304" Grid.Row="1" FontSize="20" Background="White"></TextBox>
+        <ComboBox x:Name="BankNum2"  Margin="634,82,335,0" Grid.Row="1" FontSize="20" Background="White" VerticalAlignment="Top"></ComboBox>
 
         <Rectangle x:Name="yes"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,242,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
         <Button x:Name="Createcostomer" Content="create Customer" Margin="231,232,704,163" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"
@@ -111,7 +111,7 @@ Height="35"  Click="Createcostomer_Click" >
         <Label Content="BankNum:" Margin="137,157,833,403" FontSize="20" Grid.RowSpan="2"/>
         <ComboBox x:Name="BankNum2_Copy"  Margin="245,165,777,408" FontSize="20" Background="White" Grid.RowSpan="2">
             <ComboBox.Resources>
-                <SolidColorBrush x:Key="Back" Color="White"/>
+                <SolidColorBrush x:Key="WhiteComboBox" Color="White"/>
             </ComboBox.Resources>
         </ComboBox>
         <Button x:Name="Show" Content="Show" Click="Show_Click" Margin="316,163,655,405" Foreground="Black" Background="Transparent" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">

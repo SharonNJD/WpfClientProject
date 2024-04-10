@@ -31,10 +31,12 @@ namespace WpfClientProject
             InitializeComponent();
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
             UserList = ServiceClient.GetAllUsers();
-            Users.ItemsSource = UserList;
+            Userslv.ItemsSource = UserList;
             user1 = user;
             GetAllActions();
-            
+            cbIsWorker.Items.Add("Worker");
+            cbIsWorker.Items.Add("User");
+            cbIsWorker.Items.Add("Both");
 
         }
         private UserList UserList;
@@ -43,6 +45,11 @@ namespace WpfClientProject
         {
             if (Userslv.SelectedIndex == -1) return;
             User user = Userslv.SelectedItem as User;
+            DropDownAdmin dropDown = new DropDownAdmin(user);
+            
+            dropDown.Width = 100;
+            dropDown.Height = 100;
+            AdminUserClick.Children.Add(dropDown);            
 
         }
         public void GetAllActions()
@@ -137,5 +144,28 @@ namespace WpfClientProject
             win.Show();
         }
 
+        private void cbIsWorker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (cbIsWorker.SelectedItem.ToString() == null)
+            {
+                Userslv.ItemsSource = UserList;
+            }
+            if (cbIsWorker.SelectedItem.ToString() == "User")
+            {
+                
+                Userslv.ItemsSource = UserList.FindAll(u => u.IsWorker == false);
+            }
+            if (cbIsWorker.SelectedItem.ToString() == "Worker")
+            {
+                
+                Userslv.ItemsSource = UserList.FindAll(u => u.IsWorker);
+            }
+            if (cbIsWorker.SelectedItem.ToString() == "Both")
+            {
+                
+                Userslv.ItemsSource = UserList;
+            }
+        }
     }
 }

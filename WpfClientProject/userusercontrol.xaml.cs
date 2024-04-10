@@ -40,6 +40,8 @@ namespace WpfClientProject
             BankList = ServiceClient.GetAllBankAcouuntsByUser(user1);
             BankNum2_Copy.ItemsSource = BankList;
             BankNum2_Copy.DisplayMemberPath = "bankAcuuntNum";
+            BankNum2.ItemsSource = BankList;
+            BankNum2.DisplayMemberPath = "bankAcuuntNum";
             NetWorthcucltour();
             if (ServiceClient.GetCustomerByUser(user) != null)
             {
@@ -133,25 +135,17 @@ namespace WpfClientProject
         {
             Customers customer = ServiceClient.GetCustomerByUser(user1);
             // need to fix this and also need to make sure someone else dosent change other people account
-            
-            if (Regex.IsMatch(BankNum2.Text,@"^[0-9]+$"))
-            {
 
 
-                BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum2.Text));
-                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
-                bool isThebank = false;
+            if (BankNum2.SelectedIndex == -1) return;
+            BankAccount bankAccount = BankNum2.SelectedItem as BankAccount;
 
-                for (int i = 0; i < bankAccounts.Count; i++)
-                {
 
-                    if (bankAccounts[i].bankAcuuntNum == int.Parse(BankNum2.Text))
-                    {
-                        isThebank = true;
-                    }
-                }
-                if (isThebank)
-                {
+            BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum2.Text));
+               
+
+               
+                
                     if (customer != null && account != null)
                     {
                         if (customer.dateOfJoining.AddDays(10) < DateTime.Now)
@@ -170,32 +164,22 @@ namespace WpfClientProject
                     {
                         MessageBox.Show("You arent a customer or you dont have a bank acouunt");
                     }
-                }
-            }
-            else
-            {
-                MessageBox.Show("input is not a number");
-            }
+                
+            
+           
             
         }
 
         private void AdultAcouunt_Click(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(BankNum2.Text, @"^[0-9]+$"))
-            {
-                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
-                bool isThebank = false;
+            if (BankNum2.SelectedIndex == -1) return;
+            BankAccount bankAccount = BankNum2.SelectedItem as BankAccount;
+           
+                
 
-                for (int i = 0; i < bankAccounts.Count; i++)
-                {
-
-                    if (bankAccounts[i].bankAcuuntNum == int.Parse(BankNum2.Text))
-                    {
-                        isThebank = true;
-                    }
-                }
-                if (isThebank)
-                {
+               
+                
+                
                     BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNum2.Text));
                     if (user1.Birthday.Year < DateTime.Now.Year - 18)
                     {
@@ -206,8 +190,8 @@ namespace WpfClientProject
                     {
                         MessageBox.Show("to young");
                     }
-                }
-            }
+                
+            
 
         }
 
@@ -215,7 +199,7 @@ namespace WpfClientProject
         {
             if (BankNum2_Copy.SelectedIndex == -1) return;
             BankAccount bankAccount=BankNum2_Copy.SelectedItem as BankAccount;
-                   
+                               
                     
                         double newworth = 0;
                         int id = int.Parse(BankNum2_Copy.Text);
@@ -236,10 +220,10 @@ namespace WpfClientProject
 
 
                     
-                }
+                
 
             }
         }
     }
-    }
+    
 

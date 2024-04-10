@@ -7,9 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1080">
 
-    <Grid>
-
-        <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
+    <Grid x:Name="BackGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="170" Name="Actions"/>
+        </Grid.ColumnDefinitions>
+        
+            <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
                     <GradientStop Color="LightCyan" Offset="1"/>
@@ -18,8 +22,10 @@
             </Rectangle.Fill>
         </Rectangle>
 
-
-        <ListView x:Name="Userslv" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Top" Margin="0,0,199,0" SelectionChanged="Users_SelectionChanged_1">
+        <StackPanel x:Name="AdminUserClick" Grid.Column="1">
+           
+        </StackPanel>
+        <ListView x:Name="Userslv" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Top" Margin="0,0,199,0" SelectionChanged="Users_SelectionChanged">
             <ListView.ItemContainerStyle>
                 <Style>
                     <Setter Property="Block.BorderBrush" Value="Black">
@@ -45,6 +51,16 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <StackPanel Margin="764,406,226,153"  >
+            
+            <TextBlock Text="Sort By IsWorker"/>
+            <ComboBox x:Name="cbIsWorker"   SelectionChanged="cbIsWorker_SelectionChanged" Background="White">
+                <ComboBox.Resources>
+                    <SolidColorBrush x:Key="Back" Color="White"/>
+                </ComboBox.Resources>
+            </ComboBox>
+            
+        </StackPanel>
 
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="40,400,0,0" VerticalAlignment="Top" Width="326" RadiusY="5" RadiusX="5"/>
         <TextBlock Text="Send money " Margin="40,400,841,170" FontSize="18" RenderTransformOrigin="0.452,4.233"></TextBlock>
@@ -91,4 +107,5 @@ FontSize="15"/>
         </StackPanel>
 
     </Grid>
+
 </UserControl>

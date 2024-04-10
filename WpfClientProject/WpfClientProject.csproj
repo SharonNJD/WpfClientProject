@@ -86,6 +86,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="DropDownAdmin.xaml.cs">
+      <DependentUpon>DropDownAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImageConverter.cs" />
     <Compile Include="NewUserPage.xaml.cs">
       <DependentUpon>NewUserPage.xaml</DependentUpon>
@@ -111,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DropDownAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
