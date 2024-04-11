@@ -85,6 +85,34 @@ namespace WpfClientProject
         {
 
         }
+        private void ForgienCoinCuc()
+        {
+            double newworth = 0;
+
+
+            if (ServiceClient.GetBankAccount(user1) != null)
+            {
+
+                
+                //AccountActionList accountActionsto = new AccountActionList();
+                //accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
+                //AccountActionList accountActionsto2 = new AccountActionList();
+                //accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+                //foreach (AccountAction accountAction in accountActionsto)
+                //{
+                //    newworth += accountAction.Amount;
+                //}
+                //foreach (AccountAction accountAction in accountActionsto2)
+                //{
+                //    newworth -= accountAction.Amount;
+                //}
+
+
+
+            }
+
+
+        }
         public void GetAllActions()
         {
             cmbSource2.Items.Clear ();
@@ -109,6 +137,7 @@ namespace WpfClientProject
             action.TimaStamp = DateTime.Now;
             
             ServiceClient.Insertintoacountaction(action);
+
         }
     }
 }

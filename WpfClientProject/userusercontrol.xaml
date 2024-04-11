@@ -75,38 +75,45 @@
 
 
         <Image HorizontalAlignment="Left" Height="20" Margin="411,199,0,0" VerticalAlignment="Top" Width="20"  Grid.Row="1"/>
-        <Rectangle Fill="#FF04041F" HorizontalAlignment="Left" Height="20" Margin="377,287,0,0" VerticalAlignment="Top" Width="70" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Height="11" Margin="377,289,0,0" TextWrapping="Wrap" Text="SEE ALL" VerticalAlignment="Top" Width="70" Foreground="#FFAEABAB" FontSize="10" TextAlignment="Center" Grid.Row="1"/>
 
-        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,205,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
-        <Button x:Name="createbank" Content="create bank" Click="createbank_Click" Margin="246,201,720,189" Grid.Row="1" Foreground="Black" Background="Transparent"/>
-        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="520,0,0,0" VerticalAlignment="Top" Width="154" RadiusY="11.007" RadiusX="11.007" Grid.Row="2"/>
-        <Button x:Name="RquestToLoan" Content="RquestToLoan" Click="RquestToLoan_Click" Margin="526,-50,414,360" Foreground="Black" Background="Transparent" Grid.Row="2"/>
-        <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="690,0,0,0" VerticalAlignment="Top" Width="144" RadiusY="11.007" RadiusX="11.007" Grid.Row="2"/>
-        <Button x:Name="AdultAcouunt" Content="AdultAcouunt" Click="AdultAcouunt_Click" Margin="690,-50,250,357" Foreground="Black" Background="Transparent" RenderTransformOrigin="1.845,0.667" Grid.Row="2"/>
+
+        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="228,172,0,0" VerticalAlignment="Top" Width="149" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
+        <TextBlock x:Name="SecretCode" Margin="157,213,640,189" Grid.Row="1" Visibility="Collapsed"  ></TextBlock>
+        <TextBlock x:Name="BankAcouuntnum" Margin="170,261,643,139" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed"  >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.4"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
+        <Button x:Name="createbank" Content="Create BankAcouunt" Click="createbank_Click" Margin="218,167,694,231" Grid.Row="1" Foreground="Black" Background="Transparent" BorderBrush="Transparent"/>
+        <Rectangle Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="519,165,0,0" VerticalAlignment="Top" Width="154" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
+        <Button x:Name="RquestToLoan" Content="RquestToLoan" Click="RquestToLoan_Click" Margin="526,160,414,408" Foreground="Black" Background="Transparent" BorderBrush="Transparent" Grid.RowSpan="2"/>
+        <Rectangle x:Name="Createcus"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="608,31,0,0" VerticalAlignment="Top" Width="144" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
+        <Rectangle x:Name="yes"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="690,166,0,0" VerticalAlignment="Top" Width="141" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
+        <Button x:Name="AdultAcouunt" Content="AdultAcouunt" Click="AdultAcouunt_Click" Margin="691,162,249,406" Foreground="Black" Background="Transparent" RenderTransformOrigin="1.845,0.667" BorderBrush="Transparent" Grid.RowSpan="2"/>
         <Label Content="BankNum:" Margin="529,82,444,304" Grid.Row="1" FontSize="20"></Label>
         <ComboBox x:Name="BankNum2"  Margin="634,82,335,0" Grid.Row="1" FontSize="20" Background="White" VerticalAlignment="Top"></ComboBox>
-
-        <Rectangle x:Name="yes"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="247,242,0,0" VerticalAlignment="Top" Width="114" RadiusY="11.007" RadiusX="11.007" Grid.Row="1"/>
-        <Button x:Name="Createcostomer" Content="create Customer" Margin="231,232,704,163" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"
-Height="35"  Click="Createcostomer_Click" >
+        <Rectangle   Fill="CadetBlue" HorizontalAlignment="Left" Height="30" Margin="316,164,0,0" VerticalAlignment="Top" Width="133" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
+        <Button x:Name="Createcostomer" Content="Create Customer" Margin="613,26,329,372" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"  Click="Createcostomer_Click" BorderBrush="Transparent" >
 
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-0.531"/>
+                    <RotateTransform Angle="-0.281"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
 
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="520,126,0,0" TextWrapping="Wrap" Text="Last Activites" VerticalAlignment="Top" Width="133" Foreground="White"/>
-
 
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="529,179,0,0" TextWrapping="Wrap" Text="Money manegment" VerticalAlignment="Top" Width="157" Foreground="White" Grid.Row="1"/>
 
         <Image HorizontalAlignment="Left" Height="101" Margin="745,201,0,0" VerticalAlignment="Top" Width="299" Grid.Row="1"/>
+
         <TextBlock HorizontalAlignment="Left" Height="47" Margin="565,196,0,0" TextWrapping="Wrap" Text="35.01" VerticalAlignment="Top" Width="203" Foreground="White" FontSize="36" Grid.Row="1"/>
         <Label Content="BankNum:" Margin="137,157,833,403" FontSize="20" Grid.RowSpan="2"/>
         <ComboBox x:Name="BankNum2_Copy"  Margin="245,165,777,408" FontSize="20" Background="White" Grid.RowSpan="2">
@@ -114,7 +121,7 @@ Height="35"  Click="Createcostomer_Click" >
                 <SolidColorBrush x:Key="WhiteComboBox" Color="White"/>
             </ComboBox.Resources>
         </ComboBox>
-        <Button x:Name="Show" Content="Show" Click="Show_Click" Margin="316,163,655,405" Foreground="Black" Background="Transparent" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+        <Button x:Name="Show" Content="Show" Click="Show_Click" Margin="316,161,631,407" Foreground="Black" Background="Transparent" BorderBrush="Transparent" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
 
         </Button>
 

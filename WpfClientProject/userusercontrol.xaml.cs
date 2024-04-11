@@ -37,11 +37,8 @@ namespace WpfClientProject
 
             UserName.Text = user.FirstName + " " + user.LastName;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-            BankList = ServiceClient.GetAllBankAcouuntsByUser(user1);
-            BankNum2_Copy.ItemsSource = BankList;
-            BankNum2_Copy.DisplayMemberPath = "bankAcuuntNum";
-            BankNum2.ItemsSource = BankList;
-            BankNum2.DisplayMemberPath = "bankAcuuntNum";
+            refreshCMB();
+
             NetWorthcucltour();
             if (ServiceClient.GetCustomerByUser(user) != null)
             {
@@ -50,6 +47,14 @@ namespace WpfClientProject
             }
 
 
+        }
+        public void refreshCMB()
+        {
+            BankList = ServiceClient.GetAllBankAcouuntsByUser(user1);
+            BankNum2_Copy.ItemsSource = BankList;
+            BankNum2_Copy.DisplayMemberPath = "bankAcuuntNum";
+            BankNum2.ItemsSource = BankList;
+            BankNum2.DisplayMemberPath = "bankAcuuntNum";
         }
 
         private void Createcostomer_Click(object sender, RoutedEventArgs e)
@@ -63,6 +68,7 @@ namespace WpfClientProject
 
                 ServiceClient.InsertIntoCustomers(customer);
                 customer = ServiceClient.GetCustomerByUser(user1);
+                
             }
             else
             {
@@ -78,9 +84,9 @@ namespace WpfClientProject
                 double newworth = 0;
                 int id = ServiceClient.GetBankAccount(user1).bankAcuuntNum;
                 AccountActionList accountActionsto = new AccountActionList();
-                accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
+                accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id, 1);
                 AccountActionList accountActionsto2 = new AccountActionList();
-                accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+                accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id, 1);
                 
                 foreach (AccountAction accountAction in accountActionsto)
                 {
@@ -99,34 +105,56 @@ namespace WpfClientProject
 
         private void createbank_Click(object sender, RoutedEventArgs e)
         {
+            
             BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(user1);
-            if (list.Count < 3)
+            bool CanCreate = false;
+            if ((list == null || list.Count<3))
             {
-                BankAccount bank = new BankAccount();
-                Random rnd = new Random();
-                customer = ServiceClient.GetCustomerByUser(user1);
+                CanCreate = true;
 
-
-                bank.secretCode = rnd.Next(1000, 9999);
-                bank.canloan = false;
-                bank.canTransferOverSeas = false;
-                bank.canTradeStocks = false;
-                if (user1.Birthday.Year > 2006)
-                {
-                    bank.adultAcouunt = true;
-                }
-                else
-                    bank.adultAcouunt = false;
-                bank.personalAcouunt = true;
-                bank.customer = customer;
-
-
-                ServiceClient.InsertIntoBankAcouunt(bank);
             }
             else
             {
-                MessageBox.Show("you have the max amount of possible bank acouunts");
+                CanCreate= false;
             }
+            if (ServiceClient.GetCustomerByUser(user1) != null)
+            {
+                
+                if (CanCreate = true)
+                {
+                    BankAccount bank = new BankAccount();
+                    Random rnd = new Random();
+                    customer = ServiceClient.GetCustomerByUser(user1);
+
+
+                    bank.secretCode = rnd.Next(1000, 9999);
+                    bank.canloan = false;
+                    bank.canTransferOverSeas = false;
+                    bank.canTradeStocks = false;
+                    if (user1.Birthday.Year > 2006)
+                    {
+                        bank.adultAcouunt = true;
+                    }
+                    else
+                        bank.adultAcouunt = false;
+                    bank.personalAcouunt = true;
+                    bank.customer = customer;
+
+
+                    ServiceClient.InsertIntoBankAcouunt(bank);
+                    list = ServiceClient.GetAllBankAcouuntsByUser(user1);
+                    SecretCode.Visibility = Visibility.Visible;
+                    BankAcouuntnum.Visibility = Visibility.Visible;
+                    SecretCode.Text = "Your secret code is " + list[list.Count - 1].secretCode.ToString();
+                    BankAcouuntnum.Text = "Your Bank Acouunt Num is " + list[list.Count - 1].bankAcuuntNum.ToString();
+                    refreshCMB();
+                }
+                else
+                {
+                    MessageBox.Show("you have the max amount of possible bank acouunts");
+                }
+            }
+            
             
 
         }
@@ -185,6 +213,7 @@ namespace WpfClientProject
                     {
                         account.adultAcouunt = true;
                         ServiceClient.UpdateBankAcouunt(account);
+
                     }
                     else
                     {
@@ -204,9 +233,9 @@ namespace WpfClientProject
                         double newworth = 0;
                         int id = int.Parse(BankNum2_Copy.Text);
                         AccountActionList accountActionsto = new AccountActionList();
-                        accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
+                        accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id,1);
                         AccountActionList accountActionsto2 = new AccountActionList();
-                        accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+                        accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id, 1);
 
                         foreach (AccountAction accountAction in accountActionsto)
                         {

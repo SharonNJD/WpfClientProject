@@ -73,9 +73,9 @@ namespace WpfClientProject
 
                 int id = ServiceClient.GetBankAccount(user1).bankAcuuntNum;
                 AccountActionList accountActionsto = new AccountActionList();
-                accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
+                accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id, 1);
                 AccountActionList accountActionsto2 = new AccountActionList();
-                accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+                accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id , 1);
                 foreach (AccountAction accountAction in accountActionsto)
                 {
                     newworth += accountAction.Amount;

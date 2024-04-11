@@ -41,7 +41,7 @@ namespace WpfClientProject
         {
 
             Howmuch.Visibility = Visibility.Visible;
-            double Amount = int.Parse(tbAmount2.Text);
+            double Amount = double.Parse(tbAmount2.Text);
             Amount = Amount + Amount / 100;
             Howmuch.Text = "You will have to pay" + Amount.ToString();
             Yes.Visibility = Visibility.Visible;
@@ -92,20 +92,22 @@ namespace WpfClientProject
                 MyAction source = (MyAction)cmbSource2.SelectedItem;
                 AccountAction action = new AccountAction();
                 action.Action = source;
-                action.BankAccount = ServiceClient.GetBankAccount(user1);
+                action.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbFrom2.Text));
 
                 action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
                 action.Amount = int.Parse(tbAmount2.Text);
                 action.TimaStamp = DateTime.Now;
 
                 AccountAction ToBank = new AccountAction();
-                action.Action = source;
-                action.BankAccount = ServiceClient.GetBankAccount(user1);
+                ToBank.Action = source;
+                ToBank.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbFrom2.Text));
 
-                action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(5);
-                action.Amount = int.Parse(tbAmount2.Text) / 100;
-                action.TimaStamp = DateTime.Now;
+                ToBank.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(5);
+                ToBank.Amount = int.Parse(tbAmount2.Text) / 100;
+                ToBank.TimaStamp = DateTime.Now;
                 networth = NetWorthcucltour(int.Parse(cmbFrom2.Text));
+                
+
                 if (networth > double.Parse(tbAmount2.Text))
                 {
                     ServiceClient.Insertintoacountaction(ToBank);
@@ -147,14 +149,14 @@ namespace WpfClientProject
             double newworth = 0;
             
             
-                if (ServiceClient.GetBankAccount(user1) != null)
+                if (ServiceClient.GetBankAcouuntByNum(num) != null)
                 {
                     
                     int id = num;
                     AccountActionList accountActionsto = new AccountActionList();
-                    accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id);
+                    accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id, 1);
                     AccountActionList accountActionsto2 = new AccountActionList();
-                    accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id);
+                    accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id, 1);
                     foreach (AccountAction accountAction in accountActionsto)
                     {
                         newworth += accountAction.Amount;

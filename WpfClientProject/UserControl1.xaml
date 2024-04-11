@@ -123,7 +123,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5" Width="453">
                 <Label Content="amount: "/>
-                <TextBox x:Name="tbAmount2" PreviewTextInput="tbAmount_PreviewTextInput" Width="102"/>
+                <TextBox x:Name="tbAmount2" PreviewTextInput="tbAmount_PreviewTextInput" Width="101"/>
                 <Label Content="To: " Width="60"/>
                 <TextBox x:Name="ToBank" PreviewTextInput="tbAmount_PreviewTextInput" Margin="0,0,0,0"/>
                 <Button Content="Send" Margin=" 0" Padding="5" Click="Button_Click_1" Width="40"/>
