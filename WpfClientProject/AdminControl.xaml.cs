@@ -43,17 +43,19 @@ namespace WpfClientProject
 
         private void Users_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            AdminUserClick.Children.Clear();
             if (Userslv.SelectedIndex == -1) return;
             User user = Userslv.SelectedItem as User;
             DropDownAdmin dropDown = new DropDownAdmin(user);
             
-            dropDown.Width = 100;
+            dropDown.Width = 170;
             dropDown.Height = 100;
             AdminUserClick.Children.Add(dropDown);            
 
         }
         public void GetAllActions()
         {
+
             cmbSource2.Items.Clear();
             ActionList actionList = ServiceClient.GetAllActions();
             cmbSource2.ItemsSource = actionList;

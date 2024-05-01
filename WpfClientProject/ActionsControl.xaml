@@ -82,7 +82,8 @@
                 <Label Content="To " Width="55"/>
                 <TextBox x:Name="cmbTarget2" Width="57"/>
                 <Label Content="From " Width="55"/>
-                <TextBox x:Name="cmbFrom2"/>
+                
+                <ComboBox Background="White" x:Name="BankNumFrom"></ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="amount: "/>

@@ -26,17 +26,24 @@ namespace WpfClientProject
         ServiceReferenceBank.ServiceBaseClient ServiceClient;
         User user1;
         double networth;
+        BankAccountList BankList = new BankAccountList();
         public ActionsControl(User user)
         {
 
             InitializeComponent();
             user1 = user;
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-          
+            refreshCMB();
             GetAllActions();
             Howmuch.Visibility = Visibility.Collapsed;
         }
-
+        public void refreshCMB()
+        {
+            BankList = ServiceClient.GetAllBankAcouuntsByUser(user1);
+            BankNumFrom.ItemsSource = BankList;
+            BankNumFrom.DisplayMemberPath = "bankAcuuntNum";
+            
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -52,23 +59,7 @@ namespace WpfClientProject
         {
             bool isThebankForm = false;
             bool isTheBankTo = false;
-            if (Regex.IsMatch(cmbFrom2.Text, @"^[0-9]+$"))
-            {
-
-
-                BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbFrom2.Text));
-                BankAccountList bankAccounts = ServiceClient.GetAllBankAcouuntsByUser(user1);
-                
-
-                for (int i = 0; i < bankAccounts.Count; i++)
-                {
-
-                    if (bankAccounts[i].bankAcuuntNum == int.Parse(cmbFrom2.Text))
-                    {
-                        isThebankForm = true;
-                    }
-                }
-            }
+            
             if (Regex.IsMatch(cmbTarget2.Text, @"^[0-9]+$"))
             {
 
@@ -92,7 +83,7 @@ namespace WpfClientProject
                 MyAction source = (MyAction)cmbSource2.SelectedItem;
                 AccountAction action = new AccountAction();
                 action.Action = source;
-                action.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbFrom2.Text));
+                action.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNumFrom.Text));
 
                 action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
                 action.Amount = int.Parse(tbAmount2.Text);
@@ -100,12 +91,12 @@ namespace WpfClientProject
 
                 AccountAction ToBank = new AccountAction();
                 ToBank.Action = source;
-                ToBank.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbFrom2.Text));
+                ToBank.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNumFrom.Text));
 
                 ToBank.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(5);
                 ToBank.Amount = int.Parse(tbAmount2.Text) / 100;
                 ToBank.TimaStamp = DateTime.Now;
-                networth = NetWorthcucltour(int.Parse(cmbFrom2.Text));
+                networth = NetWorthcucltour(int.Parse(BankNumFrom.Text));
                 
 
                 if (networth > double.Parse(tbAmount2.Text))
