@@ -228,23 +228,10 @@ namespace WpfClientProject
         {
             if (BankNum2_Copy.SelectedIndex == -1) return;
             BankAccount bankAccount=BankNum2_Copy.SelectedItem as BankAccount;
-                               
+           
                     
                         double newworth = 0;
-                        int id = int.Parse(BankNum2_Copy.Text);
-                        AccountActionList accountActionsto = new AccountActionList();
-                        accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id,1);
-                        AccountActionList accountActionsto2 = new AccountActionList();
-                        accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id, 1);
-
-                        foreach (AccountAction accountAction in accountActionsto)
-                        {
-                            newworth += accountAction.Amount;
-                        }
-                        foreach (AccountAction accountAction in accountActionsto2)
-                        {
-                            newworth -= accountAction.Amount;
-                        }
+            newworth = bankAccount.balance;
                         NetWorth.Text = newworth.ToString();
 
 

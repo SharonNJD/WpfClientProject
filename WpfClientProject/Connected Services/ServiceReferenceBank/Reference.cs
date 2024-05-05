@@ -72,6 +72,9 @@ namespace WpfClientProject.ServiceReferenceBank {
         private bool adultAcouuntField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double balanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int bankAcuuntNumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -101,6 +104,19 @@ namespace WpfClientProject.ServiceReferenceBank {
                 if ((this.adultAcouuntField.Equals(value) != true)) {
                     this.adultAcouuntField = value;
                     this.RaisePropertyChanged("adultAcouunt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double balance {
+            get {
+                return this.balanceField;
+            }
+            set {
+                if ((this.balanceField.Equals(value) != true)) {
+                    this.balanceField = value;
+                    this.RaisePropertyChanged("balance");
                 }
             }
         }

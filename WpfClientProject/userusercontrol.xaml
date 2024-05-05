@@ -67,12 +67,6 @@
                 </LinearGradientBrush>
             </Path.Fill>
         </Path>
-        <Grid Margin="163,176,564,144" Grid.Row="1">
-
-
-        </Grid>
-
-
 
         <Image HorizontalAlignment="Left" Height="20" Margin="411,199,0,0" VerticalAlignment="Top" Width="20"  Grid.Row="1"/>
 
@@ -95,7 +89,11 @@
         <Rectangle x:Name="yes"    Fill="CadetBlue" HorizontalAlignment="Left" Height="24" Margin="690,166,0,0" VerticalAlignment="Top" Width="141" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
         <Button x:Name="AdultAcouunt" Content="AdultAcouunt" Click="AdultAcouunt_Click" Margin="691,162,249,406" Foreground="Black" Background="Transparent" RenderTransformOrigin="1.845,0.667" BorderBrush="Transparent" Grid.RowSpan="2"/>
         <Label Content="BankNum:" Margin="529,82,444,304" Grid.Row="1" FontSize="20"></Label>
-        <ComboBox x:Name="BankNum2"  Margin="634,82,335,0" Grid.Row="1" FontSize="20" Background="White" VerticalAlignment="Top"></ComboBox>
+        <ComboBox x:Name="BankNum2"  Margin="634,82,335,0" Grid.Row="1" FontSize="20" VerticalAlignment="Top">
+            <ComboBox.Resources>
+                <SolidColorBrush x:Key="MaterialDesignPaper" Color="White"/>
+            </ComboBox.Resources>
+        </ComboBox>
         <Rectangle   Fill="CadetBlue" HorizontalAlignment="Left" Height="30" Margin="316,164,0,0" VerticalAlignment="Top" Width="133" RadiusY="11.007" RadiusX="11.007" Grid.RowSpan="2"/>
         <Button x:Name="Createcostomer" Content="Create Customer" Margin="613,26,329,372" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Background="Transparent"  Click="Createcostomer_Click" BorderBrush="Transparent" >
 
@@ -116,9 +114,9 @@
 
         <TextBlock HorizontalAlignment="Left" Height="47" Margin="565,196,0,0" TextWrapping="Wrap" Text="35.01" VerticalAlignment="Top" Width="203" Foreground="White" FontSize="36" Grid.Row="1"/>
         <Label Content="BankNum:" Margin="137,157,833,403" FontSize="20" Grid.RowSpan="2"/>
-        <ComboBox x:Name="BankNum2_Copy"  Margin="245,165,777,408" FontSize="20" Background="White" Grid.RowSpan="2">
+        <ComboBox x:Name="BankNum2_Copy"  Margin="245,165,777,408" FontSize="20" Grid.RowSpan="2">
             <ComboBox.Resources>
-                <SolidColorBrush x:Key="WhiteComboBox" Color="White"/>
+                <SolidColorBrush x:Key="MaterialDesignPaper" Color="White"/>
             </ComboBox.Resources>
         </ComboBox>
         <Button x:Name="Show" Content="Show" Click="Show_Click" Margin="316,161,631,407" Foreground="Black" Background="Transparent" BorderBrush="Transparent" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">

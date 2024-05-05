@@ -42,6 +42,7 @@
       <xs:extension base="tns:BaseEntity">
         <xs:sequence>
           <xs:element minOccurs="0" name="adultAcouunt" type="xs:boolean" />
+          <xs:element minOccurs="0" name="balance" type="xs:double" />
           <xs:element minOccurs="0" name="bankAcuuntNum" type="xs:int" />
           <xs:element minOccurs="0" name="canTradeStocks" type="xs:boolean" />
           <xs:element minOccurs="0" name="canTransferOverSeas" type="xs:boolean" />

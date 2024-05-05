@@ -43,34 +43,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <StackPanel Grid.Row="2" Grid.Column="1">
-            <TextBlock Text="Actions  " FontSize="25"
-   FontWeight="DemiBold"
-   TextAlignment="Center"
-   Grid.Row="0"/>
-            <Border BorderBrush="Indigo"  BorderThickness="2" CornerRadius="5"
-        Grid.Row="1" Margin="5" Padding="5" Width="412" Height="135">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal"  Margin="5">
-                        <Label Content="Action: "/>
-                        <ComboBox x:Name="cmbSource">
-                            <ComboBox x:Name="cmbSource_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                        </ComboBox>
-                        <Label Name="Actionstuff" Content="Type: " Visibility="Hidden"/>
-                        <ComboBox x:Name="cmbTarget" Visibility="Hidden"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="5">
-                        <Label Content="amount: "/>
-                        <TextBox x:Name="tbAmount" />
-                        <Button Content="Calc it!" Margin="15 0" Padding="5" />
-                    </StackPanel>
-                    <TextBlock x:Name="tbResult" Margin="15"
-                   
-                  
-                   FontSize="15"/>
-                </StackPanel>
-            </Border>
-        </StackPanel>
+       
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="227" Margin="108,250,0,0" VerticalAlignment="Top" Width="473" RadiusY="5" RadiusX="5"/>
         <TextBlock Text="Send money or request " Margin="108,253,773,317" FontSize="18"></TextBlock>
         <StackPanel Grid.Column="0" Margin="108,283,499,44">
