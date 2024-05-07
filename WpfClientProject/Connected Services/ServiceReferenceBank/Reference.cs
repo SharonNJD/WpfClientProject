@@ -18,8 +18,8 @@ namespace WpfClientProject.ServiceReferenceBank {
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.BankAccount))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.AccountAction))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.MyAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.AccountAction))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClientProject.ServiceReferenceBank.User))]
     public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -215,93 +215,6 @@ namespace WpfClientProject.ServiceReferenceBank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountAction", Namespace="http://schemas.datacontract.org/2004/07/Model")]
-    [System.SerializableAttribute()]
-    public partial class AccountAction : WpfClientProject.ServiceReferenceBank.BaseEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WpfClientProject.ServiceReferenceBank.MyAction ActionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double AmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WpfClientProject.ServiceReferenceBank.BankAccount BankAccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TimaStampField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WpfClientProject.ServiceReferenceBank.BankAccount ToBankAcouuntField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WpfClientProject.ServiceReferenceBank.MyAction Action {
-            get {
-                return this.ActionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ActionField, value) != true)) {
-                    this.ActionField = value;
-                    this.RaisePropertyChanged("Action");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Amount {
-            get {
-                return this.AmountField;
-            }
-            set {
-                if ((this.AmountField.Equals(value) != true)) {
-                    this.AmountField = value;
-                    this.RaisePropertyChanged("Amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WpfClientProject.ServiceReferenceBank.BankAccount BankAccount {
-            get {
-                return this.BankAccountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BankAccountField, value) != true)) {
-                    this.BankAccountField = value;
-                    this.RaisePropertyChanged("BankAccount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TimaStamp {
-            get {
-                return this.TimaStampField;
-            }
-            set {
-                if ((this.TimaStampField.Equals(value) != true)) {
-                    this.TimaStampField = value;
-                    this.RaisePropertyChanged("TimaStamp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WpfClientProject.ServiceReferenceBank.BankAccount ToBankAcouunt {
-            get {
-                return this.ToBankAcouuntField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ToBankAcouuntField, value) != true)) {
-                    this.ToBankAcouuntField = value;
-                    this.RaisePropertyChanged("ToBankAcouunt");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MyAction", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
     public partial class MyAction : WpfClientProject.ServiceReferenceBank.BaseEntity {
@@ -398,6 +311,93 @@ namespace WpfClientProject.ServiceReferenceBank {
                 if ((this.minRankField.Equals(value) != true)) {
                     this.minRankField = value;
                     this.RaisePropertyChanged("minRank");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountAction", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class AccountAction : WpfClientProject.ServiceReferenceBank.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClientProject.ServiceReferenceBank.MyAction ActionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClientProject.ServiceReferenceBank.BankAccount BankAccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimaStampField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClientProject.ServiceReferenceBank.BankAccount ToBankAcouuntField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClientProject.ServiceReferenceBank.MyAction Action {
+            get {
+                return this.ActionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ActionField, value) != true)) {
+                    this.ActionField = value;
+                    this.RaisePropertyChanged("Action");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((this.AmountField.Equals(value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClientProject.ServiceReferenceBank.BankAccount BankAccount {
+            get {
+                return this.BankAccountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BankAccountField, value) != true)) {
+                    this.BankAccountField = value;
+                    this.RaisePropertyChanged("BankAccount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime TimaStamp {
+            get {
+                return this.TimaStampField;
+            }
+            set {
+                if ((this.TimaStampField.Equals(value) != true)) {
+                    this.TimaStampField = value;
+                    this.RaisePropertyChanged("TimaStamp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClientProject.ServiceReferenceBank.BankAccount ToBankAcouunt {
+            get {
+                return this.ToBankAcouuntField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ToBankAcouuntField, value) != true)) {
+                    this.ToBankAcouuntField = value;
+                    this.RaisePropertyChanged("ToBankAcouunt");
                 }
             }
         }
@@ -642,13 +642,6 @@ namespace WpfClientProject.ServiceReferenceBank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="AccountActionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="AccountAction")]
-    [System.SerializableAttribute()]
-    public class AccountActionList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.AccountAction> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CustomersList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Customers")]
     [System.SerializableAttribute()]
     public class CustomersList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.Customers> {
@@ -659,6 +652,13 @@ namespace WpfClientProject.ServiceReferenceBank {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ActionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="MyAction")]
     [System.SerializableAttribute()]
     public class ActionList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.MyAction> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="AccountActionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="AccountAction")]
+    [System.SerializableAttribute()]
+    public class AccountActionList : System.Collections.Generic.List<WpfClientProject.ServiceReferenceBank.AccountAction> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -689,47 +689,53 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllUsers", ReplyAction="http://tempuri.org/IServiceBase/GetAllUsersResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.UserList> GetAllUsersAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByID", ReplyAction="http://tempuri.org/IServiceBase/GetUserByIDResponse")]
-        WpfClientProject.ServiceReferenceBank.User GetUserByID(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UserLogin", ReplyAction="http://tempuri.org/IServiceBase/UserLoginResponse")]
+        WpfClientProject.ServiceReferenceBank.User UserLogin(WpfClientProject.ServiceReferenceBank.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByID", ReplyAction="http://tempuri.org/IServiceBase/GetUserByIDResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByIDAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UserLogin", ReplyAction="http://tempuri.org/IServiceBase/UserLoginResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> UserLoginAsync(WpfClientProject.ServiceReferenceBank.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAccountList", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAccountListResponse")]
-        WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAccountList();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAccounts", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAccountsResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAccounts();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAccountList", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAccountListResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAccountListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAccounts", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAccountsResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAccountsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertIntoBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/InsertIntoBankAcouuntResponse")]
-        int InsertIntoBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountsByNumber", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountsByNumberResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccount GetBankAccountsByNumber(int number);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertIntoBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/InsertIntoBankAcouuntResponse")]
-        System.Threading.Tasks.Task<int> InsertIntoBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountsByNumber", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountsByNumberResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAccountsByNumberAsync(int number);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/UpdateBankAcouuntResponse")]
-        int UpdateBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountsByUser", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountsByUserResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAccountsByUser(WpfClientProject.ServiceReferenceBank.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/UpdateBankAcouuntResponse")]
-        System.Threading.Tasks.Task<int> UpdateBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountsByUser", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountsByUserResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAccountsByUserAsync(WpfClientProject.ServiceReferenceBank.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealIdResponse")]
-        WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAcouuntsByRealId(int realId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountByCostumer", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountByCostumerResponse")]
+        WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAccountByCostumer(WpfClientProject.ServiceReferenceBank.Customers customer);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealIdResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAcouuntsByRealIdAsync(int realId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountByCostumer", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountByCostumerResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAccountByCostumerAsync(WpfClientProject.ServiceReferenceBank.Customers customer);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer", ReplyAction="http://tempuri.org/IServiceBase/GetbankAcouuntthattransferResponse")]
-        WpfClientProject.ServiceReferenceBank.AccountActionList GetbankAcouuntthattransfer(int num, int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertBankAccount", ReplyAction="http://tempuri.org/IServiceBase/InsertBankAccountResponse")]
+        int InsertBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer", ReplyAction="http://tempuri.org/IServiceBase/GetbankAcouuntthattransferResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetbankAcouuntthattransferAsync(int num, int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertBankAccount", ReplyAction="http://tempuri.org/IServiceBase/InsertBankAccountResponse")]
+        System.Threading.Tasks.Task<int> InsertBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntByNum", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntByNumResponse")]
-        WpfClientProject.ServiceReferenceBank.BankAccount GetBankAcouuntByNum(int num);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateBankAccount", ReplyAction="http://tempuri.org/IServiceBase/UpdateBankAccountResponse")]
+        int UpdateBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAcouuntByNum", ReplyAction="http://tempuri.org/IServiceBase/GetBankAcouuntByNumResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAcouuntByNumAsync(int num);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateBankAccount", ReplyAction="http://tempuri.org/IServiceBase/UpdateBankAccountResponse")]
+        System.Threading.Tasks.Task<int> UpdateBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteBankAccount", ReplyAction="http://tempuri.org/IServiceBase/DeleteBankAccountResponse")]
+        int DeleteBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteBankAccount", ReplyAction="http://tempuri.org/IServiceBase/DeleteBankAccountResponse")]
+        System.Threading.Tasks.Task<int> DeleteBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetCustomerByUser", ReplyAction="http://tempuri.org/IServiceBase/GetCustomerByUserResponse")]
         WpfClientProject.ServiceReferenceBank.Customers GetCustomerByUser(WpfClientProject.ServiceReferenceBank.User user);
@@ -737,29 +743,23 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetCustomerByUser", ReplyAction="http://tempuri.org/IServiceBase/GetCustomerByUserResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.Customers> GetCustomerByUserAsync(WpfClientProject.ServiceReferenceBank.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/DeleteBankAcouuntResponse")]
-        int DeleteBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllCustomers", ReplyAction="http://tempuri.org/IServiceBase/GetAllCustomersResponse")]
+        WpfClientProject.ServiceReferenceBank.CustomersList GetAllCustomers();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/DeleteBankAcouuntResponse")]
-        System.Threading.Tasks.Task<int> DeleteBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllCustomers", ReplyAction="http://tempuri.org/IServiceBase/GetAllCustomersResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.CustomersList> GetAllCustomersAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetUserByRealIdResponse")]
-        WpfClientProject.ServiceReferenceBank.User GetUserByRealId(int realId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertCustomers", ReplyAction="http://tempuri.org/IServiceBase/InsertCustomersResponse")]
+        int InsertCustomers(WpfClientProject.ServiceReferenceBank.Customers customers);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetUserByRealId", ReplyAction="http://tempuri.org/IServiceBase/GetUserByRealIdResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByRealIdAsync(int realId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertCustomers", ReplyAction="http://tempuri.org/IServiceBase/InsertCustomersResponse")]
+        System.Threading.Tasks.Task<int> InsertCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertIntoCustomers", ReplyAction="http://tempuri.org/IServiceBase/InsertIntoCustomersResponse")]
-        int InsertIntoCustomers(WpfClientProject.ServiceReferenceBank.Customers customers);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateCustomers", ReplyAction="http://tempuri.org/IServiceBase/UpdateCustomersResponse")]
+        int UpdateCustomers(WpfClientProject.ServiceReferenceBank.Customers customers);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertIntoCustomers", ReplyAction="http://tempuri.org/IServiceBase/InsertIntoCustomersResponse")]
-        System.Threading.Tasks.Task<int> InsertIntoCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpgdateCustomers", ReplyAction="http://tempuri.org/IServiceBase/UpgdateCustomersResponse")]
-        int UpgdateCustomers(WpfClientProject.ServiceReferenceBank.Customers customers);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpgdateCustomers", ReplyAction="http://tempuri.org/IServiceBase/UpgdateCustomersResponse")]
-        System.Threading.Tasks.Task<int> UpgdateCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateCustomers", ReplyAction="http://tempuri.org/IServiceBase/UpdateCustomersResponse")]
+        System.Threading.Tasks.Task<int> UpdateCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteCustomers", ReplyAction="http://tempuri.org/IServiceBase/DeleteCustomersResponse")]
         int DeleteCustomers(WpfClientProject.ServiceReferenceBank.Customers customers);
@@ -767,17 +767,11 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteCustomers", ReplyAction="http://tempuri.org/IServiceBase/DeleteCustomersResponse")]
         System.Threading.Tasks.Task<int> DeleteCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllCustomers", ReplyAction="http://tempuri.org/IServiceBase/GetAllCustomersResponse")]
-        WpfClientProject.ServiceReferenceBank.CustomersList GetAllCustomers();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertAction", ReplyAction="http://tempuri.org/IServiceBase/InsertActionResponse")]
+        int InsertAction(WpfClientProject.ServiceReferenceBank.MyAction action);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllCustomers", ReplyAction="http://tempuri.org/IServiceBase/GetAllCustomersResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.CustomersList> GetAllCustomersAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertIntoAction", ReplyAction="http://tempuri.org/IServiceBase/InsertIntoActionResponse")]
-        int InsertIntoAction(WpfClientProject.ServiceReferenceBank.MyAction action);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertIntoAction", ReplyAction="http://tempuri.org/IServiceBase/InsertIntoActionResponse")]
-        System.Threading.Tasks.Task<int> InsertIntoActionAsync(WpfClientProject.ServiceReferenceBank.MyAction action);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertAction", ReplyAction="http://tempuri.org/IServiceBase/InsertActionResponse")]
+        System.Threading.Tasks.Task<int> InsertActionAsync(WpfClientProject.ServiceReferenceBank.MyAction action);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateAction", ReplyAction="http://tempuri.org/IServiceBase/UpdateActionResponse")]
         int UpdateAction(WpfClientProject.ServiceReferenceBank.MyAction action);
@@ -797,35 +791,23 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllActions", ReplyAction="http://tempuri.org/IServiceBase/GetAllActionsResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.ActionList> GetAllActionsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UserLogin", ReplyAction="http://tempuri.org/IServiceBase/UserLoginResponse")]
-        WpfClientProject.ServiceReferenceBank.User UserLogin(WpfClientProject.ServiceReferenceBank.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertAccountAction", ReplyAction="http://tempuri.org/IServiceBase/InsertAccountActionResponse")]
+        int InsertAccountAction(WpfClientProject.ServiceReferenceBank.AccountAction account);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UserLogin", ReplyAction="http://tempuri.org/IServiceBase/UserLoginResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> UserLoginAsync(WpfClientProject.ServiceReferenceBank.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/InsertAccountAction", ReplyAction="http://tempuri.org/IServiceBase/InsertAccountActionResponse")]
+        System.Threading.Tasks.Task<int> InsertAccountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccount", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountResponse")]
-        WpfClientProject.ServiceReferenceBank.BankAccount GetBankAccount(WpfClientProject.ServiceReferenceBank.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateAccountAction", ReplyAction="http://tempuri.org/IServiceBase/UpdateAccountActionResponse")]
+        int UpdateAccountAction(WpfClientProject.ServiceReferenceBank.AccountAction account);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccount", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAccountAsync(WpfClientProject.ServiceReferenceBank.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateAccountAction", ReplyAction="http://tempuri.org/IServiceBase/UpdateAccountActionResponse")]
+        System.Threading.Tasks.Task<int> UpdateAccountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/Insertintoacountaction", ReplyAction="http://tempuri.org/IServiceBase/InsertintoacountactionResponse")]
-        int Insertintoacountaction(WpfClientProject.ServiceReferenceBank.AccountAction account);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteAccountAction", ReplyAction="http://tempuri.org/IServiceBase/DeleteAccountActionResponse")]
+        int DeleteAccountAction(WpfClientProject.ServiceReferenceBank.AccountAction action);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/Insertintoacountaction", ReplyAction="http://tempuri.org/IServiceBase/InsertintoacountactionResponse")]
-        System.Threading.Tasks.Task<int> InsertintoacountactionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateIntoAcountAction", ReplyAction="http://tempuri.org/IServiceBase/UpdateIntoAcountActionResponse")]
-        int UpdateIntoAcountAction(WpfClientProject.ServiceReferenceBank.AccountAction account);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/UpdateIntoAcountAction", ReplyAction="http://tempuri.org/IServiceBase/UpdateIntoAcountActionResponse")]
-        System.Threading.Tasks.Task<int> UpdateIntoAcountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteIntoAcountAction", ReplyAction="http://tempuri.org/IServiceBase/DeleteIntoAcountActionResponse")]
-        int DeleteIntoAcountAction(WpfClientProject.ServiceReferenceBank.AccountAction action);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteIntoAcountAction", ReplyAction="http://tempuri.org/IServiceBase/DeleteIntoAcountActionResponse")]
-        System.Threading.Tasks.Task<int> DeleteIntoAcountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction action);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/DeleteAccountAction", ReplyAction="http://tempuri.org/IServiceBase/DeleteAccountActionResponse")]
+        System.Threading.Tasks.Task<int> DeleteAccountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction action);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/SelectAllAccountAction", ReplyAction="http://tempuri.org/IServiceBase/SelectAllAccountActionResponse")]
         WpfClientProject.ServiceReferenceBank.AccountActionList SelectAllAccountAction();
@@ -833,17 +815,17 @@ namespace WpfClientProject.ServiceReferenceBank {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/SelectAllAccountAction", ReplyAction="http://tempuri.org/IServiceBase/SelectAllAccountActionResponse")]
         System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> SelectAllAccountActionAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUser", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUserResponse")]
-        WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAcouuntsByUser(WpfClientProject.ServiceReferenceBank.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAccount", ReplyAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAccountResponse")]
+        WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUser", ReplyAction="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUserResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAcouuntsByUserAsync(WpfClientProject.ServiceReferenceBank.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAccount", ReplyAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAccountResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetAccountActionByBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouuntResponse")]
-        WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAcouunt(int id, int num);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountTransfer", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountTransferResponse")]
+        WpfClientProject.ServiceReferenceBank.AccountActionList GetBankAccountTransfer(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount, bool to);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouunt", ReplyAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouuntResponse")]
-        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetAccountActionByBankAcouuntAsync(int id, int num);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBase/GetBankAccountTransfer", ReplyAction="http://tempuri.org/IServiceBase/GetBankAccountTransferResponse")]
+        System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetBankAccountTransferAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount, bool to);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -905,60 +887,68 @@ namespace WpfClientProject.ServiceReferenceBank {
             return base.Channel.GetAllUsersAsync();
         }
         
-        public WpfClientProject.ServiceReferenceBank.User GetUserByID(int id) {
-            return base.Channel.GetUserByID(id);
+        public WpfClientProject.ServiceReferenceBank.User UserLogin(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.UserLogin(user);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByIDAsync(int id) {
-            return base.Channel.GetUserByIDAsync(id);
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> UserLoginAsync(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.UserLoginAsync(user);
         }
         
-        public WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAccountList() {
-            return base.Channel.GetAllBankAccountList();
+        public WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAccounts() {
+            return base.Channel.GetAllBankAccounts();
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAccountListAsync() {
-            return base.Channel.GetAllBankAccountListAsync();
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAccountsAsync() {
+            return base.Channel.GetAllBankAccountsAsync();
         }
         
-        public int InsertIntoBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
-            return base.Channel.InsertIntoBankAcouunt(bankAccount);
+        public WpfClientProject.ServiceReferenceBank.BankAccount GetBankAccountsByNumber(int number) {
+            return base.Channel.GetBankAccountsByNumber(number);
         }
         
-        public System.Threading.Tasks.Task<int> InsertIntoBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
-            return base.Channel.InsertIntoBankAcouuntAsync(bankAccount);
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAccountsByNumberAsync(int number) {
+            return base.Channel.GetBankAccountsByNumberAsync(number);
         }
         
-        public int UpdateBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
-            return base.Channel.UpdateBankAcouunt(bankAccount);
+        public WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAccountsByUser(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetBankAccountsByUser(user);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
-            return base.Channel.UpdateBankAcouuntAsync(bankAccount);
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAccountsByUserAsync(WpfClientProject.ServiceReferenceBank.User user) {
+            return base.Channel.GetBankAccountsByUserAsync(user);
         }
         
-        public WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAcouuntsByRealId(int realId) {
-            return base.Channel.GetBankAcouuntsByRealId(realId);
+        public WpfClientProject.ServiceReferenceBank.BankAccountList GetBankAccountByCostumer(WpfClientProject.ServiceReferenceBank.Customers customer) {
+            return base.Channel.GetBankAccountByCostumer(customer);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAcouuntsByRealIdAsync(int realId) {
-            return base.Channel.GetBankAcouuntsByRealIdAsync(realId);
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetBankAccountByCostumerAsync(WpfClientProject.ServiceReferenceBank.Customers customer) {
+            return base.Channel.GetBankAccountByCostumerAsync(customer);
         }
         
-        public WpfClientProject.ServiceReferenceBank.AccountActionList GetbankAcouuntthattransfer(int num, int id) {
-            return base.Channel.GetbankAcouuntthattransfer(num, id);
+        public int InsertBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.InsertBankAccount(bankAccount);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetbankAcouuntthattransferAsync(int num, int id) {
-            return base.Channel.GetbankAcouuntthattransferAsync(num, id);
+        public System.Threading.Tasks.Task<int> InsertBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.InsertBankAccountAsync(bankAccount);
         }
         
-        public WpfClientProject.ServiceReferenceBank.BankAccount GetBankAcouuntByNum(int num) {
-            return base.Channel.GetBankAcouuntByNum(num);
+        public int UpdateBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.UpdateBankAccount(bankAccount);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAcouuntByNumAsync(int num) {
-            return base.Channel.GetBankAcouuntByNumAsync(num);
+        public System.Threading.Tasks.Task<int> UpdateBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.UpdateBankAccountAsync(bankAccount);
+        }
+        
+        public int DeleteBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.DeleteBankAccount(bankAccount);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.DeleteBankAccountAsync(bankAccount);
         }
         
         public WpfClientProject.ServiceReferenceBank.Customers GetCustomerByUser(WpfClientProject.ServiceReferenceBank.User user) {
@@ -969,36 +959,28 @@ namespace WpfClientProject.ServiceReferenceBank {
             return base.Channel.GetCustomerByUserAsync(user);
         }
         
-        public int DeleteBankAcouunt(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
-            return base.Channel.DeleteBankAcouunt(bankAccount);
+        public WpfClientProject.ServiceReferenceBank.CustomersList GetAllCustomers() {
+            return base.Channel.GetAllCustomers();
         }
         
-        public System.Threading.Tasks.Task<int> DeleteBankAcouuntAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
-            return base.Channel.DeleteBankAcouuntAsync(bankAccount);
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.CustomersList> GetAllCustomersAsync() {
+            return base.Channel.GetAllCustomersAsync();
         }
         
-        public WpfClientProject.ServiceReferenceBank.User GetUserByRealId(int realId) {
-            return base.Channel.GetUserByRealId(realId);
+        public int InsertCustomers(WpfClientProject.ServiceReferenceBank.Customers customers) {
+            return base.Channel.InsertCustomers(customers);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> GetUserByRealIdAsync(int realId) {
-            return base.Channel.GetUserByRealIdAsync(realId);
+        public System.Threading.Tasks.Task<int> InsertCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers) {
+            return base.Channel.InsertCustomersAsync(customers);
         }
         
-        public int InsertIntoCustomers(WpfClientProject.ServiceReferenceBank.Customers customers) {
-            return base.Channel.InsertIntoCustomers(customers);
+        public int UpdateCustomers(WpfClientProject.ServiceReferenceBank.Customers customers) {
+            return base.Channel.UpdateCustomers(customers);
         }
         
-        public System.Threading.Tasks.Task<int> InsertIntoCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers) {
-            return base.Channel.InsertIntoCustomersAsync(customers);
-        }
-        
-        public int UpgdateCustomers(WpfClientProject.ServiceReferenceBank.Customers customers) {
-            return base.Channel.UpgdateCustomers(customers);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpgdateCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers) {
-            return base.Channel.UpgdateCustomersAsync(customers);
+        public System.Threading.Tasks.Task<int> UpdateCustomersAsync(WpfClientProject.ServiceReferenceBank.Customers customers) {
+            return base.Channel.UpdateCustomersAsync(customers);
         }
         
         public int DeleteCustomers(WpfClientProject.ServiceReferenceBank.Customers customers) {
@@ -1009,20 +991,12 @@ namespace WpfClientProject.ServiceReferenceBank {
             return base.Channel.DeleteCustomersAsync(customers);
         }
         
-        public WpfClientProject.ServiceReferenceBank.CustomersList GetAllCustomers() {
-            return base.Channel.GetAllCustomers();
+        public int InsertAction(WpfClientProject.ServiceReferenceBank.MyAction action) {
+            return base.Channel.InsertAction(action);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.CustomersList> GetAllCustomersAsync() {
-            return base.Channel.GetAllCustomersAsync();
-        }
-        
-        public int InsertIntoAction(WpfClientProject.ServiceReferenceBank.MyAction action) {
-            return base.Channel.InsertIntoAction(action);
-        }
-        
-        public System.Threading.Tasks.Task<int> InsertIntoActionAsync(WpfClientProject.ServiceReferenceBank.MyAction action) {
-            return base.Channel.InsertIntoActionAsync(action);
+        public System.Threading.Tasks.Task<int> InsertActionAsync(WpfClientProject.ServiceReferenceBank.MyAction action) {
+            return base.Channel.InsertActionAsync(action);
         }
         
         public int UpdateAction(WpfClientProject.ServiceReferenceBank.MyAction action) {
@@ -1049,44 +1023,28 @@ namespace WpfClientProject.ServiceReferenceBank {
             return base.Channel.GetAllActionsAsync();
         }
         
-        public WpfClientProject.ServiceReferenceBank.User UserLogin(WpfClientProject.ServiceReferenceBank.User user) {
-            return base.Channel.UserLogin(user);
+        public int InsertAccountAction(WpfClientProject.ServiceReferenceBank.AccountAction account) {
+            return base.Channel.InsertAccountAction(account);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.User> UserLoginAsync(WpfClientProject.ServiceReferenceBank.User user) {
-            return base.Channel.UserLoginAsync(user);
+        public System.Threading.Tasks.Task<int> InsertAccountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account) {
+            return base.Channel.InsertAccountActionAsync(account);
         }
         
-        public WpfClientProject.ServiceReferenceBank.BankAccount GetBankAccount(WpfClientProject.ServiceReferenceBank.User user) {
-            return base.Channel.GetBankAccount(user);
+        public int UpdateAccountAction(WpfClientProject.ServiceReferenceBank.AccountAction account) {
+            return base.Channel.UpdateAccountAction(account);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccount> GetBankAccountAsync(WpfClientProject.ServiceReferenceBank.User user) {
-            return base.Channel.GetBankAccountAsync(user);
+        public System.Threading.Tasks.Task<int> UpdateAccountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account) {
+            return base.Channel.UpdateAccountActionAsync(account);
         }
         
-        public int Insertintoacountaction(WpfClientProject.ServiceReferenceBank.AccountAction account) {
-            return base.Channel.Insertintoacountaction(account);
+        public int DeleteAccountAction(WpfClientProject.ServiceReferenceBank.AccountAction action) {
+            return base.Channel.DeleteAccountAction(action);
         }
         
-        public System.Threading.Tasks.Task<int> InsertintoacountactionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account) {
-            return base.Channel.InsertintoacountactionAsync(account);
-        }
-        
-        public int UpdateIntoAcountAction(WpfClientProject.ServiceReferenceBank.AccountAction account) {
-            return base.Channel.UpdateIntoAcountAction(account);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateIntoAcountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction account) {
-            return base.Channel.UpdateIntoAcountActionAsync(account);
-        }
-        
-        public int DeleteIntoAcountAction(WpfClientProject.ServiceReferenceBank.AccountAction action) {
-            return base.Channel.DeleteIntoAcountAction(action);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteIntoAcountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction action) {
-            return base.Channel.DeleteIntoAcountActionAsync(action);
+        public System.Threading.Tasks.Task<int> DeleteAccountActionAsync(WpfClientProject.ServiceReferenceBank.AccountAction action) {
+            return base.Channel.DeleteAccountActionAsync(action);
         }
         
         public WpfClientProject.ServiceReferenceBank.AccountActionList SelectAllAccountAction() {
@@ -1097,20 +1055,20 @@ namespace WpfClientProject.ServiceReferenceBank {
             return base.Channel.SelectAllAccountActionAsync();
         }
         
-        public WpfClientProject.ServiceReferenceBank.BankAccountList GetAllBankAcouuntsByUser(WpfClientProject.ServiceReferenceBank.User user) {
-            return base.Channel.GetAllBankAcouuntsByUser(user);
+        public WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAccount(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.GetAccountActionByBankAccount(bankAccount);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.BankAccountList> GetAllBankAcouuntsByUserAsync(WpfClientProject.ServiceReferenceBank.User user) {
-            return base.Channel.GetAllBankAcouuntsByUserAsync(user);
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetAccountActionByBankAccountAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount) {
+            return base.Channel.GetAccountActionByBankAccountAsync(bankAccount);
         }
         
-        public WpfClientProject.ServiceReferenceBank.AccountActionList GetAccountActionByBankAcouunt(int id, int num) {
-            return base.Channel.GetAccountActionByBankAcouunt(id, num);
+        public WpfClientProject.ServiceReferenceBank.AccountActionList GetBankAccountTransfer(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount, bool to) {
+            return base.Channel.GetBankAccountTransfer(bankAccount, to);
         }
         
-        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetAccountActionByBankAcouuntAsync(int id, int num) {
-            return base.Channel.GetAccountActionByBankAcouuntAsync(id, num);
+        public System.Threading.Tasks.Task<WpfClientProject.ServiceReferenceBank.AccountActionList> GetBankAccountTransferAsync(WpfClientProject.ServiceReferenceBank.BankAccount bankAccount, bool to) {
+            return base.Channel.GetBankAccountTransferAsync(bankAccount, to);
         }
     }
 }

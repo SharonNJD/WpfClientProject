@@ -27,15 +27,15 @@ namespace WpfClientProject
         {
             InitializeComponent();
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-            bankAccountList = ServiceClient.GetBankAcouuntsByRealId(id);
+           // bankAccountList = ServiceClient.GetBankAccountsByRealId(id);
             Banks.ItemsSource = bankAccountList;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ServiceClient.GetBankAcouuntByNum(int.Parse(tbBankNum.Text)) != null)
+            if (ServiceClient.GetBankAccountsByNumber(int.Parse(tbBankNum.Text)) != null)
             {
-                ServiceClient.DeleteBankAcouunt(ServiceClient.GetBankAcouuntByNum(int.Parse(tbBankNum.Text)));
+                ServiceClient.DeleteBankAccount(ServiceClient.GetBankAccountsByNumber(int.Parse(tbBankNum.Text)));
             }
             
         }

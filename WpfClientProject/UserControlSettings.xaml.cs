@@ -84,12 +84,12 @@ namespace WpfClientProject
         {
              
             
-            BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(User);
+            BankAccountList list = ServiceClient.GetBankAccountsByUser(User);
             if (list != null)
             {
                 for (int i = 0; i < list.Count; i++)
                 {
-                    ServiceClient.DeleteBankAcouunt(list[i]);
+                    ServiceClient.DeleteBankAccount(list[i]);
                 }
             }
             if (ServiceClient.GetCustomerByUser(User) != null)

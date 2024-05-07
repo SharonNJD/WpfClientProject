@@ -34,12 +34,12 @@ namespace WpfClientProject
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(User1);
+            BankAccountList list = ServiceClient.GetBankAccountsByUser(User1);
             if (list != null)
             {
                 for (int i = 0; i < list.Count; i++)
                 {
-                    ServiceClient.DeleteBankAcouunt(list[i]);
+                    ServiceClient.DeleteBankAccount(list[i]);
                 }
             }
             if (ServiceClient.GetCustomerByUser(User1) != null)

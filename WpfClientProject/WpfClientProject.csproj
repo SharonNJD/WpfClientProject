@@ -90,14 +90,20 @@
       <DependentUpon>DropDownAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="ImageConverter.cs" />
-    <Compile Include="NewUserPage.xaml.cs">
-      <DependentUpon>NewUserPage.xaml</DependentUpon>
+    <Compile Include="UserControlCoin.xaml.cs">
+      <DependentUpon>UserControlCoin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Register.xaml.cs">
-      <DependentUpon>Register.xaml</DependentUpon>
+    <Compile Include="UserControlSupport.xaml.cs">
+      <DependentUpon>UserControlSupport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="WindowUser.xaml.cs">
+      <DependentUpon>WindowUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowRegister.xaml.cs">
+      <DependentUpon>WindowRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCurrency.xaml.cs">
+      <DependentUpon>UserControlCurrency.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlBanks.xaml.cs">
       <DependentUpon>UserControlBanks.xaml</DependentUpon>
@@ -105,8 +111,8 @@
     <Compile Include="UserControlSettings.xaml.cs">
       <DependentUpon>UserControlSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="userusercontrol.xaml.cs">
-      <DependentUpon>userusercontrol.xaml</DependentUpon>
+    <Compile Include="UserControlAccount.xaml.cs">
+      <DependentUpon>UserControlAccount.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
     <Page Include="ActionsControl.xaml">
@@ -121,7 +127,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="UserControlCoin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSupport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowStart.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -129,19 +143,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="WindowStart.xaml.cs">
+      <DependentUpon>WindowStart.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NewUserPage.xaml">
+    <Page Include="WindowUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Register.xaml">
+    <Page Include="WindowRegister.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControl1.xaml">
+    <Page Include="UserControlCurrency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,7 +167,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="userusercontrol.xaml">
+    <Page Include="UserControlAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -301,14 +315,6 @@
     <Resource Include="Images\icons8-new-post-48.png" />
     <Resource Include="Images\icons8-notification-50.png" />
     <Resource Include="Images\icons8-user-48.png" />
-    <Resource Include="Images\profile-1.jpg" />
-    <Resource Include="Images\profile-2.png" />
-    <Resource Include="Images\profile-3.jpg" />
-    <Resource Include="Images\profile-4.jpg" />
-    <Resource Include="Images\profile-5.jpg" />
-    <Resource Include="Images\profile-6.jpg" />
-    <Resource Include="Images\profile-7.jpg" />
-    <Resource Include="Images\profile-8.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\dollor.jpg" />

@@ -31,47 +31,53 @@
   <wsdl:message name="IServiceBase_GetAllUsers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetUserByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserByID" />
+  <wsdl:message name="IServiceBase_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetUserByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserByIDResponse" />
+  <wsdl:message name="IServiceBase_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAllBankAccountList_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllBankAccountList" />
+  <wsdl:message name="IServiceBase_GetAllBankAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBankAccounts" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAllBankAccountList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllBankAccountListResponse" />
+  <wsdl:message name="IServiceBase_GetAllBankAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBankAccountsResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_InsertIntoBankAcouunt_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertIntoBankAcouunt" />
+  <wsdl:message name="IServiceBase_GetBankAccountsByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountsByNumber" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_InsertIntoBankAcouunt_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertIntoBankAcouuntResponse" />
+  <wsdl:message name="IServiceBase_GetBankAccountsByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountsByNumberResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_UpdateBankAcouunt_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateBankAcouunt" />
+  <wsdl:message name="IServiceBase_GetBankAccountsByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountsByUser" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_UpdateBankAcouunt_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateBankAcouuntResponse" />
+  <wsdl:message name="IServiceBase_GetBankAccountsByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountsByUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetBankAcouuntsByRealId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBankAcouuntsByRealId" />
+  <wsdl:message name="IServiceBase_GetBankAccountByCostumer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountByCostumer" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetBankAcouuntsByRealId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBankAcouuntsByRealIdResponse" />
+  <wsdl:message name="IServiceBase_GetBankAccountByCostumer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountByCostumerResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetbankAcouuntthattransfer_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetbankAcouuntthattransfer" />
+  <wsdl:message name="IServiceBase_InsertBankAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBankAccount" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetbankAcouuntthattransfer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetbankAcouuntthattransferResponse" />
+  <wsdl:message name="IServiceBase_InsertBankAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBankAccountResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetBankAcouuntByNum_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBankAcouuntByNum" />
+  <wsdl:message name="IServiceBase_UpdateBankAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankAccount" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetBankAcouuntByNum_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBankAcouuntByNumResponse" />
+  <wsdl:message name="IServiceBase_UpdateBankAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBase_DeleteBankAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBankAccount" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBase_DeleteBankAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBankAccountResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceBase_GetCustomerByUser_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomerByUser" />
@@ -79,29 +85,23 @@
   <wsdl:message name="IServiceBase_GetCustomerByUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomerByUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_DeleteBankAcouunt_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteBankAcouunt" />
+  <wsdl:message name="IServiceBase_GetAllCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomers" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_DeleteBankAcouunt_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteBankAcouuntResponse" />
+  <wsdl:message name="IServiceBase_GetAllCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetUserByRealId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserByRealId" />
+  <wsdl:message name="IServiceBase_InsertCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomers" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetUserByRealId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserByRealIdResponse" />
+  <wsdl:message name="IServiceBase_InsertCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomersResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_InsertIntoCustomers_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertIntoCustomers" />
+  <wsdl:message name="IServiceBase_UpdateCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomers" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_InsertIntoCustomers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertIntoCustomersResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_UpgdateCustomers_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpgdateCustomers" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_UpgdateCustomers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpgdateCustomersResponse" />
+  <wsdl:message name="IServiceBase_UpdateCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomersResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceBase_DeleteCustomers_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCustomers" />
@@ -109,17 +109,11 @@
   <wsdl:message name="IServiceBase_DeleteCustomers_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCustomersResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAllCustomers_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCustomers" />
+  <wsdl:message name="IServiceBase_InsertAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAction" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAllCustomers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCustomersResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_InsertIntoAction_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertIntoAction" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_InsertIntoAction_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertIntoActionResponse" />
+  <wsdl:message name="IServiceBase_InsertAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertActionResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceBase_UpdateAction_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateAction" />
@@ -139,35 +133,23 @@
   <wsdl:message name="IServiceBase_GetAllActions_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllActionsResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_UserLogin_InputMessage">
-    <wsdl:part name="parameters" element="tns:UserLogin" />
+  <wsdl:message name="IServiceBase_InsertAccountAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAccountAction" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_UserLogin_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  <wsdl:message name="IServiceBase_InsertAccountAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAccountActionResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetBankAccount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBankAccount" />
+  <wsdl:message name="IServiceBase_UpdateAccountAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccountAction" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetBankAccount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBankAccountResponse" />
+  <wsdl:message name="IServiceBase_UpdateAccountAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccountActionResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_Insertintoacountaction_InputMessage">
-    <wsdl:part name="parameters" element="tns:Insertintoacountaction" />
+  <wsdl:message name="IServiceBase_DeleteAccountAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccountAction" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_Insertintoacountaction_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertintoacountactionResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_UpdateIntoAcountAction_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateIntoAcountAction" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_UpdateIntoAcountAction_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateIntoAcountActionResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_DeleteIntoAcountAction_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteIntoAcountAction" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBase_DeleteIntoAcountAction_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteIntoAcountActionResponse" />
+  <wsdl:message name="IServiceBase_DeleteAccountAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccountActionResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceBase_SelectAllAccountAction_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllAccountAction" />
@@ -175,17 +157,17 @@
   <wsdl:message name="IServiceBase_SelectAllAccountAction_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllAccountActionResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAllBankAcouuntsByUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllBankAcouuntsByUser" />
+  <wsdl:message name="IServiceBase_GetAccountActionByBankAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountActionByBankAccount" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAllBankAcouuntsByUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllBankAcouuntsByUserResponse" />
+  <wsdl:message name="IServiceBase_GetAccountActionByBankAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountActionByBankAccountResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAccountActionByBankAcouunt_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAccountActionByBankAcouunt" />
+  <wsdl:message name="IServiceBase_GetBankAccountTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountTransfer" />
   </wsdl:message>
-  <wsdl:message name="IServiceBase_GetAccountActionByBankAcouunt_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAccountActionByBankAcouuntResponse" />
+  <wsdl:message name="IServiceBase_GetBankAccountTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountTransferResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceBase">
     <wsdl:operation name="InsertUser">
@@ -204,65 +186,61 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAllUsers" message="tns:IServiceBase_GetAllUsers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAllUsersResponse" message="tns:IServiceBase_GetAllUsers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetUserByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetUserByID" message="tns:IServiceBase_GetUserByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetUserByIDResponse" message="tns:IServiceBase_GetUserByID_OutputMessage" />
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UserLogin" message="tns:IServiceBase_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UserLoginResponse" message="tns:IServiceBase_UserLogin_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllBankAccountList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAllBankAccountList" message="tns:IServiceBase_GetAllBankAccountList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAllBankAccountListResponse" message="tns:IServiceBase_GetAllBankAccountList_OutputMessage" />
+    <wsdl:operation name="GetAllBankAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAllBankAccounts" message="tns:IServiceBase_GetAllBankAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAllBankAccountsResponse" message="tns:IServiceBase_GetAllBankAccounts_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="InsertIntoBankAcouunt">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertIntoBankAcouunt" message="tns:IServiceBase_InsertIntoBankAcouunt_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertIntoBankAcouuntResponse" message="tns:IServiceBase_InsertIntoBankAcouunt_OutputMessage" />
+    <wsdl:operation name="GetBankAccountsByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountsByNumber" message="tns:IServiceBase_GetBankAccountsByNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountsByNumberResponse" message="tns:IServiceBase_GetBankAccountsByNumber_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateBankAcouunt">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpdateBankAcouunt" message="tns:IServiceBase_UpdateBankAcouunt_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UpdateBankAcouuntResponse" message="tns:IServiceBase_UpdateBankAcouunt_OutputMessage" />
+    <wsdl:operation name="GetBankAccountsByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountsByUser" message="tns:IServiceBase_GetBankAccountsByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountsByUserResponse" message="tns:IServiceBase_GetBankAccountsByUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetBankAcouuntsByRealId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId" message="tns:IServiceBase_GetBankAcouuntsByRealId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealIdResponse" message="tns:IServiceBase_GetBankAcouuntsByRealId_OutputMessage" />
+    <wsdl:operation name="GetBankAccountByCostumer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountByCostumer" message="tns:IServiceBase_GetBankAccountByCostumer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountByCostumerResponse" message="tns:IServiceBase_GetBankAccountByCostumer_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetbankAcouuntthattransfer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer" message="tns:IServiceBase_GetbankAcouuntthattransfer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetbankAcouuntthattransferResponse" message="tns:IServiceBase_GetbankAcouuntthattransfer_OutputMessage" />
+    <wsdl:operation name="InsertBankAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertBankAccount" message="tns:IServiceBase_InsertBankAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertBankAccountResponse" message="tns:IServiceBase_InsertBankAccount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetBankAcouuntByNum">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAcouuntByNum" message="tns:IServiceBase_GetBankAcouuntByNum_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAcouuntByNumResponse" message="tns:IServiceBase_GetBankAcouuntByNum_OutputMessage" />
+    <wsdl:operation name="UpdateBankAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpdateBankAccount" message="tns:IServiceBase_UpdateBankAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UpdateBankAccountResponse" message="tns:IServiceBase_UpdateBankAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBankAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/DeleteBankAccount" message="tns:IServiceBase_DeleteBankAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/DeleteBankAccountResponse" message="tns:IServiceBase_DeleteBankAccount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomerByUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetCustomerByUser" message="tns:IServiceBase_GetCustomerByUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetCustomerByUserResponse" message="tns:IServiceBase_GetCustomerByUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteBankAcouunt">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/DeleteBankAcouunt" message="tns:IServiceBase_DeleteBankAcouunt_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/DeleteBankAcouuntResponse" message="tns:IServiceBase_DeleteBankAcouunt_OutputMessage" />
+    <wsdl:operation name="GetAllCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAllCustomers" message="tns:IServiceBase_GetAllCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAllCustomersResponse" message="tns:IServiceBase_GetAllCustomers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetUserByRealId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetUserByRealId" message="tns:IServiceBase_GetUserByRealId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetUserByRealIdResponse" message="tns:IServiceBase_GetUserByRealId_OutputMessage" />
+    <wsdl:operation name="InsertCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertCustomers" message="tns:IServiceBase_InsertCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertCustomersResponse" message="tns:IServiceBase_InsertCustomers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="InsertIntoCustomers">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertIntoCustomers" message="tns:IServiceBase_InsertIntoCustomers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertIntoCustomersResponse" message="tns:IServiceBase_InsertIntoCustomers_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpgdateCustomers">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpgdateCustomers" message="tns:IServiceBase_UpgdateCustomers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UpgdateCustomersResponse" message="tns:IServiceBase_UpgdateCustomers_OutputMessage" />
+    <wsdl:operation name="UpdateCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpdateCustomers" message="tns:IServiceBase_UpdateCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UpdateCustomersResponse" message="tns:IServiceBase_UpdateCustomers_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteCustomers">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/DeleteCustomers" message="tns:IServiceBase_DeleteCustomers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/DeleteCustomersResponse" message="tns:IServiceBase_DeleteCustomers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllCustomers">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAllCustomers" message="tns:IServiceBase_GetAllCustomers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAllCustomersResponse" message="tns:IServiceBase_GetAllCustomers_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertIntoAction">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertIntoAction" message="tns:IServiceBase_InsertIntoAction_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertIntoActionResponse" message="tns:IServiceBase_InsertIntoAction_OutputMessage" />
+    <wsdl:operation name="InsertAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertAction" message="tns:IServiceBase_InsertAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertActionResponse" message="tns:IServiceBase_InsertAction_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateAction">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpdateAction" message="tns:IServiceBase_UpdateAction_InputMessage" />
@@ -276,37 +254,29 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAllActions" message="tns:IServiceBase_GetAllActions_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAllActionsResponse" message="tns:IServiceBase_GetAllActions_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UserLogin">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UserLogin" message="tns:IServiceBase_UserLogin_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UserLoginResponse" message="tns:IServiceBase_UserLogin_OutputMessage" />
+    <wsdl:operation name="InsertAccountAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/InsertAccountAction" message="tns:IServiceBase_InsertAccountAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertAccountActionResponse" message="tns:IServiceBase_InsertAccountAction_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetBankAccount">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccount" message="tns:IServiceBase_GetBankAccount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountResponse" message="tns:IServiceBase_GetBankAccount_OutputMessage" />
+    <wsdl:operation name="UpdateAccountAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpdateAccountAction" message="tns:IServiceBase_UpdateAccountAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UpdateAccountActionResponse" message="tns:IServiceBase_UpdateAccountAction_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Insertintoacountaction">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/Insertintoacountaction" message="tns:IServiceBase_Insertintoacountaction_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/InsertintoacountactionResponse" message="tns:IServiceBase_Insertintoacountaction_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateIntoAcountAction">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/UpdateIntoAcountAction" message="tns:IServiceBase_UpdateIntoAcountAction_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/UpdateIntoAcountActionResponse" message="tns:IServiceBase_UpdateIntoAcountAction_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteIntoAcountAction">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/DeleteIntoAcountAction" message="tns:IServiceBase_DeleteIntoAcountAction_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/DeleteIntoAcountActionResponse" message="tns:IServiceBase_DeleteIntoAcountAction_OutputMessage" />
+    <wsdl:operation name="DeleteAccountAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/DeleteAccountAction" message="tns:IServiceBase_DeleteAccountAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/DeleteAccountActionResponse" message="tns:IServiceBase_DeleteAccountAction_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SelectAllAccountAction">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/SelectAllAccountAction" message="tns:IServiceBase_SelectAllAccountAction_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/SelectAllAccountActionResponse" message="tns:IServiceBase_SelectAllAccountAction_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllBankAcouuntsByUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUser" message="tns:IServiceBase_GetAllBankAcouuntsByUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUserResponse" message="tns:IServiceBase_GetAllBankAcouuntsByUser_OutputMessage" />
+    <wsdl:operation name="GetAccountActionByBankAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAccount" message="tns:IServiceBase_GetAccountActionByBankAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAccountResponse" message="tns:IServiceBase_GetAccountActionByBankAccount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAccountActionByBankAcouunt">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouunt" message="tns:IServiceBase_GetAccountActionByBankAcouunt_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouuntResponse" message="tns:IServiceBase_GetAccountActionByBankAcouunt_OutputMessage" />
+    <wsdl:operation name="GetBankAccountTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountTransfer" message="tns:IServiceBase_GetBankAccountTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBase/GetBankAccountTransferResponse" message="tns:IServiceBase_GetBankAccountTransfer_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceBase" type="tns:IServiceBase">
@@ -347,8 +317,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetUserByID">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetUserByID" style="document" />
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/UserLogin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -356,8 +326,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllBankAccountList">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetAllBankAccountList" style="document" />
+    <wsdl:operation name="GetAllBankAccounts">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetAllBankAccounts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -365,8 +335,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertIntoBankAcouunt">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/InsertIntoBankAcouunt" style="document" />
+    <wsdl:operation name="GetBankAccountsByNumber">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAccountsByNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -374,8 +344,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateBankAcouunt">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/UpdateBankAcouunt" style="document" />
+    <wsdl:operation name="GetBankAccountsByUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAccountsByUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -383,8 +353,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBankAcouuntsByRealId">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAcouuntsByRealId" style="document" />
+    <wsdl:operation name="GetBankAccountByCostumer">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAccountByCostumer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -392,8 +362,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetbankAcouuntthattransfer">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetbankAcouuntthattransfer" style="document" />
+    <wsdl:operation name="InsertBankAccount">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/InsertBankAccount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -401,8 +371,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBankAcouuntByNum">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAcouuntByNum" style="document" />
+    <wsdl:operation name="UpdateBankAccount">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/UpdateBankAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBankAccount">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/DeleteBankAccount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -419,8 +398,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteBankAcouunt">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/DeleteBankAcouunt" style="document" />
+    <wsdl:operation name="GetAllCustomers">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetAllCustomers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -428,8 +407,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetUserByRealId">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetUserByRealId" style="document" />
+    <wsdl:operation name="InsertCustomers">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/InsertCustomers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -437,17 +416,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertIntoCustomers">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/InsertIntoCustomers" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpgdateCustomers">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/UpgdateCustomers" style="document" />
+    <wsdl:operation name="UpdateCustomers">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/UpdateCustomers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -464,17 +434,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllCustomers">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetAllCustomers" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertIntoAction">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/InsertIntoAction" style="document" />
+    <wsdl:operation name="InsertAction">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/InsertAction" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -509,8 +470,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UserLogin">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/UserLogin" style="document" />
+    <wsdl:operation name="InsertAccountAction">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/InsertAccountAction" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -518,8 +479,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBankAccount">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAccount" style="document" />
+    <wsdl:operation name="UpdateAccountAction">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/UpdateAccountAction" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -527,26 +488,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Insertintoacountaction">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/Insertintoacountaction" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateIntoAcountAction">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/UpdateIntoAcountAction" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteIntoAcountAction">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/DeleteIntoAcountAction" style="document" />
+    <wsdl:operation name="DeleteAccountAction">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/DeleteAccountAction" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -563,8 +506,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllBankAcouuntsByUser">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetAllBankAcouuntsByUser" style="document" />
+    <wsdl:operation name="GetAccountActionByBankAccount">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAccount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -572,8 +515,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAccountActionByBankAcouunt">
-      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetAccountActionByBankAcouunt" style="document" />
+    <wsdl:operation name="GetBankAccountTransfer">
+      <soap:operation soapAction="http://tempuri.org/IServiceBase/GetBankAccountTransfer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

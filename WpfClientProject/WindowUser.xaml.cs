@@ -23,16 +23,19 @@ namespace WpfClientProject
     /// <summary>
     /// Interaction logic for NewUserPage.xaml
     /// </summary>
-    public partial class NewUserPage : Window
+    public partial class WindowUser : Window
     {
-        User user;
-     
-        
-        public NewUserPage(User us)
-        {
-            
+       private User user;
+        private Customers customer;
+        private BankAccountList BankList;
+       private ServiceBaseClient ServiceClient;
+        public WindowUser(User us)
+        {            
             InitializeComponent();
             user = us;
+            ServiceClient =new ServiceBaseClient();
+            BankList = ServiceClient.GetBankAccountsByUser(user);
+            customer= ServiceClient.GetCustomerByUser(user);
             DataContext = us;
             AdminPage.Visibility = Visibility.Collapsed;
             if (user.IsWorker)
@@ -49,14 +52,12 @@ namespace WpfClientProject
             this.Close();
         }
 
-        private void Trade_Load(object sender, RoutedEventArgs e)
+        private void Trade_Selected(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
-            GridMain.Children.Add(new UserControl1(user));
+            GridMain.Children.Add(new UserControlCurrency(user));
             GridMain.Visibility = Visibility.Visible;
-            this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-            
-
+            this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));  
         }
 
         private void ButtonCloseApp_Click_1(object sender, RoutedEventArgs e)
@@ -64,10 +65,10 @@ namespace WpfClientProject
             this.Close();
         }
 
-        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        private void Account_Selected(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
-            userusercontrol u = new userusercontrol(user);
+            UserControlAccount u = new UserControlAccount(user,BankList, customer);
             GridMain.Children.Add(u);
             u.Height = 600;
             u.Width = 1080;
@@ -75,7 +76,7 @@ namespace WpfClientProject
             this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
 
-        private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
+        private void Actions_Selected(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
             GridMain.Children.Add(new ActionsControl(user));
@@ -83,7 +84,7 @@ namespace WpfClientProject
             this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
 
-        private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
+        private void Setting_Selected(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
             GridMain.Children.Add(new UserControlSettings(user));
@@ -91,12 +92,20 @@ namespace WpfClientProject
             this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
 
-        private void ListViewItem_Selected_3(object sender, RoutedEventArgs e)
+        private void Admin_Selected(object sender, RoutedEventArgs e)
         {
             GridMain.Children.Clear();
             GridMain.Children.Add(new AdminControl(user));
             GridMain.Visibility = Visibility.Visible;
             this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
+        private void Support_Selected(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new UserControlSupport());
+            GridMain.Visibility = Visibility.Visible;
+            this.ButtonClose.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+        
     }
 }

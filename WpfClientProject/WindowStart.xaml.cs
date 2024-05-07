@@ -19,13 +19,13 @@ namespace WpfClientProject
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WindowStart : Window
     {
         bool passOk;
        
         ServiceReferenceBank.ServiceBaseClient ServiceClient;
         User user;
-        public MainWindow()
+        public WindowStart()
         {
             InitializeComponent();
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
@@ -38,12 +38,9 @@ namespace WpfClientProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Register newWindow = new Register();
+            WindowRegister newWindow = new WindowRegister();
             newWindow.Show();
-            this.Close();
-            
-
-
+            this.Close();  
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
@@ -54,7 +51,7 @@ namespace WpfClientProject
             User loggeduser = ServiceClient.UserLogin(user);
             if (loggeduser != null)
             {
-                NewUserPage reg = new NewUserPage(loggeduser);
+                WindowUser reg = new WindowUser(loggeduser);
                 this.Close();
                 reg.Show();
             }
@@ -89,7 +86,7 @@ namespace WpfClientProject
             User loggeduser = ServiceClient.UserLogin(user);
             if (loggeduser != null)
             {
-                NewUserPage reg = new NewUserPage(loggeduser);
+                WindowUser reg = new WindowUser(loggeduser);
                 this.Close();
                 reg.Show();
             }

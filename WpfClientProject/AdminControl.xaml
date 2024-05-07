@@ -23,7 +23,7 @@
         </Rectangle>
 
         <StackPanel x:Name="AdminUserClick" Grid.Column="1">
-           
+            <TextBlock x:Name="tbId" />
         </StackPanel>
         <ListView x:Name="Userslv" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Top" Margin="0,0,199,0" SelectionChanged="Users_SelectionChanged">
             <ListView.ItemContainerStyle>
@@ -81,30 +81,9 @@
    
 FontSize="15"/>
         </StackPanel>
-        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="385,400,0,0" VerticalAlignment="Top" Width="169" RadiusY="5" RadiusX="5"/>
-        <TextBlock Margin="385,411,496,143" FontSize="18" RenderTransformOrigin="0.452,4.233"><Run Text="Delete all"/><LineBreak/><Run/></TextBlock>
-        <StackPanel  Margin="385,474,456,51">
-
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Content="Real ID: "/>
-                <TextBox x:Name="tbId" Width="100" Background="AliceBlue" />
-
-            </StackPanel>
-            <Button Content="Send" Margin="15 0" Padding="5"  Width="77" Click="Button_Click_1" />
-
-        </StackPanel>
-        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="569,400,0,0" VerticalAlignment="Top" Width="169" RadiusY="5" RadiusX="5"/>
-        <TextBlock Margin="579,411,342,143" FontSize="18" RenderTransformOrigin="0.452,4.233"><Run Text="Show bank acouunts"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <StackPanel  Margin="559,475,282,50">
-
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Content="Real ID: "/>
-                <TextBox x:Name="tbId1" Width="100" Background="AliceBlue" />
-
-            </StackPanel>
-            <Button Content="Send" Margin="15 0" Padding="5"  Width="77" Click="Button_Click_2" />
-
-        </StackPanel>
+        
+       
+       
 
     </Grid>
 

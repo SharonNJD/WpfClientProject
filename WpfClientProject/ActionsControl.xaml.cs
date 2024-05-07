@@ -40,7 +40,7 @@ namespace WpfClientProject
         }
         public void refreshCMB()
         {
-            BankList = ServiceClient.GetAllBankAcouuntsByUser(user1);
+            BankList = ServiceClient.GetBankAccountsByUser(user1);
             BankNumFrom.ItemsSource = BankList;
             BankNumFrom.DisplayMemberPath = "bankAcuuntNum";
             
@@ -65,8 +65,8 @@ namespace WpfClientProject
             {
 
 
-                BankAccount account = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
-                BankAccountList bankAccounts = ServiceClient.GetAllBankAccountList();
+                BankAccount account = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
+                BankAccountList bankAccounts = ServiceClient.GetAllBankAccounts();
 
 
                 for (int i = 0; i < bankAccounts.Count; i++)
@@ -84,26 +84,25 @@ namespace WpfClientProject
                 MyAction source = (MyAction)cmbSource2.SelectedItem;
                 AccountAction action = new AccountAction();
                 action.Action = source;
-                action.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNumFrom.Text));
+                action.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
 
-                action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(cmbTarget2.Text));
+                action.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
                 action.Amount = int.Parse(tbAmount2.Text);
                 action.TimaStamp = DateTime.Now;
 
                 AccountAction ToBank = new AccountAction();
                 ToBank.Action = source;
-                ToBank.BankAccount = ServiceClient.GetBankAcouuntByNum(int.Parse(BankNumFrom.Text));
+                ToBank.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
 
-                ToBank.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(5);
+                ToBank.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(5);
                 ToBank.Amount = int.Parse(tbAmount2.Text) / 100;
                 ToBank.TimaStamp = DateTime.Now;
-                networth = NetWorthcucltour(int.Parse(BankNumFrom.Text));
-                
+               // networth = NetWorthcucltour(int.Parse(BankNumFrom.Text));                
 
                 if (networth > double.Parse(tbAmount2.Text))
                 {
-                    ServiceClient.Insertintoacountaction(ToBank);
-                    ServiceClient.Insertintoacountaction(action);
+                    ServiceClient.InsertAccountAction(ToBank);
+                    ServiceClient.InsertAccountAction(action);
                     MessageBox.Show("Money transferd");
                     
                 }
@@ -133,40 +132,8 @@ namespace WpfClientProject
             ActionList actionList = ServiceClient.GetAllActions();
             cmbSource2.ItemsSource = actionList;
             cmbSource2.DisplayMemberPath = "actionName";
-
-
-
         }
-        private double NetWorthcucltour(int num)
-        {
-            double newworth = 0;
-            
-            
-                if (ServiceClient.GetBankAcouuntByNum(num) != null)
-                {
-                    
-                    int id = num;
-                    AccountActionList accountActionsto = new AccountActionList();
-                    accountActionsto = ServiceClient.GetAccountActionByBankAcouunt(id, 1);
-                    AccountActionList accountActionsto2 = new AccountActionList();
-                    accountActionsto2 = ServiceClient.GetbankAcouuntthattransfer(id, 1);
-                    foreach (AccountAction accountAction in accountActionsto)
-                    {
-                        newworth += accountAction.Amount;
-                    }
-                    foreach (AccountAction accountAction in accountActionsto2)
-                    {
-                        newworth -= accountAction.Amount;
-                    }
-                   
-
-
-                }
-
-            
-            return newworth;
-        }
-
+       
         private void No_Click(object sender, RoutedEventArgs e)
         {
             Yes.Visibility = Visibility.Collapsed;

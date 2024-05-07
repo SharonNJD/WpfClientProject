@@ -72,26 +72,7 @@
    
     FontSize="15"/>
         </StackPanel>
-        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="605,250,0,0" VerticalAlignment="Top" Width="408" RadiusY="5" RadiusX="5"/>
-        <TextBlock Text="Create saving acounnt" Margin="610,253,271,317" FontSize="18"></TextBlock>
-        <StackPanel Grid.Column="0" Margin="605,283,67,44" RenderTransformOrigin="1.585,0.458">
-            <StackPanel Orientation="Horizontal"  Margin="5">
-                <Label Content="Money in: "/>
-                <ComboBox x:Name="cmbSource3">
-                    <ComboBox x:Name="cmbSource_Copy3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                </ComboBox>
-                <Label Content="Acsess to " Width="81"/>
-                <ComboBox x:Name="cmbTarget3"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Content="name: "/>
-                <TextBox x:Name="tbAmount3" />
-                <Button Content="Send" Margin="15 0" Padding="5" />
-            </StackPanel>
-            <TextBlock x:Name="tbResult3" Margin="15"
-
-   
-FontSize="15"/>
-        </StackPanel>
+        
+        
     </Grid>
 </UserControl>
