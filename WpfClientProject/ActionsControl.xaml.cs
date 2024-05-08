@@ -58,30 +58,12 @@ namespace WpfClientProject
         }
         public void Transfer()
         {
-            bool isThebankForm = false;
-            bool isTheBankTo = false;
             
-            if (Regex.IsMatch(cmbTarget2.Text, @"^[0-9]+$"))
-            {
-
-
-                BankAccount account = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
-                BankAccountList bankAccounts = ServiceClient.GetAllBankAccounts();
-
-
-                for (int i = 0; i < bankAccounts.Count; i++)
-                {
-
-                    if (bankAccounts[i].bankAcuuntNum == int.Parse(cmbTarget2.Text))
-                    {
-                        isTheBankTo = true;
-                    }
-                }
-            }
-            else { MessageBox.Show("Wrong Input From It must be only numbers"); }
-            if (isThebankForm && isTheBankTo)
-            {
+             BankAccount bank = BankNumFrom.SelectedItem as BankAccount; ;
+            
+            
                 MyAction source = (MyAction)cmbSource2.SelectedItem;
+            
                 AccountAction action = new AccountAction();
                 action.Action = source;
                 action.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
@@ -97,9 +79,12 @@ namespace WpfClientProject
                 ToBank.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(5);
                 ToBank.Amount = int.Parse(tbAmount2.Text) / 100;
                 ToBank.TimaStamp = DateTime.Now;
+                AccountAction Form = new AccountAction();
+                Form.Action = source;
+
                // networth = NetWorthcucltour(int.Parse(BankNumFrom.Text));                
 
-                if (networth > double.Parse(tbAmount2.Text))
+                if (bank.balance > double.Parse(tbAmount2.Text))
                 {
                     ServiceClient.InsertAccountAction(ToBank);
                     ServiceClient.InsertAccountAction(action);
@@ -110,19 +95,7 @@ namespace WpfClientProject
                 {
                     MessageBox.Show("Not enough money " + networth + " this is your net worth");
                 }
-            }
-            else
-            {
-                if (!isThebankForm)
-                {
-                    MessageBox.Show("this is not your bank acouunt");
-                }
-                if (!isTheBankTo)
-                {
-                    MessageBox.Show("This bank acouunt dosent exist");
-                }
-                
-            }
+        
                 
         }
 
@@ -144,6 +117,21 @@ namespace WpfClientProject
         private void Yes_Click(object sender, RoutedEventArgs e)
         {
             Transfer();
+        }
+
+        private void cmbSource2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MyAction action = (MyAction)cmbSource2.SelectedItem;
+            if (action.actionName == "TransferTo")
+            {
+                To.Visibility = Visibility.Visible;
+                cmbTarget2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                To.Visibility = Visibility.Hidden;
+                cmbTarget2.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

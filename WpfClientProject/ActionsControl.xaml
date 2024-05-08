@@ -32,7 +32,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
-    
+
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Rectangle.Fill>
@@ -43,20 +43,21 @@
             </Rectangle.Fill>
         </Rectangle>
 
-       
-        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="227" Margin="108,250,0,0" VerticalAlignment="Top" Width="473" RadiusY="5" RadiusX="5"/>
-        <TextBlock Text="Send money or request " Margin="108,253,773,317" FontSize="18"></TextBlock>
-        <StackPanel Grid.Column="0" Margin="108,283,499,44">
+
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="227" Margin="307,253,0,0" VerticalAlignment="Top" Width="473" RadiusY="5" RadiusX="5"/>
+        <TextBlock Text="Actions " Margin="307,253,574,317" FontSize="18"></TextBlock>
+        <StackPanel Grid.Column="0" Margin="304,283,304,44">
             <StackPanel Orientation="Horizontal"  Margin="5" Width="442">
                 <Label Content="Action: "/>
-                <ComboBox x:Name="cmbSource2">
+                <ComboBox x:Name="cmbSource2" SelectionChanged="cmbSource2_SelectionChanged" >
                     
                 </ComboBox>
-                <Label Content="To " Width="55"/>
-                <TextBox x:Name="cmbTarget2" Width="57"/>
+
+
                 <Label Content="From " Width="55"/>
-                
-                <ComboBox Background="White" x:Name="BankNumFrom"></ComboBox>
+                <ComboBox Background="White" x:Name="BankNumFrom"/>
+                <Label x:Name="To"          Content="To " Width="55" Visibility="Hidden"/>
+                <TextBox x:Name="cmbTarget2" Width="48" Visibility="Hidden"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="amount: "/>
@@ -65,14 +66,14 @@
             </StackPanel>
             <TextBlock x:Name="Howmuch" Height="36"  Background="White" FontSize="20" />
             <Button x:Name="Yes" Visibility="Collapsed" Content="Yes" Margin="15 0" Padding="5" Click="Yes_Click" />
-            
+
             <Button x:Name="No" Visibility="Collapsed" Content="No" Margin="15 0" Padding="5" Click="No_Click" />
             <TextBlock x:Name="tbResult2" Margin="15"
     
    
     FontSize="15"/>
         </StackPanel>
-        
-        
+
+
     </Grid>
 </UserControl>
