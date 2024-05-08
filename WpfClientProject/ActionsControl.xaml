@@ -34,6 +34,7 @@
     </UserControl.Resources>
 
     <Grid>
+        
         <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
@@ -43,11 +44,11 @@
             </Rectangle.Fill>
         </Rectangle>
 
-
+        <TextBlock Text="Actions" FontSize="100" Margin="369,0,37,379"></TextBlock>
         <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="227" Margin="307,253,0,0" VerticalAlignment="Top" Width="473" RadiusY="5" RadiusX="5"/>
         <TextBlock Text="Actions " Margin="307,253,574,317" FontSize="18"></TextBlock>
         <StackPanel Grid.Column="0" Margin="304,283,304,44">
-            <StackPanel Orientation="Horizontal"  Margin="5" Width="442">
+            <StackPanel Orientation="Horizontal"  Margin="5" Width="461">
                 <Label Content="Action: "/>
                 <ComboBox x:Name="cmbSource2" SelectionChanged="cmbSource2_SelectionChanged" >
                     
@@ -60,7 +61,7 @@
                 <TextBox x:Name="cmbTarget2" Width="48" Visibility="Hidden"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Content="amount: "/>
+                <Label Content="Amount:"/>
                 <TextBox x:Name="tbAmount2" />
                 <Button Content="Send" Margin="15 0" Padding="5" Click="Button_Click" RenderTransformOrigin="4.155,0.547" />
             </StackPanel>

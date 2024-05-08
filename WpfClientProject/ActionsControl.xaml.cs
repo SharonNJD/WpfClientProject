@@ -63,46 +63,65 @@ namespace WpfClientProject
             
             
                 MyAction source = (MyAction)cmbSource2.SelectedItem;
-            
+            if (source.actionName == "TransferFrom") {
                 AccountAction action = new AccountAction();
                 action.Action = source;
                 action.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
+                action.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
 
-                action.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
                 action.Amount = int.Parse(tbAmount2.Text);
                 action.TimaStamp = DateTime.Now;
+                ActionList actionList = ServiceClient.GetAllActions();
+
 
                 AccountAction ToBank = new AccountAction();
-                ToBank.Action = source;
-                ToBank.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
+                ToBank.Action = actionList[4]; ;
+                ToBank.BankAccount = ServiceClient.GetBankAccountsByNumber(5);
 
                 ToBank.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(5);
-                ToBank.Amount = int.Parse(tbAmount2.Text) / 100;
+                int num = int.Parse(tbAmount2.Text);
+                double num2 = num / 100;
+                ToBank.Amount = ((double.Parse(tbAmount2.Text) * 1.0) / 100)*1.0;
                 ToBank.TimaStamp = DateTime.Now;
-                AccountAction Form = new AccountAction();
-                Form.Action = source;
 
-               // networth = NetWorthcucltour(int.Parse(BankNumFrom.Text));                
+                AccountAction Toperson = new AccountAction();
+                Toperson.Action = actionList[4];
+                Toperson.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
+
+                Toperson.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
+                Toperson.Amount = double.Parse(tbAmount2.Text) - (double.Parse(tbAmount2.Text) / 100);
+                Toperson.TimaStamp = DateTime.Now;
+
+                // networth = NetWorthcucltour(int.Parse(BankNumFrom.Text));                
 
                 if (bank.balance > double.Parse(tbAmount2.Text))
                 {
-                    ServiceClient.InsertAccountAction(ToBank);
+                    ServiceClient.InsertAccountAction(Toperson);
                     ServiceClient.InsertAccountAction(action);
+                    ServiceClient.InsertAccountAction(ToBank);
                     MessageBox.Show("Money transferd");
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Not enough money " + networth + " this is your net worth");
                 }
-        
-                
+
+
+
+
+            }
+
+
         }
 
         public void GetAllActions()
         {
             cmbSource2.Items.Clear();
             ActionList actionList = ServiceClient.GetAllActions();
+            actionList.RemoveAt(4);
+            actionList.RemoveAt(0);
+            actionList.RemoveAt(1);
             cmbSource2.ItemsSource = actionList;
             cmbSource2.DisplayMemberPath = "actionName";
         }
@@ -122,7 +141,7 @@ namespace WpfClientProject
         private void cmbSource2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MyAction action = (MyAction)cmbSource2.SelectedItem;
-            if (action.actionName == "TransferTo")
+            if (action.actionName == "TransferFrom")
             {
                 To.Visibility = Visibility.Visible;
                 cmbTarget2.Visibility = Visibility.Visible;
