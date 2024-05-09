@@ -51,7 +51,7 @@ namespace WpfClientProject
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            UserControlBanks win = new UserControlBanks(int.Parse(User1.realid));
+            UserControlBanks win = new UserControlBanks(User1);
             win.Show();
         }
     }

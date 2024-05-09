@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfClientProject"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="170" Background="White">
+             d:DesignHeight="100" d:DesignWidth="200" Background="Cyan">
     <Grid>
         <Menu>
-            <MenuItem x:Name="UserName"  Width="170">
-                <MenuItem Header="Delete" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="BankAcouunts" Click="MenuItem_Click_1">
+            <MenuItem x:Name="UserName"  Width="200">
+                <MenuItem Header="Delete" Click="MenuItem_Click" Background="AliceBlue"></MenuItem>
+                <MenuItem Header="BankAcouunts" Click="MenuItem_Click_1" Background="AliceBlue">
                     
                 </MenuItem>
             </MenuItem>

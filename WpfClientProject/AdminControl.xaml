@@ -10,10 +10,10 @@
     <Grid x:Name="BackGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="170" Name="Actions"/>
+            <ColumnDefinition Width="200" Name="Actions"/>
         </Grid.ColumnDefinitions>
-        
-            <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
+
+        <Rectangle HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1080" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
                     <GradientStop Color="LightCyan" Offset="1"/>
@@ -21,17 +21,22 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-
-        <StackPanel x:Name="AdminUserClick" Grid.Column="1">
+        <TextBlock Text="Sort By IsWorker" FontSize="30" Margin="0,469,69,-469"/>
+        <ComboBox x:Name="cbIsWorker"   SelectionChanged="cbIsWorker_SelectionChanged" Background="White" Margin="6,515,666,0" VerticalAlignment="Top">
+            <ComboBox.Resources>
+                <SolidColorBrush x:Key="Back" Color="White"/>
+            </ComboBox.Resources>
+        </ComboBox>
+        <StackPanel x:Name="AdminUserClick" Grid.ColumnSpan="2" Margin="886,0,0,0">
             <TextBlock x:Name="tbId" />
         </StackPanel>
-        <ListView x:Name="Userslv" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="354" VerticalAlignment="Top" Margin="0,0,199,0" SelectionChanged="Users_SelectionChanged">
+        <ListView x:Name="Userslv" Grid.Column="0" BorderBrush="Black" Background="Black"  Height="436" VerticalAlignment="Top" SelectionChanged="Users_SelectionChanged" HorizontalAlignment="Left" Width="834">
             <ListView.ItemContainerStyle>
                 <Style>
                     <Setter Property="Block.BorderBrush" Value="Black">
-                        
+
                     </Setter>
-                    
+
                     <Setter Property="Block.BorderThickness" Value="3"></Setter>
                 </Style>
             </ListView.ItemContainerStyle>
@@ -39,51 +44,28 @@
                 <GridView >
 
                     <GridViewColumn Header="User" Width="Auto" DisplayMemberBinding="{Binding realid}" />
-                    <GridViewColumn Header="firstName" Width="90" DisplayMemberBinding="{Binding FirstName}"/>
-                    <GridViewColumn Header="lastName" Width="90" DisplayMemberBinding="{Binding LastName}"/>
-                    <GridViewColumn Header="email" Width="90" DisplayMemberBinding="{Binding Email}"/>
-                    <GridViewColumn Header="phoneNum" Width="90" DisplayMemberBinding="{Binding Phonenum}"/>
-                    <GridViewColumn Header="IsWorker" Width="90" DisplayMemberBinding="{Binding IsWorker}"/>
-                    <GridViewColumn Header="WorkerRank" Width="90" DisplayMemberBinding="{Binding WorkerRank}"/>
-                    <GridViewColumn Header="birthday" Width="90" DisplayMemberBinding="{Binding Birthday}"/>
+                    <GridViewColumn Header="firstName" Width="Auto" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="lastName" Width="Auto" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="email" Width="Auto" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="phoneNum" Width="Auto" DisplayMemberBinding="{Binding Phonenum}"/>
+                    <GridViewColumn Header="IsWorker" Width="Auto" DisplayMemberBinding="{Binding IsWorker}"/>
+
+                    <GridViewColumn Header="birthday" Width="Auto" DisplayMemberBinding="{Binding Birthday}"/>
 
 
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel Margin="764,406,226,153"  >
-            
-            <TextBlock Text="Sort By IsWorker"/>
-            <ComboBox x:Name="cbIsWorker"   SelectionChanged="cbIsWorker_SelectionChanged" Background="White">
-                <ComboBox.Resources>
-                    <SolidColorBrush x:Key="Back" Color="White"/>
-                </ComboBox.Resources>
-            </ComboBox>
-            
+
+
+
         </StackPanel>
 
-        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="150" Margin="40,400,0,0" VerticalAlignment="Top" Width="326" RadiusY="5" RadiusX="5"/>
-        <TextBlock Text="Send money " Margin="40,400,841,170" FontSize="18" RenderTransformOrigin="0.452,4.233"></TextBlock>
-        <StackPanel  Margin="48,448,632,44">
-            <StackPanel Orientation="Horizontal"  Margin="5">
-                <Label Content="Action: "/>
-                <ComboBox x:Name="cmbSource2" Width="76" Background="AliceBlue"/>
-                <Label Content="To/from " Width="64"/>
-                <TextBox x:Name="cmbTarget2" Background="AliceBlue" Width="93"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Content="amount: "/>
-                <TextBox x:Name="tbAmount2" Width="100" Background="AliceBlue" />
-                <Button Content="Send" Margin="15 0" Padding="5" Click="Button_Click" Width="77" />
-            </StackPanel>
-            <TextBlock x:Name="tbResult2" Margin="15"
 
-   
-FontSize="15"/>
-        </StackPanel>
-        
-       
-       
+
+
+
 
     </Grid>
 

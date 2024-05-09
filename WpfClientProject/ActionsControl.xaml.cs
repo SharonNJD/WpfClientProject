@@ -50,7 +50,7 @@ namespace WpfClientProject
 
             Howmuch.Visibility = Visibility.Visible;
             double Amount = double.Parse(tbAmount2.Text);
-            Amount = Amount + Amount / 100;
+            Amount = Amount + 1;
             Howmuch.Text = "You will have to pay" + Amount.ToString();
             Yes.Visibility = Visibility.Visible;
             No.Visibility = Visibility.Visible;
@@ -60,59 +60,40 @@ namespace WpfClientProject
         {
             
              BankAccount bank = BankNumFrom.SelectedItem as BankAccount; ;
-            
-            
                 MyAction source = (MyAction)cmbSource2.SelectedItem;
             if (source.actionName == "TransferFrom") {
                 AccountAction action = new AccountAction();
                 action.Action = source;
                 action.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
                 action.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(BankNumFrom.Text));
-
-                action.Amount = int.Parse(tbAmount2.Text);
+                double Amount = double.Parse(tbAmount2.Text);
+                action.Amount = Amount;
                 action.TimaStamp = DateTime.Now;
                 ActionList actionList = ServiceClient.GetAllActions();
-
-
                 AccountAction ToBank = new AccountAction();
                 ToBank.Action = actionList[4]; ;
                 ToBank.BankAccount = ServiceClient.GetBankAccountsByNumber(5);
-
                 ToBank.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(5);
-                int num = int.Parse(tbAmount2.Text);
-                double num2 = num / 100;
-                ToBank.Amount = ((double.Parse(tbAmount2.Text) * 1.0) / 100)*1.0;
+                ToBank.Amount = 1;
                 ToBank.TimaStamp = DateTime.Now;
-
                 AccountAction Toperson = new AccountAction();
                 Toperson.Action = actionList[4];
                 Toperson.BankAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
-
                 Toperson.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
-                Toperson.Amount = double.Parse(tbAmount2.Text) - (double.Parse(tbAmount2.Text) / 100);
-                Toperson.TimaStamp = DateTime.Now;
-
-                // networth = NetWorthcucltour(int.Parse(BankNumFrom.Text));                
-
+                Toperson.Amount = double.Parse(tbAmount2.Text);
+                Toperson.TimaStamp = DateTime.Now;             
                 if (bank.balance > double.Parse(tbAmount2.Text))
                 {
                     ServiceClient.InsertAccountAction(Toperson);
                     ServiceClient.InsertAccountAction(action);
                     ServiceClient.InsertAccountAction(ToBank);
                     MessageBox.Show("Money transferd");
-
                 }
                 else
                 {
                     MessageBox.Show("Not enough money " + networth + " this is your net worth");
                 }
-
-
-
-
             }
-
-
         }
 
         public void GetAllActions()

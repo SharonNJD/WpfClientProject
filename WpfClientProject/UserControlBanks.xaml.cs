@@ -23,14 +23,23 @@ namespace WpfClientProject
     {
         ServiceReferenceBank.ServiceBaseClient ServiceClient;
         BankAccountList bankAccountList;
-        public UserControlBanks(int id)
+        public UserControlBanks(User user)
         {
             InitializeComponent();
             ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-           // bankAccountList = ServiceClient.GetBankAccountsByRealId(id);
+            bankAccountList = ServiceClient.GetBankAccountsByUser(user);
             Banks.ItemsSource = bankAccountList;
+            
+            RefreshCMB();
         }
+        public void RefreshCMB()
+        {
 
+            tbBankNum.ItemsSource = bankAccountList;
+            tbBankNum.DisplayMemberPath = "bankAcuuntNum";
+            tbBankNum.SelectedIndex = 0;
+            
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (ServiceClient.GetBankAccountsByNumber(int.Parse(tbBankNum.Text)) != null)

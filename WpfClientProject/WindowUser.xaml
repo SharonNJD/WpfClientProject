@@ -58,7 +58,11 @@
     </Window.Triggers>
     <Grid x:Name="grid" Margin="0"
           Background="#55313131">
-        <Grid x:Name="GridBackground" />
+        <Grid x:Name="GridBackground" >
+            <Image
+                Source="/Images/_5032411d-2c60-4b05-b4a6-57f1c6e3505e-removebg-preview.png"
+                Stretch="Fill" Margin="0,0,10,10" />
+        </Grid>
         <Grid x:Name="GridMain"
               Visibility="Collapsed" />
         <Button x:Name="ButtonOpen"

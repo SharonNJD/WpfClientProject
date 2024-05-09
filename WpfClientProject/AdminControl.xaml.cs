@@ -48,7 +48,7 @@ namespace WpfClientProject
             User user = Userslv.SelectedItem as User;
             DropDownAdmin dropDown = new DropDownAdmin(user);
             
-            dropDown.Width = 170;
+            dropDown.Width = 200;
             dropDown.Height = 100;
             AdminUserClick.Children.Add(dropDown);            
 
@@ -56,34 +56,12 @@ namespace WpfClientProject
         public void GetAllActions()
         {
 
-            cmbSource2.Items.Clear();
-            ActionList actionList = ServiceClient.GetAllActions();
-            cmbSource2.ItemsSource = actionList;
-            cmbSource2.DisplayMemberPath = "actionName";
+      
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            MyAction source = (MyAction)cmbSource2.SelectedItem;
-            AccountAction action = new AccountAction();
-            action.Action = source;
-            action.BankAccount = ServiceClient.GetBankAccountsByUser(user1)[0];
-
-            action.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(cmbTarget2.Text));
-            action.Amount = int.Parse(tbAmount2.Text);
-            action.TimaStamp = DateTime.Now;
-            networth = 1000;
-            if (networth > double.Parse(tbAmount2.Text))
-            {
-
-                ServiceClient.InsertAccountAction(action);
-                //NetWorthcucltour();
-            }
-            else
-            {
-                MessageBox.Show("Not enough money " + networth + " this is your net worth");
-            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -109,8 +87,7 @@ namespace WpfClientProject
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-          UserControlBanks win = new UserControlBanks(int.Parse(tbId.Text));
-            win.Show();
+          
         }
 
         private void cbIsWorker_SelectionChanged(object sender, SelectionChangedEventArgs e)
