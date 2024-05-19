@@ -233,6 +233,9 @@
                             <Button Content="🗑️"
                                     ToolTip="Delete user"
                                     Click="DeleteUser_Click" />
+                            <Button Content="🏦"
+        ToolTip="Delete user"
+        Click="BankAcount_Click" />
                         </StackPanel>
                     </materialDesign:PopupBox>
                 </StackPanel>

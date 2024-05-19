@@ -71,6 +71,16 @@ namespace WpfClientProject
             window.Height = 850;
             window.ShowDialog();
         }
+        private void BankAcount_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new Window();
+            window.Content = new WorkerBankControl(viewUser);
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            window.WindowStyle = WindowStyle.ToolWindow;
+            window.Width = 1250;
+            window.Height = 850;
+            window.ShowDialog();
+        }
 
         private void DeleteAccount_Click(object sender, RoutedEventArgs e)
         {

@@ -37,11 +37,11 @@ namespace WpfClientProject
             BankList = ServiceClient.GetBankAccountsByUser(user);
             customer = ServiceClient.GetCustomerByUser(user);
             DataContext = us;
-            sepWorker.Visibility=tbWorker.Visibility =BankPage.Visibility = Visibility.Collapsed;
+          
             UserPage.Visibility = ActionPage.Visibility = tbAdmin.Visibility =sepAdmin.Visibility= Visibility.Collapsed;
             if (user.IsWorker)
             {
-                sepWorker.Visibility = tbWorker.Visibility = BankPage.Visibility = Visibility.Visible;
+                
                 if (user.IsWorker)
                     UserPage.Visibility = ActionPage.Visibility = tbAdmin.Visibility = sepAdmin.Visibility = Visibility.Visible;
             }

@@ -98,18 +98,7 @@
                             <GridViewColumn Header="Bank Acoount"
                                             Width="Auto"
                                             DisplayMemberBinding="{Binding bankAcuuntNum}" />
-                            <GridViewColumn Header="Name"
-                                            Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock>
-                                        <Run Text="{Binding Customers.FirstName}"
-                                             FontSize="30" />
-                                        <Run Text="{Binding Customers.LastName}"
-                                             FontSize="30" /></TextBlock>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
+
                             <GridViewColumn Header="Loan?"
                                             Width="Auto"
                                             DisplayMemberBinding="{Binding canloan,Converter={StaticResource BoolConverter}}" />
@@ -122,39 +111,20 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
+
+
                 <Rectangle Fill="Gray"
                            HorizontalAlignment="Left"
-                           Height="150"
-                           Margin="23,504,0,0"
+                           Height="168"
+                           Margin="30,486,0,0"
                            VerticalAlignment="Top"
-                           Width="169"
+                           Width="193"
                            RadiusY="5"
                            RadiusX="5" />
-                <StackPanel  Margin="23,555,818,-30">
-                    <StackPanel Orientation="Horizontal"
-                                Margin="5">
-                        <Label Content="Real ID: " />
-                        <TextBox x:Name="tbId"
-                                 Width="100"
-                                 Background="AliceBlue" />
-                    </StackPanel>
-                    <Button Content="Send"
-                            Margin="15 0"
-                            Padding="5"
-                            Width="77" />
-                </StackPanel>
-                <Rectangle Fill="Gray"
-                           HorizontalAlignment="Left"
-                           Height="150"
-                           Margin="237,504,0,0"
-                           VerticalAlignment="Top"
-                           Width="169"
-                           RadiusY="5"
-                           RadiusX="5" />
-                <TextBlock Margin="237,504,644,50"
+                <TextBlock Margin="30,486,851,68"
                            FontSize="18"
                            RenderTransformOrigin="0.452,4.233"><Run Text="Delete bank" /><LineBreak /><Run /></TextBlock>
-                <StackPanel  Margin="237,557,604,-32">
+                <StackPanel  Margin="30,525,851,0">
                     <StackPanel Orientation="Horizontal"
                                 Margin="5">
                         <Label Content="BankNum: " />

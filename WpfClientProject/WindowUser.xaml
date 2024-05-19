@@ -182,29 +182,7 @@
                     <Separator Foreground="White"
                                Margin="10 0"
                                Background="#FF0F233E" x:Name="sepWorker" />
-                    <TextBlock Text="Worker options"
-                               x:Name="tbWorker"
-                               TextAlignment="Center"
-                               Width="200"
-                               FontSize="20"
-                               Margin="10 0"
-                               Foreground="Black" />
-                    <ListViewItem x:Name="BankPage"
-                                  Height="45"
-                                  Padding="0"
-                                  Selected="BankPage_Selected">
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="10 0">
-                            <materialDesign:PackIcon Kind="Bank"
-                                                     Width="20"
-                                                     Height="20"
-                                                     Foreground="LightSteelBlue"
-                                                     Margin="5"
-                                                     VerticalAlignment="Center" />
-                            <TextBlock Text="Bank Page"
-                                       Margin="10" />
-                        </StackPanel>
-                    </ListViewItem>
+                    
                     <Separator Foreground="White"
                                Margin="10 0"
                                Background="#FF0F233E" x:Name="sepAdmin" />
