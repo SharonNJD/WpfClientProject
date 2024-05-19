@@ -227,9 +227,6 @@
                             <Button Content="⚙️"
                                     ToolTip="Settings"
                                     Click="UserSettings_Click" />
-                            <Button Content="🧾❌"
-                                    ToolTip="Delete Accout"
-                                    Click="DeleteAccount_Click" />
                             <Button Content="🗑️"
                                     ToolTip="Delete user"
                                     Click="DeleteUser_Click" />

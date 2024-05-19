@@ -91,6 +91,21 @@ namespace WpfClientProject
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
 
+            User user = viewUser;
+            BankAccountList list = ServiceClient.GetBankAccountsByUser(viewUser);
+            if (list != null)
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    ServiceClient.DeleteBankAccount(list[i]);
+                }
+            }
+            if (ServiceClient.GetCustomerByUser(user) != null)
+            {
+                ServiceClient.DeleteCustomers(ServiceClient.GetCustomerByUser(user));
+            }
+            ServiceClient.DeleteUser(user);
+
         }
         private void cmbAccounts_Selected(object sender, RoutedEventArgs e)
         {
