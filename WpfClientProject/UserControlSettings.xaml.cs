@@ -52,7 +52,9 @@ namespace WpfClientProject
         }
         private void Updatebtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!Validation.GetHasError(tbxId) && !Validation.GetHasError(tbxFirstName) && !Validation.GetHasError(tbxLastName) && (passOk) && !Validation.GetHasError(tbxEmail1) && !Validation.GetHasError(tbxPhoneNum1))
+            if (!Validation.GetHasError(tbxId) && !Validation.GetHasError(tbxFirstName) &&
+                !Validation.GetHasError(tbxLastName) && (passOk) &&
+                !Validation.GetHasError(tbxEmail1) && !Validation.GetHasError(tbxPhoneNum1))
             {
                 ServiceClient = new ServiceBaseClient();
                 User.Password = pbPass.Password;
