@@ -39,6 +39,9 @@ namespace WpfClientProject.ServiceReferenceCurrency {
         private double RateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SymbolField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int UnitField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -86,6 +89,19 @@ namespace WpfClientProject.ServiceReferenceCurrency {
                 if ((this.RateField.Equals(value) != true)) {
                     this.RateField = value;
                     this.RaisePropertyChanged("Rate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Symbol {
+            get {
+                return this.SymbolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SymbolField, value) != true)) {
+                    this.SymbolField = value;
+                    this.RaisePropertyChanged("Symbol");
                 }
             }
         }

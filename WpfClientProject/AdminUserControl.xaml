@@ -1,0 +1,242 @@
+﻿<UserControl x:Class="WpfClientProject.AdminUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfClientProject"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             Height="800"
+             Width="1400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="RadioButton">
+                <Setter Property="BorderBrush"
+                        Value="White" />
+                <Setter Property="VerticalContentAlignment"
+                        Value="Center" />
+                <Setter Property="HorizontalContentAlignment"
+                        Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border BorderBrush="Black"
+            BorderThickness="5"
+            CornerRadius="2">
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.982,0.5"
+                                     StartPoint="0.023,0.5">
+                    <GradientStop Color="LightCyan"
+                                  Offset="1" />
+                    <GradientStop Color="DarkCyan" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Admin Managment"
+                       FontSize="35"
+                       Grid.Row="0"
+                       Foreground="White"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center" />
+            <Rectangle Fill="Gray"
+                       Grid.Row="1" />
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        Margin="20 0">
+                <materialDesign:PackIcon Kind="Search"
+                                         VerticalAlignment="Center"
+                                         Width="30"
+                                         Height="30"
+                                         Margin="15 0"
+                                         Foreground="White" />
+                <TextBox x:Name="tbSearch"
+                         Foreground="White"
+                         FontSize="25"
+                         TextChanged="tbSearch_TextChanged"
+                         materialDesign:HintAssist.Hint="Search by Name or Id"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         MinWidth="250"
+                         HorizontalAlignment="Left" />
+                <TextBlock Text=" Type : "
+                           FontSize="30"
+                           VerticalAlignment="Center"
+                           Foreground='White' />
+                <RadioButton Content=" All"
+                             Name="rbAll"
+                             IsChecked="True"
+                             Checked="Type_Click"
+                             Unchecked="Type_Click"
+                             GroupName="Type"
+                             Margin="25 0"
+                             VerticalAlignment="Center"
+                             FontSize="25"
+                             Foreground="White" />
+                <RadioButton Content=" Workers"
+                             Name="rbWorker"
+                             Checked="Type_Click"
+                             Unchecked="Type_Click"
+                             GroupName="Type"
+                             Margin="25 0"
+                             VerticalAlignment="Center"
+                             FontSize="25"
+                             Foreground="White" />
+                <RadioButton Content=" Customers"
+                             Name="rbCustomer"
+                             Checked="Type_Click"
+                             Unchecked="Type_Click"
+                             GroupName="Type"
+                             VerticalAlignment="Center"
+                             FontSize="25"
+                             Foreground="White" />
+            </StackPanel>
+            <Grid Grid.Row="2"
+                  x:Name="viewGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="350" />
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="Userslv"
+                          Grid.Row="2"
+                          Margin="15 0"
+                          FontSize="25"
+                          Foreground="Black"
+                          VerticalAlignment="Top"
+                          SelectionChanged="Users_SelectionChanged">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Block.BorderBrush"
+                                    Value="Black" />
+                            <Setter Property="Block.BorderThickness"
+                                    Value="3" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="Aquamarine" />
+                                </Trigger>
+                                <Trigger Property="IsSelected"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="DarkCyan" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID"
+                                            Width="200"
+                                            DisplayMemberBinding="{Binding realid}" />
+                            <GridViewColumn Header="Name"
+                                            Width="250">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                        <Run Text="{Binding FirstName}" />
+                                        <Run Text="{Binding LastName}" /></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="email"
+                                            Width="350"
+                                            DisplayMemberBinding="{Binding Email}" />
+                            <GridViewColumn Header="Phone"
+                                            Width="200"
+                                            DisplayMemberBinding="{Binding Phonenum}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel Grid.Column="1"
+                            x:Name="spSide"
+                            Background="Gray"
+                            materialDesign:ElevationAssist.Elevation="Dp12">
+                    <TextBlock x:Name="tbTitle"
+                               Text="title"
+                               Margin="0 20 0 0"
+                               TextAlignment="Center"
+                               FontSize="30"
+                               Foreground="White" />
+                    <TextBlock x:Name="tbType"
+                               Text="type"
+                               TextAlignment="Center"
+                               FontSize="20"
+                               Foreground="White" />
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Margin="10 15">
+                        <TextBlock Text="Total Net worth: "
+                                   Foreground="White"
+                                   FontSize="20" />
+                        <TextBlock x:Name="tbTotalNet"
+                                   Text=""
+                                   Foreground="White"
+                                   FontSize="20" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                Margin="10">
+                        <TextBlock Text="Accounts: "
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White" />
+                        <ComboBox x:Name="cmbAccounts"
+                                  Width="180"
+                                  FontSize="20"
+                                  DisplayMemberPath="bankAcuuntNum"
+                                  Foreground="White"
+                                  BorderBrush="White"
+                                  SelectionChanged="cmbAccounts_Selected">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper"
+                                                 Color="Black" />
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                Margin="10">
+                        <TextBlock Text="Account Net worth: "
+                                   Foreground="White"
+                                   FontSize="20" />
+                        <TextBlock x:Name="tbAccountNet"
+                                   Text=""
+                                   Foreground="White"
+                                   FontSize="20" />
+                    </StackPanel>
+                    <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"
+                                             PlacementMode="BottomAndAlignCentres"
+                                             ToolTipService.Placement="Right"
+                                             HorizontalAlignment="Center"
+                                             Margin="20"
+                                             Background="Aquamarine"
+                                             Foreground="Black">
+                        <StackPanel>
+                            <Button Content="👁️"
+                                    ToolTip="View account"
+                                    Click="ViewAccount_Click" />
+                            <Button Content="⚙️"
+                                    ToolTip="Settings"
+                                    Click="UserSettings_Click" />
+                            <Button Content="🧾❌"
+                                    ToolTip="Delete Accout"
+                                    Click="DeleteAccount_Click" />
+                            <Button Content="🗑️"
+                                    ToolTip="Delete user"
+                                    Click="DeleteUser_Click" />
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

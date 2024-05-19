@@ -59,7 +59,6 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:User">
         <xs:sequence>
-          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
           <xs:element minOccurs="0" name="dateOfJoining" type="xs:dateTime" />
           <xs:element minOccurs="0" name="isNative" type="xs:boolean" />
         </xs:sequence>
@@ -67,12 +66,33 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Customers" nillable="true" type="tns:Customers" />
-  <xs:complexType name="AccountActionList">
+  <xs:complexType name="CustomersList">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountAction" nillable="true" type="tns:AccountAction" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customers" nillable="true" type="tns:Customers" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AccountActionList" nillable="true" type="tns:AccountActionList" />
+  <xs:element name="CustomersList" nillable="true" type="tns:CustomersList" />
+  <xs:complexType name="MyAction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actionName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="adding" type="xs:boolean" />
+          <xs:element minOccurs="0" name="coinForeign" type="xs:boolean" />
+          <xs:element minOccurs="0" name="coinSymbol" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="commissionTaken" type="xs:double" />
+          <xs:element minOccurs="0" name="minRank" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MyAction" nillable="true" type="tns:MyAction" />
+  <xs:complexType name="ActionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MyAction" nillable="true" type="tns:MyAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionList" nillable="true" type="tns:ActionList" />
   <xs:complexType name="AccountAction">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseEntity">
@@ -87,31 +107,10 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="AccountAction" nillable="true" type="tns:AccountAction" />
-  <xs:complexType name="MyAction">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:BaseEntity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Adding" type="xs:boolean" />
-          <xs:element minOccurs="0" name="CoinForeign" type="xs:boolean" />
-          <xs:element minOccurs="0" name="actionName" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="coinSymbol" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="commissionTaken" type="xs:double" />
-          <xs:element minOccurs="0" name="minRank" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="MyAction" nillable="true" type="tns:MyAction" />
-  <xs:complexType name="CustomersList">
+  <xs:complexType name="AccountActionList">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customers" nillable="true" type="tns:Customers" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountAction" nillable="true" type="tns:AccountAction" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CustomersList" nillable="true" type="tns:CustomersList" />
-  <xs:complexType name="ActionList">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="MyAction" nillable="true" type="tns:MyAction" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ActionList" nillable="true" type="tns:ActionList" />
+  <xs:element name="AccountActionList" nillable="true" type="tns:AccountActionList" />
 </xs:schema>

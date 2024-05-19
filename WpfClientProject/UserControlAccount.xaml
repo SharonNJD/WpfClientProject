@@ -1,0 +1,218 @@
+﻿<UserControl x:Class="WpfClientProject.UserControlAccount"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfClientProject"
+             mc:Ignorable="d"
+             Height="800"
+             Width="1200">
+    <UserControl.Resources>
+        <Style TargetType="Rectangle">
+            <Setter Property="Fill"
+                    Value="Gray" />
+            <Setter Property="RadiusX"
+                    Value="5" />
+            <Setter Property="RadiusY"
+                    Value="5" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="20"
+                                      ShadowDepth="3"
+                                      Direction="-90"
+                                      Color="Gray" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="FontSize"
+                    Value="30" />
+        </Style>
+        <Style TargetType="Button"
+               BasedOn="{StaticResource MaterialDesignPaperButton}">
+            <Setter Property="Margin"
+                    Value="5" />
+            <Setter Property="Background"
+                    Value="CadetBlue" />
+            <Setter Property="RenderTransformOrigin"
+                    Value="0.5,0.5" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="4"
+                                      Direction="-90"
+                                      ShadowDepth="0.5"
+                                      Color="White" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Border BorderBrush="Black"
+            BorderThickness="5"
+            CornerRadius="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.982,0.5"
+                                     StartPoint="0.023,0.5">
+                    <GradientStop Color="LightCyan"
+                                  Offset="1" />
+                    <GradientStop Color="DarkCyan" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid Grid.Row="0">
+                <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z"
+                      Fill="#FF4777F5"
+                      HorizontalAlignment="Left"
+                      Height="51"
+                      Margin="128,20,0,0"
+                      Stretch="Fill"
+                      VerticalAlignment="Top"
+                      Width="47" />
+                <Image HorizontalAlignment="Left"
+                       Height="40"
+                       Margin="132,26,0,0"
+                       VerticalAlignment="Top"
+                       Width="40"
+                       Source="\Images\_5032411d-2c60-4b05-b4a6-57f1c6e3505e-removebg-preview.png" />
+                <StackPanel Background="#7F050546"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Height="62"
+                            Margin="411,33,0,0"
+                            Width="300">
+                    <TextBlock x:Name="UserName"
+                               Height="62"
+                               Margin="6"
+                               Padding="5 0 0 0"
+                               HorizontalAlignment="Left"
+                               Foreground="White" />
+                </StackPanel>
+                <Ellipse Fill="#FF00FB89"
+                         HorizontalAlignment="Left"
+                         Height="10"
+                         Margin="1052,40,0,0"
+                         VerticalAlignment="Top"
+                         Width="10"
+                         RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <TextBlock HorizontalAlignment="Left"
+                           Text="Accounts review"
+                           VerticalAlignment="Top"
+                           Margin="100 70 0 0" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition />
+                    <RowDefinition Height="20" />
+                    <RowDefinition />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Row="1"
+                           Grid.Column="1" />
+                <Rectangle Grid.Row="3"
+                           Grid.Column="1" />
+                <Rectangle Grid.Row="1"
+                           Grid.Column="3" />
+                <Rectangle Grid.Row="3"
+                           Grid.Column="3" />
+                <StackPanel Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10">
+                    <TextBlock Text="Bank Number" />
+                    <ComboBox x:Name="cmbBankAccounts"
+                              SelectionChanged="cmbBankAccounts_SelectionChanged"
+                              FontSize="35"
+                              Margin="0 25"
+                              Foreground="White"
+                              Width="200">
+                        <ComboBox.Resources>
+                            <SolidColorBrush x:Key="MaterialDesignPaper"
+                                             Color="Black" />
+                        </ComboBox.Resources>
+                        <ComboBox.BorderBrush>
+                            <SolidColorBrush Color="White" />
+                        </ComboBox.BorderBrush>
+                    </ComboBox>
+                </StackPanel>
+                <WrapPanel Grid.Row="1"
+                           Grid.Column="3"
+                           Margin="10"
+                           x:Name="buttonsPanel">
+                    <Button x:Name="CreateCostomer"
+                            Content="Create Customer"
+                            Click="Createcostomer_Click" />
+                    <Button x:Name="CreateBank"
+                            Content="Create Bank account"
+                            Click="Createbank_Click" />
+                    <Button x:Name="RquestLoan"
+                            Content="Rquest a Loan"
+                            Click="RquestLoan_Click" />
+                    <Button x:Name="AdultAcouunt"
+                            Content="Change to adult account"
+                            Click="AdultAcouunt_Click" />
+                    <Button x:Name="ViewActions"
+                            Content="View account actions"
+                            Click="ViewActions_Click" />
+                    <Button x:Name="SecretCode"
+                            Content="View Secret Code"
+                            Click="Show_Click" />
+                </WrapPanel>
+                <Grid Grid.Row="3"
+                      Grid.Column="1"
+                      Margin="10">
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Net Worth"
+                               VerticalAlignment="Top" />
+                    <TextBlock x:Name="tbNetWorth"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontWeight="DemiBold" />
+                    <Path Data="M139,276 L189.73054,224 415.26946,224 464,276 z"
+                          Stretch="Fill"
+                          Margin="0,139,0,-5">
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1"
+                                                 StartPoint="0.5,0">
+                                <GradientStop Color="#00000000"
+                                              Offset="1" />
+                                <GradientStop Color="#33FFFFFF" />
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Grid>
+                <StackPanel Grid.Row="3"
+                            Grid.Column="3"
+                            Margin="10">
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Money manegment"
+                               Margin="0 0 0 20"
+                               VerticalAlignment="Top" />
+                    <TextBlock x:Name="tbLastAction"
+                               FontSize="20" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

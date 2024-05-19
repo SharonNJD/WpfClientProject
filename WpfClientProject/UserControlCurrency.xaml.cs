@@ -21,28 +21,24 @@ namespace WpfClientProject
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class UserControlCurrency : UserControl
     {
-        User user1;
-        ServiceReferenceBank.ServiceBaseClient ServiceClient;
-        public UserControl1(User user)
-        {
-            
+        private CurrencyServiceClient currencyService = new CurrencyServiceClient();
+        private CurrencyList currencyList;
+        private User user;
+        private ServiceBaseClient ServiceClient;
+
+        public UserControlCurrency(User user)
+        {            
             InitializeComponent();
             currencyList = currencyService.GetAllCurrencies();
             lvCurrencies.ItemsSource = currencyList;
-            user1 = user;
+            this.user = user;
 
-            ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
-           BankAccountList moshe = ServiceClient.GetAllBankAccountList();
+            ServiceClient = new ServiceBaseClient();
             GetAllActions();
-            addListToComboBox();
-        }
-        private CurrencyServiceClient currencyService = new CurrencyServiceClient();
-        private CurrencyList currencyList;
-
-
-        
+            AddListToComboBox();
+        }        
 
         private void tbAmount_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -51,24 +47,15 @@ namespace WpfClientProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-         
-
             Currency s = cmbSource.SelectedItem as Currency;
             Currency t = cmbTarget.SelectedItem as Currency;
             double amount = double.Parse(tbAmount.Text);
             double result = currencyService.Convert(s, t, amount);
             tbResult.Text = $"{amount} {s.Key} is {result} is {t.Key}";
-
-
-
-
-
-            
         }
        
 
-        public void addListToComboBox()
+        public void AddListToComboBox()
         {
             cmbSource.Items.Clear();
             cmbTarget.Items.Clear();
@@ -88,9 +75,7 @@ namespace WpfClientProject
         private void ForgienCoinCuc()
         {
             double newworth = 0;
-
-
-            if (ServiceClient.GetBankAccount(user1) != null)
+            if (ServiceClient.GetBankAccountsByUser(user)[0] != null)
             {
 
                 
@@ -106,12 +91,7 @@ namespace WpfClientProject
                 //{
                 //    newworth -= accountAction.Amount;
                 //}
-
-
-
             }
-
-
         }
         public void GetAllActions()
         {
@@ -119,9 +99,6 @@ namespace WpfClientProject
             ActionList actionList = ServiceClient.GetAllActions();
             cmbSource2.ItemsSource = actionList ;
             cmbSource2.DisplayMemberPath = "actionName";
-
-
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -130,14 +107,13 @@ namespace WpfClientProject
             MyAction source = (MyAction)cmbSource2.SelectedItem;
             AccountAction action = new AccountAction();
             action.Action = source;
-            action.BankAccount = ServiceClient.GetBankAccount(user1);
+            action.BankAccount = ServiceClient.GetBankAccountsByUser(user)[0];
             
-            action.ToBankAcouunt = ServiceClient.GetBankAcouuntByNum(int.Parse(ToBank.Text));
+            action.ToBankAcouunt = ServiceClient.GetBankAccountsByNumber(int.Parse(ToBank.Text));
             action.Amount = int.Parse(tbAmount2.Text);
             action.TimaStamp = DateTime.Now;
             
-            ServiceClient.Insertintoacountaction(action);
-
+            ServiceClient.InsertAccountAction(action);
         }
     }
 }

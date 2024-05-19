@@ -28,15 +28,7 @@ namespace WpfClientProject
         {
             InitializeComponent();
             User = user;
-            tbxId.Text = User.realid;
-            pbPass.Password = User.Password;
-            tbxFirstName.Text = User.FirstName;
-            tbxLastName.Text = User.LastName;
-            tbxEmail1.Text = User.Email;
-            tbxPhoneNum1.Text = User.Phonenum;
-
-
-
+            this.DataContext = User;
         }
         private void Passwor_Changed(object sender, RoutedEventArgs e)
         {
@@ -58,10 +50,7 @@ namespace WpfClientProject
                 passOk = true;
             }
         }
-
-
-
-        private void Updatebtn1_Click_1(object sender, RoutedEventArgs e)
+        private void Updatebtn_Click(object sender, RoutedEventArgs e)
         {
             if (!Validation.GetHasError(tbxId) && !Validation.GetHasError(tbxFirstName) && !Validation.GetHasError(tbxLastName) && (passOk) && !Validation.GetHasError(tbxEmail1) && !Validation.GetHasError(tbxPhoneNum1))
             {
@@ -73,6 +62,7 @@ namespace WpfClientProject
                 User.Email = tbxEmail1.Text;
                 User.Phonenum = tbxPhoneNum1.Text;
                 ServiceClient.UpdateUser(User);
+                MessageBox.Show("Saved!");
             }
             else
             {
@@ -84,12 +74,12 @@ namespace WpfClientProject
         {
              
             
-            BankAccountList list = ServiceClient.GetAllBankAcouuntsByUser(User);
+            BankAccountList list = ServiceClient.GetBankAccountsByUser(User);
             if (list != null)
             {
                 for (int i = 0; i < list.Count; i++)
                 {
-                    ServiceClient.DeleteBankAcouunt(list[i]);
+                    ServiceClient.DeleteBankAccount(list[i]);
                 }
             }
             if (ServiceClient.GetCustomerByUser(User) != null)

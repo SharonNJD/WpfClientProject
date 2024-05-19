@@ -21,12 +21,12 @@ namespace WpfClientProject
     /// Interaction logic for Register.xaml
     /// </summary>
      
-    public partial class Register : Window
+    public partial class WindowRegister : Window
     {
         ServiceReferenceBank.ServiceBaseClient ServiceClient;
         bool passOk;
         User user;
-        public Register()
+        public WindowRegister()
         {
 
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace WpfClientProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow newWindow = new MainWindow();
+            WindowStart newWindow = new WindowStart();
             newWindow.Show();
             this.Close();
         }
@@ -89,7 +89,7 @@ namespace WpfClientProject
                 if (!DoesUserExists(user))
                 {
                     ServiceClient.InsertUser(user);
-                    MainWindow main = new MainWindow();
+                    WindowStart main = new WindowStart();
                     main.Show();
                     this.Hide();
                 }

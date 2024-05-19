@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="170" Background="White">
     <Grid>
-        <Menu>
+        <Menu Foreground="Black">
             <MenuItem x:Name="UserName"  Width="170">
                 <MenuItem Header="Delete" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="BankAcouunts" Click="MenuItem_Click_1">

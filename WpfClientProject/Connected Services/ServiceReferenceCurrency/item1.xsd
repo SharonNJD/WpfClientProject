@@ -11,6 +11,7 @@
       <xs:element minOccurs="0" name="Change" type="xs:double" />
       <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Rate" type="xs:double" />
+      <xs:element minOccurs="0" name="Symbol" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Unit" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
