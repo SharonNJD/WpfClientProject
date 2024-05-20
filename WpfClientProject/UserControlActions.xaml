@@ -166,7 +166,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock>
-                                        <Run Text="{Binding Amount,StringFormat='0,0'}" />
+                                        <Run Text="{Binding Amount}" />
                                         <Run Text="{Binding CoinSymbol}" />
                                     </TextBlock>
                                 </DataTemplate>
@@ -207,7 +207,7 @@
                           Margin="0 25"
                           FontSize="20"
                           Foreground="Black"
-                          Width="250">
+                          Width="250" SelectionChanged="cmbActions_SelectionChanged" >
                     <ComboBox.Resources>
                         <SolidColorBrush x:Key="MaterialDesignPaper"
                                          Color="Black" />
@@ -222,12 +222,20 @@
                          Width="200"
                          FontSize="25"
                          VerticalAlignment="Center" />
+            
                 <Button Content="Excute"
                         Margin="15 0"
                         Foreground="White"
                         FontSize="25"
                         Height="50"
                         Click="Excute_Click" />
+                <TextBlock x:Name="Tob" Text=" To: "
+           VerticalAlignment="Center"
+           FontSize="25" Visibility="Hidden" />
+                <TextBox x:Name="tbTo"
+Width="100"
+FontSize="25"
+VerticalAlignment="Center" Visibility="Hidden" />
             </StackPanel>
         </Grid>
     </Border>

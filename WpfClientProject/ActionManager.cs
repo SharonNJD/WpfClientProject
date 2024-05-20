@@ -13,27 +13,28 @@ namespace WpfClientProject
         public static void ExcuteAction(AccountAction accountAction, BankAccount otherAccount)
         {
             double amount = accountAction.Amount;
-            double commition = accountAction.Action.commissionTaken*amount;
+            double commition = (amount*accountAction.Action.commissionTaken/100);
             ServiceBaseClient ServiceClient = new ServiceBaseClient();
             ServiceClient.InsertAccountAction(accountAction);
             //Other bank account
-            if (otherAccount != null)
-            {
-                accountAction.Amount = accountAction.Amount;
-                accountAction.BankAccount = otherAccount;
-                accountAction.Action = new MyAction() { Id = 4 };
-                ServiceClient.InsertAccountAction(accountAction);
-            }
+            
             //Commition command
             accountAction.Amount = commition;
-            accountAction.Action = new MyAction() { Id = 4 };
+            accountAction.Action = new MyAction() { Id = 7 };
             ServiceClient.InsertAccountAction(accountAction);
 
             //Deposit commition to bank
             accountAction.Amount = commition;
             accountAction.BankAccount = new BankAccount() { Id = 1 };
-            accountAction.Action = new MyAction() { Id = 2 };
+            accountAction.Action = new MyAction() { Id = 4 };
             ServiceClient.InsertAccountAction(accountAction);
+            if (otherAccount != null)
+            {
+                accountAction.Amount = amount;
+                accountAction.BankAccount = otherAccount;
+                accountAction.Action = new MyAction() { Id = 4 };
+                ServiceClient.InsertAccountAction(accountAction);
+            }
         }
     }
 }

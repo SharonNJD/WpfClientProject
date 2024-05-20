@@ -43,6 +43,7 @@ namespace WpfClientProject
                 cmbBankAccounts.SelectedIndex = 0;
             cmbActions.DisplayMemberPath = "actionName";
             cmbActions.ItemsSource = actions=ServiceClient.GetAllActions();
+            cmbActions.SelectedIndex = 1;
         }
 
         public void GetAllActions()
@@ -61,8 +62,10 @@ namespace WpfClientProject
             }
             try
             {
+
                 BankAccount otherAccount = null;
                 double num = double.Parse(tbAmount.Text);
+                MyAction actions = cmbActions.SelectedItem as MyAction;
                 AccountAction accountAction = new AccountAction()
                 {
                     Action = cmbActions.SelectedItem as MyAction,
@@ -70,9 +73,11 @@ namespace WpfClientProject
                     BankAccount = cmbBankAccounts.SelectedItem as BankAccount,
                     TimaStamp = DateTime.Now
                 };
-                if (cmbActions.Text.Equals("Transfer To"))
+                if (actions.actionName.Equals("Transfer From"))
                 {
+                    
                     otherAccount = new BankAccount();
+                    otherAccount = ServiceClient.GetBankAccountsByNumber(int.Parse(tbTo.Text));
                 }
                 ActionManager.ExcuteAction(accountAction, otherAccount);
                 cmbActions.SelectedItem = -1;
@@ -90,6 +95,25 @@ namespace WpfClientProject
             AccountActionList actions = ServiceClient.GetAccountActionByBankAccount(account);
             Actionslv.ItemsSource= actions;
             tbAccountToAcction.Text= "Account: "+account.bankAcuuntNum.ToString()+"  ";
+            
+            
+        }
+
+        private void cmbActions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            MyAction action = cmbActions.SelectedItem as MyAction;
+            if (action.actionName.Equals("Transfer From"))
+            {
+
+                Tob.Visibility = Visibility.Visible;
+                tbTo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Tob.Visibility = Visibility.Collapsed;
+                tbTo.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

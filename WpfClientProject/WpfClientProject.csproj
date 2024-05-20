@@ -92,9 +92,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Converters.cs" />
-    <Compile Include="DropDownAdmin.xaml.cs">
-      <DependentUpon>DropDownAdmin.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControlCoin.xaml.cs">
       <DependentUpon>UserControlCoin.xaml</DependentUpon>
     </Compile>
@@ -129,10 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DropDownAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
