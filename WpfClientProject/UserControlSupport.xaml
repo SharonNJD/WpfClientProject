@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.982,0.5"
+                         StartPoint="0.023,0.5">
+                <GradientStop Color="LightCyan"
+                      Offset="1" />
+                <GradientStop Color="DarkCyan" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <TextBlock FontSize="40" Text="Or email us at: WeDontAnswer@walla.co.il" Margin="26,225,-26,-225"></TextBlock>
+        <TextBlock FontSize="40" Text="Call us at: 0532369531" Margin="186,182,-186,-182"></TextBlock>
     </Grid>
 </UserControl>
