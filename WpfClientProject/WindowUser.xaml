@@ -100,7 +100,7 @@
                 <ListView x:Name="ListOfOptions"
                           Foreground="#FF313131"
                           FontFamily="Champagne &amp; Limousines"
-                          FontSize="18" SelectionChanged="ListOfOptions_SelectionChanged">
+                          FontSize="18" >
                     <ListViewItem Height="45"
                                   Padding="0"
                                   Selected="Account_Selected">
