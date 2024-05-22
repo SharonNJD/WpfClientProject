@@ -29,6 +29,7 @@ namespace WpfClientProject
             InitializeComponent();
             User = user;
             this.DataContext = User;
+            ServiceClient = new ServiceReferenceBank.ServiceBaseClient();
         }
         private void Passwor_Changed(object sender, RoutedEventArgs e)
         {

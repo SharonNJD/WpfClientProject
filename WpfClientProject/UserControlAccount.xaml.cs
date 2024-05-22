@@ -24,7 +24,9 @@ namespace WpfClientProject
             UserName.Text = user.FirstName + " " + user.LastName;
             ServiceClient = new ServiceBaseClient();
             CreateCostomer.Visibility = Visibility.Collapsed;
-            BankList = list;
+            
+            BankList = ServiceClient.GetBankAccountsByUser(user);
+            customer = ServiceClient.GetCustomerByUser(user);
             RefreshCMB();
             this.customer = customer;
             if (customer == null)
@@ -36,6 +38,7 @@ namespace WpfClientProject
         }
         public void RefreshCMB()
         {
+            BankList = ServiceClient.GetBankAccountsByUser(user);
             cmbBankAccounts.ItemsSource = BankList;
             cmbBankAccounts.DisplayMemberPath = "bankAcuuntNum";
             cmbBankAccounts.SelectedIndex = 0;
@@ -49,9 +52,16 @@ namespace WpfClientProject
                 Customers customer = new Customers();
                 customer.isNative = true;
                 customer.dateOfJoining = DateTime.Now;
+                customer.Id = user.Id;
 
                 ServiceClient.InsertCustomers(customer);
                 customer = ServiceClient.GetCustomerByUser(user);
+                if (customer == null)
+                {
+                    foreach (Button button in buttonsPanel.Children)
+                        button.Visibility = Visibility.Visible;
+                    CreateCostomer.Visibility = Visibility.Collapsed;
+                }
             }
             else
                 MessageBox.Show("You have a customer account");
